@@ -27,6 +27,8 @@ class Status {
   // Copy the specified status.
   Status(const Status& s);
   Status& operator=(const Status& s);
+  bool operator==(const Status& rhs) const;
+  bool operator!=(const Status& rhs) const;
 
   // Return a success status.
   static Status OK() { return Status(); }
@@ -100,6 +102,12 @@ inline Status& Status::operator=(const Status& s) {
     state_ = (s.state_ == NULL) ? NULL : CopyState(s.state_);
   }
   return *this;
+}
+inline bool Status::operator==(const Status& rhs) const {
+  return (state_[4] == rhs.state_[4]);
+}
+inline bool Status::operator!=(const Status& rhs) const {
+  return !(*this == rhs);
 }
 
 }  // namespace leveldb

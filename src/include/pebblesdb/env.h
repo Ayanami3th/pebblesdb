@@ -38,7 +38,49 @@ public:
     Env()
     {
     }
+    // A data structure brings the data verification information, which is
+    // used together with data being written to a file.
+    struct DataVerificationInfo {
+    // checksum of the data being written.
+        Slice checksum;
+    };
 
+    // DEPRECATED
+    // Priority of an IO request. This is a hint and does not guarantee any
+    // particular QoS.
+    // IO_LOW - Typically background reads/writes such as compaction/flush
+    // IO_HIGH - Typically user reads/synchronous WAL writes
+    enum class IOPriority : uint8_t {
+        kIOLow,
+        kIOHigh,
+        kIOTotal,
+    };
+
+    // Type of the data begin read/written. It can be passed down as a flag
+    // for the FileSystem implementation to optionally handle different types in
+    // different ways
+    enum class IOType : uint8_t {
+        kData,
+        kFilter,
+        kIndex,
+        kMetadata,
+        kWAL,
+        kManifest,
+        kLog,
+        kUnknown,
+        kInvalid,
+    };
+
+    // These values match Linux definition
+    // https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/uapi/linux/fcntl.h#n56
+    enum WriteLifeTimeHint {
+        WLTH_NOT_SET = 0,  // No hint information set
+        WLTH_NONE,         // No hints about write life time
+        WLTH_SHORT,        // Data written has a short life time
+        WLTH_MEDIUM,       // Data written has a medium life time
+        WLTH_LONG,         // Data written has a long life time
+        WLTH_EXTREME,      // Data written has an extremely long life time
+    };
 
     virtual ~Env();
 
@@ -149,6 +191,16 @@ public:
     // REQUIRES: lock has not already been unlocked.
     virtual Status
     UnlockFile(FileLock *lock) = 0;
+
+    // Creates directory if missing. Return Ok if it exists, or successful in
+    // Creating.
+    virtual Status 
+    CreateDirIfMissing(const std::string& dirname) = 0;
+
+    // Store the last modification time of fname in *file_mtime.
+    virtual Status 
+    GetFileModificationTime(const std::string& fname,
+                            uint64_t* file_mtime) = 0;
 
     // Arrange to run "(*function)(arg)" once in a background thread.
     //
@@ -394,6 +446,7 @@ ReadFileToString(Env *env, const std::string &fname,
 class EnvWrapper : public Env
 {
 public:
+    EnvWrapper();
     // Initialize an EnvWrapper that delegates all calls to *t
     explicit EnvWrapper(Env *t) : target_(t)
     {
@@ -509,6 +562,16 @@ public:
         return target_->LockFile(f, l);
     }
 
+    Status 
+    CreateDirIfMissing(const std::string& d) {
+        return target_->CreateDirIfMissing(d);
+    }
+
+    Status 
+    GetFileModificationTime(const std::string& fname,
+                            uint64_t* file_mtime) {
+    return target_->GetFileModificationTime(fname, file_mtime);
+    }
 
     Status
     UnlockFile(FileLock *l)

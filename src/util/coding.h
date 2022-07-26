@@ -18,6 +18,7 @@
 #include "util/string_builder.h"
 
 namespace leveldb {
+const uint32_t kMaxVarint64Length = 10;
 
 // Standard Put... routines append to a string
 extern void PutFixed32(std::string* dst, uint32_t value);
@@ -30,6 +31,8 @@ extern void PutVarint32(StringBuilder* dst, uint32_t value);
 
 // Standard Get... routines parse a value from the beginning of a Slice
 // and advance the slice past the parsed value.
+extern bool GetFixed64(Slice* input, uint64_t* value);
+extern bool GetFixed32(Slice* input, uint32_t* value);
 extern bool GetVarint32(Slice* input, uint32_t* value);
 extern bool GetVarint64(Slice* input, uint64_t* value);
 extern bool GetLengthPrefixedSlice(Slice* input, Slice* result);
@@ -100,6 +103,24 @@ inline const char* GetVarint32Ptr(const char* p,
     }
   }
   return GetVarint32PtrFallback(p, limit, value);
+}
+
+inline bool GetFixed64(Slice* input, uint64_t* value) {
+  if (input->size() < sizeof(uint64_t)) {
+    return false;
+  }
+  *value = DecodeFixed64(input->data());
+  input->remove_prefix(sizeof(uint64_t));
+  return true;
+}
+
+inline bool GetFixed32(Slice* input, uint32_t* value) {
+  if (input->size() < sizeof(uint32_t)) {
+    return false;
+  }
+  *value = DecodeFixed32(input->data());
+  input->remove_prefix(sizeof(uint32_t));
+  return true;
 }
 
 }  // namespace leveldb
