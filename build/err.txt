@@ -51,8 +51,8 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/db/builder.h:9,
                  from /home/cavalry/pebblesdb/src/db/builder.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/builder.h:9,
                  from /home/cavalry/pebblesdb/src/db/builder.cc:5:
@@ -112,19 +112,38 @@ In file included from /home/cavalry/pebblesdb/src/db/builder.h:9,
       |             ^~~~~~~~~
 In file included from /home/cavalry/pebblesdb/src/db/c.cc:12:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/metrics.h:35,
                  from /home/cavalry/pebblesdb/src/db/zbd_zenfs.h:26,
-                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:22,
+                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:23,
                  from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
                  from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
                  from /home/cavalry/pebblesdb/src/db/db_impl.cc:7:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
+In file included from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.cc:7:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
 In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
                  from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
                  from /home/cavalry/pebblesdb/src/db/db_impl.cc:7:
@@ -316,14 +335,33 @@ In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
       |             ^~~~~~~~~
 In file included from /home/cavalry/pebblesdb/src/db/metrics.h:35,
                  from /home/cavalry/pebblesdb/src/db/zbd_zenfs.h:26,
-                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:22,
+                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:23,
                  from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
                  from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
                  from /home/cavalry/pebblesdb/src/db/db_iter.cc:10:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
+In file included from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/db_iter.cc:10:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
 In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
                  from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
                  from /home/cavalry/pebblesdb/src/db/db_iter.cc:10:
@@ -422,23 +460,23 @@ In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
       |             ^~~~~~~~~
 In file included from /home/cavalry/pebblesdb/src/db/filename.cc:9:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/log_reader.cc:8:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/log_writer.cc:8:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/memtable.cc:10:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/memtable.cc:7:
 /home/cavalry/pebblesdb/src/db/memtable.h: In constructor ‘leveldb::MemTable::MemTable(const leveldb::InternalKeyComparator&)’:
@@ -504,8 +542,8 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/db/builder.h:9,
                  from /home/cavalry/pebblesdb/src/db/repair.cc:29:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/builder.h:9,
                  from /home/cavalry/pebblesdb/src/db/repair.cc:29:
@@ -553,20 +591,60 @@ In file included from /home/cavalry/pebblesdb/src/db/builder.h:9,
 /home/cavalry/pebblesdb/src/db/version_set.h:381:22: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
   381 |    for (int i = 0; i < guards_[level].size(); i++) {
       |                    ~~^~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/repair.cc:30:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
+In file included from /home/cavalry/pebblesdb/src/db/builder.h:9,
+                 from /home/cavalry/pebblesdb/src/db/repair.cc:29:
 /home/cavalry/pebblesdb/src/db/version_set.h: At global scope:
 /home/cavalry/pebblesdb/src/db/version_set.h:79:13: warning: ‘void leveldb::SaveValue(void*, const leveldb::Slice&, const leveldb::Slice&)’ defined but not used [-Wunused-function]
    79 | static void SaveValue(void* arg, const Slice& ikey, const Slice& v) {
       |             ^~~~~~~~~
 In file included from /home/cavalry/pebblesdb/src/db/metrics.h:35,
                  from /home/cavalry/pebblesdb/src/db/zbd_zenfs.h:26,
-                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:22,
+                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:23,
                  from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
                  from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
                  from /home/cavalry/pebblesdb/src/db/replay_iterator.cc:10:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
+In file included from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/replay_iterator.cc:10:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
 In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
                  from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
                  from /home/cavalry/pebblesdb/src/db/replay_iterator.cc:10:
@@ -668,8 +746,8 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/db/table_cache.h:15,
                  from /home/cavalry/pebblesdb/src/db/table_cache.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
                  from /home/cavalry/pebblesdb/src/db/table_cache.h:18,
@@ -819,8 +897,8 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/db/version_set.h:26,
                  from /home/cavalry/pebblesdb/src/db/version_edit.cc:7:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/version_edit.cc:7:
 /home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::TotalGuards() const’:
@@ -921,8 +999,8 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/db/version_set.h:26,
                  from /home/cavalry/pebblesdb/src/db/version_set.cc:7:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/version_set.cc:7:
 /home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::TotalGuards() const’:
@@ -1225,8 +1303,8 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/db/version_set.h:26,
                  from /home/cavalry/pebblesdb/src/db/write_batch.cc:29:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/write_batch.cc:29:
 /home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::TotalGuards() const’:
@@ -1284,15 +1362,103 @@ In file included from /home/cavalry/pebblesdb/src/db/write_batch.cc:29:
 /home/cavalry/pebblesdb/src/db/version_set.h:79:13: warning: ‘void leveldb::SaveValue(void*, const leveldb::Slice&, const leveldb::Slice&)’ defined but not used [-Wunused-function]
    79 | static void SaveValue(void* arg, const Slice& ikey, const Slice& v) {
       |             ^~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/metrics.h:35,
+                 from /home/cavalry/pebblesdb/src/db/zbd_zenfs.h:26,
+                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:23,
+                 from /home/cavalry/pebblesdb/src/db/fs_zenfs.h:20,
+                 from /home/cavalry/pebblesdb/src/db/fs_zenfs.cc:7:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/fs_zenfs.h:20,
+                 from /home/cavalry/pebblesdb/src/db/fs_zenfs.cc:7:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
+/home/cavalry/pebblesdb/src/db/fs_zenfs.cc: In member function ‘leveldb::Status leveldb::ZenFS::MkFS(std::string, uint32_t)’:
+/home/cavalry/pebblesdb/src/db/fs_zenfs.cc:1663:23: warning: moving a local object in a return statement prevents copy elision [-Wpessimizing-move]
+ 1663 |       return std::move(s);
+      |              ~~~~~~~~~^~~
+/home/cavalry/pebblesdb/src/db/fs_zenfs.cc:1663:23: note: remove ‘std::move’ call
+/home/cavalry/pebblesdb/src/db/fs_zenfs.cc: At global scope:
+/home/cavalry/pebblesdb/src/db/fs_zenfs.cc:1692:22: warning: ‘std::string leveldb::GetLogFilename(std::string)’ defined but not used [-Wunused-function]
+ 1692 |   static std::string GetLogFilename(std::string bdev)
+      |                      ^~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/metrics.h:35,
+                 from /home/cavalry/pebblesdb/src/db/zbd_zenfs.h:26,
+                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:23,
+                 from /home/cavalry/pebblesdb/src/db/io_zenfs.cc:8:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/io_zenfs.cc:8:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
+In file included from /home/cavalry/pebblesdb/src/db/zbd_zenfs.cc:27:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/zbd_zenfs.cc:29:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
+/home/cavalry/pebblesdb/src/db/zbd_zenfs.cc: In member function ‘leveldb::Status leveldb::ZonedBlockDevice::AllocateIOZone(leveldb::WriteLifeTimeHint, leveldb::IOType, leveldb::Zone**)’:
+/home/cavalry/pebblesdb/src/db/zbd_zenfs.cc:790:7: warning: variable ‘new_zone’ set but not used [-Wunused-but-set-variable]
+  790 |   int new_zone = 0;
+      |       ^~~~~~~~
 In file included from /home/cavalry/pebblesdb/src/table/filter_block.cc:9:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/table/format.cc:7:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 /home/cavalry/pebblesdb/src/table/merger.cc:268:1: warning: "/*" within comment [-Wcomment]
   268 | /*  for (int i = 0; i < n_; i++) {
@@ -1353,8 +1519,8 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/table/merger.h:8,
                  from /home/cavalry/pebblesdb/src/table/merger.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/table/merger.h:8,
                  from /home/cavalry/pebblesdb/src/table/merger.cc:5:
@@ -1436,15 +1602,15 @@ In file included from /home/cavalry/pebblesdb/src/table/merger.h:8,
       |             ^~~~~~~~~
 In file included from /home/cavalry/pebblesdb/src/table/table_builder.cc:9:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/include/pebblesdb/table.h:10,
                  from /home/cavalry/pebblesdb/src/table/table.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
                  from /home/cavalry/pebblesdb/src/table/table.cc:7:
@@ -1553,8 +1719,8 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/include/pebblesdb/table.h:10,
                  from /home/cavalry/pebblesdb/src/table/two_level_iterator.cc:6:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 /home/cavalry/pebblesdb/src/util/crc32c.cc:43:17: warning: ‘uint32_t leveldb::crc32c::crc32_sse42_quads(uint32_t, const char*, size_t)’ defined but not used [-Wunused-function]
    43 | static uint32_t crc32_sse42_quads(uint32_t init_crc, const char* data, size_t n) {
@@ -1564,41 +1730,93 @@ In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
       |                 ^~~~~~~~~~~~~~~~~~
 In file included from /home/cavalry/pebblesdb/src/util/env.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::NewSequentialFile(const string&, leveldb::SequentialFile**)’:
+/home/cavalry/pebblesdb/src/util/env.cc:15:49: warning: no return statement in function returning non-void [-Wreturn-type]
+   15 |                       SequentialFile **result) {}
+      |                                                 ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::NewRandomAccessFile(const string&, leveldb::RandomAccessFile**)’:
+/home/cavalry/pebblesdb/src/util/env.cc:18:53: warning: no return statement in function returning non-void [-Wreturn-type]
+   18 |                         RandomAccessFile **result) {}
+      |                                                     ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::NewWritableFile(const string&, leveldb::WritableFile**)’:
+/home/cavalry/pebblesdb/src/util/env.cc:21:45: warning: no return statement in function returning non-void [-Wreturn-type]
+   21 |                     WritableFile **result) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::NewConcurrentWritableFile(const string&, leveldb::ConcurrentWritableFile**)’:
+/home/cavalry/pebblesdb/src/util/env.cc:24:65: warning: no return statement in function returning non-void [-Wreturn-type]
+   24 |                               ConcurrentWritableFile **result) {}
+      |                                                                 ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::NewLogger(const string&, leveldb::Logger**)’:
+/home/cavalry/pebblesdb/src/util/env.cc:26:60: warning: no return statement in function returning non-void [-Wreturn-type]
+   26 | Env::NewLogger(const std::string &fname, Logger **result) {}
+      |                                                            ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual bool leveldb::Env::FileExists(const string&)’:
+/home/cavalry/pebblesdb/src/util/env.cc:28:44: warning: no return statement in function returning non-void [-Wreturn-type]
+   28 | Env::FileExists(const std::string &fname) {}
+      |                                            ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::CreateDirIfMissing(const string&)’:
+/home/cavalry/pebblesdb/src/util/env.cc:30:54: warning: no return statement in function returning non-void [-Wreturn-type]
+   30 | Env::CreateDirIfMissing(const std::string &dirname) {}
+      |                                                      ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::NewDirectory(const string&, std::unique_ptr<leveldb::Directory>*)’:
+/home/cavalry/pebblesdb/src/util/env.cc:34:56: warning: no return statement in function returning non-void [-Wreturn-type]
+   34 |                   std::unique_ptr<Directory> *result) {}
+      |                                                        ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::GetFileModificationTime(const string&, uint64_t*)’:
+/home/cavalry/pebblesdb/src/util/env.cc:37:53: warning: no return statement in function returning non-void [-Wreturn-type]
+   37 |                              uint64_t *file_mtime) {}
+      |                                                     ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::IsDirectory(const string&, bool*)’:
+/home/cavalry/pebblesdb/src/util/env.cc:40:33: warning: no return statement in function returning non-void [-Wreturn-type]
+   40 |                  bool *is_dir) {}
+      |                                 ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::GetAbsolutePath(const string&, std::string*)’:
+/home/cavalry/pebblesdb/src/util/env.cc:44:49: warning: no return statement in function returning non-void [-Wreturn-type]
+   44 |                      std::string *output_path) {}
+      |                                                 ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::NumFileLinks(const string&, uint64_t*)’:
+/home/cavalry/pebblesdb/src/util/env.cc:47:40: warning: no return statement in function returning non-void [-Wreturn-type]
+   47 |                   uint64_t *nr_links) {}
+      |                                        ^
+/home/cavalry/pebblesdb/src/util/env.cc: In member function ‘virtual leveldb::Status leveldb::Env::AreFilesSame(const string&, const string&, bool*)’:
+/home/cavalry/pebblesdb/src/util/env.cc:52:31: warning: no return statement in function returning non-void [-Wreturn-type]
+   52 |                   bool *res) {}
+      |                               ^
 In file included from /home/cavalry/pebblesdb/src/util/env_posix.cc:23:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/util/logging.cc:13:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/util/options.cc:8:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
                  from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
                  from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
                  from /home/cavalry/pebblesdb/src/util/crc32c_test.cc:6:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1015:5: warning: no return statement in function returning non-void [-Wreturn-type]
- 1015 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
       |     ^
 In file included from /home/cavalry/pebblesdb/src/util/crc32c_test.cc:6:
 /home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = unsigned int]’:
@@ -1611,54 +1829,1189 @@ In file included from /home/cavalry/pebblesdb/src/util/crc32c_test.cc:6:
 /home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
    80 |     if (! (x op y)) {                                   \
       |              ^~
-/usr/bin/ld: libpebblesdb.a(env_posix.cc.o): in function `leveldb::(anonymous namespace)::PosixEnv::PosixEnv()':
-env_posix.cc:(.text+0x376b): undefined reference to `leveldb::EnvWrapper::EnvWrapper()'
-/usr/bin/ld: libpebblesdb.a(env_posix.cc.o):(.data.rel.ro+0xd8): undefined reference to `leveldb::Env::LinkFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env_posix.cc.o):(.data.rel.ro+0xe8): undefined reference to `leveldb::Env::LockFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::FileLock**, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb10EnvWrapperE[_ZTVN7leveldb10EnvWrapperE]+0xd8): undefined reference to `leveldb::Env::LinkFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb10EnvWrapperE[_ZTVN7leveldb10EnvWrapperE]+0xe8): undefined reference to `leveldb::Env::LockFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::FileLock**, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x20): undefined reference to `leveldb::Env::NewSequentialFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::SequentialFile**)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x28): undefined reference to `leveldb::Env::NewSequentialFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::Env::FileOptions const&, std::unique_ptr<leveldb::SequentialFile, std::default_delete<leveldb::SequentialFile> >*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x30): undefined reference to `leveldb::Env::NewRandomAccessFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::RandomAccessFile**)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x38): undefined reference to `leveldb::Env::NewRandomAccessFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::Env::FileOptions const&, std::unique_ptr<leveldb::RandomAccessFile, std::default_delete<leveldb::RandomAccessFile> >*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x48): undefined reference to `leveldb::Env::NewWritableFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::Env::FileOptions const&, std::unique_ptr<leveldb::WritableFile, std::default_delete<leveldb::WritableFile> >*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x50): undefined reference to `leveldb::Env::NewConcurrentWritableFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::ConcurrentWritableFile**)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x58): undefined reference to `leveldb::Env::FileExists(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x60): undefined reference to `leveldb::Env::FileExists(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x68): undefined reference to `leveldb::Env::GetChildren(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x70): undefined reference to `leveldb::Env::GetChildren(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x78): undefined reference to `leveldb::Env::DeleteFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x80): undefined reference to `leveldb::Env::DeleteFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x88): undefined reference to `leveldb::Env::CreateDir(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x90): undefined reference to `leveldb::Env::CreateDir(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x98): undefined reference to `leveldb::Env::DeleteDir(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xa0): undefined reference to `leveldb::Env::DeleteDir(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xa8): undefined reference to `leveldb::Env::GetFileSize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xb0): undefined reference to `leveldb::Env::GetFileSize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, unsigned long*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xb8): undefined reference to `leveldb::Env::RenameFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xc0): undefined reference to `leveldb::Env::RenameFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xc8): undefined reference to `leveldb::Env::CopyFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xd0): undefined reference to `leveldb::Env::LinkFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xd8): undefined reference to `leveldb::Env::LinkFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xe0): undefined reference to `leveldb::Env::LockFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::FileLock**)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xe8): undefined reference to `leveldb::Env::LockFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::FileLock**, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0xf8): undefined reference to `leveldb::Env::UnlockFile(leveldb::FileLock*, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x100): undefined reference to `leveldb::Env::CreateDirIfMissing(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x108): undefined reference to `leveldb::Env::GetFileModificationTime(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x110): undefined reference to `leveldb::Env::GetFileModificationTime(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, unsigned long*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x120): undefined reference to `leveldb::Env::StartThread(void (*)(void*), void*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x128): undefined reference to `leveldb::Env::StartThreadAndReturnThreadId(void (*)(void*), void*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x130): undefined reference to `leveldb::Env::WaitForThread(unsigned long, void**)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x140): undefined reference to `leveldb::Env::GetTestDirectory(leveldb::IOOptions const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x148): undefined reference to `leveldb::Env::NewLogger(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::Logger**)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x150): undefined reference to `leveldb::Env::NewLogger(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, std::shared_ptr<leveldb::Logger>*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x170): undefined reference to `leveldb::Env::IsDirectory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, bool*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x178): undefined reference to `leveldb::Env::NewDirectory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, std::unique_ptr<leveldb::Directory, std::default_delete<leveldb::Directory> >*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x180): undefined reference to `leveldb::Env::GetAbsolutePath(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x188): undefined reference to `leveldb::Env::CreateDirIfMissing(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x190): undefined reference to `leveldb::Env::NumFileLinks(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, unsigned long*, leveldb::IODebugContext*)'
-/usr/bin/ld: libpebblesdb.a(env.cc.o):(.data.rel.ro._ZTVN7leveldb3EnvE[_ZTVN7leveldb3EnvE]+0x198): undefined reference to `leveldb::Env::AreFilesSame(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, leveldb::IOOptions const&, bool*, leveldb::IODebugContext*)'
-collect2: error: ld returned 1 exit status
-make[2]: *** [CMakeFiles/crc32c_test.dir/build.make:115：crc32c_test] 错误 1
-make[1]: *** [CMakeFiles/Makefile2:120：CMakeFiles/crc32c_test.dir/all] 错误 2
-make: *** [Makefile:141：all] 错误 2
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/log_test.cc:7:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+/home/cavalry/pebblesdb/src/db/log_test.cc: In member function ‘void leveldb::log::_Test_ErrorJoinsRecords::_Run()’:
+/home/cavalry/pebblesdb/src/db/log_test.cc:469:40: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+  469 |   for (int offset = kBlockSize; offset < 2*kBlockSize; offset++) {
+      |                                 ~~~~~~~^~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/log_test.cc:11:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = long unsigned int]’:
+/home/cavalry/pebblesdb/src/db/log_test.cc:306:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const long unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsLe(const X&, const Y&) [with X = int; Y = unsigned int]’:
+/home/cavalry/pebblesdb/src/db/log_test.cc:476:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:91:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   91 |   BINARY_OP(IsLe, <=)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsGe(const X&, const Y&) [with X = int; Y = unsigned int]’:
+/home/cavalry/pebblesdb/src/db/log_test.cc:477:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:89:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   89 |   BINARY_OP(IsGe, >=)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/coding_test.cc:7:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/coding_test.cc:7:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = long unsigned int]’:
+/home/cavalry/pebblesdb/src/util/coding_test.cc:58:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const long unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/env_test.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/env_test.cc:8:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = long unsigned int]’:
+/home/cavalry/pebblesdb/src/util/env_test.cc:64:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const long unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/bloom_test.cc:9:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/skiplist_test.cc:9:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+/home/cavalry/pebblesdb/src/db/skiplist_test.cc: In constructor ‘leveldb::ConcurrentTest::State::State()’:
+/home/cavalry/pebblesdb/src/db/skiplist_test.cc:208:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const uint32_t’ {aka ‘const unsigned int’} [-Wsign-compare]
+  208 |       for (int k = 0; k < K; k++) {
+      |                       ~~^~~
+/home/cavalry/pebblesdb/src/db/skiplist_test.cc: In member function ‘void leveldb::ConcurrentTest::ReadStep(leveldb::Random*)’:
+/home/cavalry/pebblesdb/src/db/skiplist_test.cc:238:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const uint32_t’ {aka ‘const unsigned int’} [-Wsign-compare]
+  238 |     for (int k = 0; k < K; k++) {
+      |                     ~~^~~
+In file included from /home/cavalry/pebblesdb/src/db/skiplist_test.cc:13:
+/home/cavalry/pebblesdb/src/db/skiplist_test.cc:263:31: warning: comparison of integer expressions of different signedness: ‘uint64_t’ {aka ‘long unsigned int’} and ‘intptr_t’ {aka ‘long int’} [-Wsign-compare]
+  263 |                     (gen(pos) > initial_state.Get(key(pos)))
+      |                      ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/util/testharness.h:105:72: note: in definition of macro ‘ASSERT_TRUE’
+  105 | #define ASSERT_TRUE(c) ::leveldb::test::Tester(__FILE__, __LINE__).Is((c), #c)
+      |                                                                        ^
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = long unsigned int; Y = int]’:
+/home/cavalry/pebblesdb/src/db/skiplist_test.cc:74:7:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const long unsigned int’ and ‘const int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/arena_test.cc:8:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/arena_test.cc:8:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = long unsigned int]’:
+/home/cavalry/pebblesdb/src/util/arena_test.cc:59:7:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const long unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/metrics.h:35,
+                 from /home/cavalry/pebblesdb/src/db/zbd_zenfs.h:26,
+                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:23,
+                 from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
+In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In constructor ‘leveldb::GuardMetaData::GuardMetaData()’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:43:15: warning: ‘leveldb::GuardMetaData::largest’ will be initialized after [-Wreorder]
+   43 |   InternalKey largest;   // Largest internal key served by table
+      |               ^~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:39:12: warning:   ‘uint64_t leveldb::GuardMetaData::number_segments’ [-Wreorder]
+   39 |   uint64_t number_segments;
+      |            ^~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:48:1: warning:   when initialized here [-Wreorder]
+   48 | GuardMetaData() : refs(0), level(-1), guard_key(), smallest(), largest(), number_segments(0) { files.clear();}
+      | ^~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/timer.h:11,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:26,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddFileToSentinel(leveldb::FileMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:114:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  114 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:136:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  136 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:145:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  145 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:154:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  154 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:160:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  160 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardWithFiles(int, uint64_t, const leveldb::InternalKey&, const leveldb::InternalKey&, const leveldb::InternalKey&, std::vector<long unsigned int>)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:171:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  171 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::UpdateGuards(uint64_t*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:196:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  196 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::TotalGuards() const’:
+/home/cavalry/pebblesdb/src/db/version_set.h:299:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  299 |     for (int i = 0; i < config::kNumLevels; i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/timer.h:11,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:26,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddGuard(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:305:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  305 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddToCompleteGuards(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:310:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  310 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddToNewGuards(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:315:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  315 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddCompleteGuardsToEdit(leveldb::VersionEdit*)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:320:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  320 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h:321:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  321 |      for (int j = 0; j < complete_guards_[i].size(); j++) {
+      |                      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddGuardsToEdit(leveldb::VersionEdit*, std::set<int>)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:331:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  331 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h:333:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  333 |       for (int j = 0; j < complete_guards_[i].size(); j++) {
+      |                       ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::GetNumLevelsWithFiles(int*, int*, double*)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:360:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  360 |    for (int level = 0; level < config::kNumLevels; level++) {
+      |                        ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::HACK_IncreaseCompactionScoresForLevel(int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:381:22: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  381 |    for (int i = 0; i < guards_[level].size(); i++) {
+      |                    ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/autocompact_test.cc: In member function ‘void leveldb::AutoCompactTest::DoReads(int)’:
+/home/cavalry/pebblesdb/src/db/autocompact_test.cc:96:14: warning: comparison of integer expressions of different signedness: ‘uint64_t’ {aka ‘long unsigned int’} and ‘long int’ [-Wsign-compare]
+   96 |     if (size <= initial_size/10) {
+      |         ~~~~~^~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/autocompact_test.cc:8:
+/home/cavalry/pebblesdb/src/db/version_set.h: At global scope:
+/home/cavalry/pebblesdb/src/db/version_set.h:79:13: warning: ‘void leveldb::SaveValue(void*, const leveldb::Slice&, const leveldb::Slice&)’ defined but not used [-Wunused-function]
+   79 | static void SaveValue(void* arg, const Slice& ikey, const Slice& v) {
+      |             ^~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/corruption_test.cc:14:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/corruption_test.cc:17:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
+In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/corruption_test.cc:17:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In constructor ‘leveldb::GuardMetaData::GuardMetaData()’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:43:15: warning: ‘leveldb::GuardMetaData::largest’ will be initialized after [-Wreorder]
+   43 |   InternalKey largest;   // Largest internal key served by table
+      |               ^~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:39:12: warning:   ‘uint64_t leveldb::GuardMetaData::number_segments’ [-Wreorder]
+   39 |   uint64_t number_segments;
+      |            ^~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:48:1: warning:   when initialized here [-Wreorder]
+   48 | GuardMetaData() : refs(0), level(-1), guard_key(), smallest(), largest(), number_segments(0) { files.clear();}
+      | ^~~~~~~~~~~~~
+In file included from /usr/include/c++/9/cassert:44,
+                 from /home/cavalry/pebblesdb/src/db/filesystem_utility.h:7,
+                 from /home/cavalry/pebblesdb/src/db/fs_zenfs.h:10,
+                 from /home/cavalry/pebblesdb/src/db/snapshot.h:10,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/corruption_test.cc:17:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddFileToSentinel(leveldb::FileMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:114:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  114 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:136:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  136 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:145:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  145 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:154:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  154 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:160:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  160 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardWithFiles(int, uint64_t, const leveldb::InternalKey&, const leveldb::InternalKey&, const leveldb::InternalKey&, std::vector<long unsigned int>)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:171:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  171 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/corruption_test.cc:17:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::UpdateGuards(uint64_t*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:196:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  196 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/corruption_test.cc:17:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::TotalGuards() const’:
+/home/cavalry/pebblesdb/src/db/version_set.h:299:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  299 |     for (int i = 0; i < config::kNumLevels; i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/9/cassert:44,
+                 from /home/cavalry/pebblesdb/src/db/filesystem_utility.h:7,
+                 from /home/cavalry/pebblesdb/src/db/fs_zenfs.h:10,
+                 from /home/cavalry/pebblesdb/src/db/snapshot.h:10,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/corruption_test.cc:17:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddGuard(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:305:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  305 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddToCompleteGuards(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:310:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  310 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddToNewGuards(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:315:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  315 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/corruption_test.cc:17:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddCompleteGuardsToEdit(leveldb::VersionEdit*)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:320:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  320 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h:321:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  321 |      for (int j = 0; j < complete_guards_[i].size(); j++) {
+      |                      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddGuardsToEdit(leveldb::VersionEdit*, std::set<int>)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:331:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  331 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h:333:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  333 |       for (int j = 0; j < complete_guards_[i].size(); j++) {
+      |                       ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::GetNumLevelsWithFiles(int*, int*, double*)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:360:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  360 |    for (int level = 0; level < config::kNumLevels; level++) {
+      |                        ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::HACK_IncreaseCompactionScoresForLevel(int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:381:22: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  381 |    for (int i = 0; i < guards_[level].size(); i++) {
+      |                    ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/corruption_test.cc: In member function ‘void leveldb::CorruptionTest::Check(int, int)’:
+/home/cavalry/pebblesdb/src/db/corruption_test.cc:125:21: warning: comparison of integer expressions of different signedness: ‘uint64_t’ {aka ‘long unsigned int’} and ‘int’ [-Wsign-compare]
+  125 |                 key < next_expected)
+      |                 ~~~~^~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/corruption_test.cc: In member function ‘void leveldb::_Test_CompactionInputError::_Run()’:
+/home/cavalry/pebblesdb/src/db/corruption_test.cc:378:15: warning: unused variable ‘last’ [-Wunused-variable]
+  378 |     const int last = config::kMaxMemCompactLevel;
+      |               ^~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/corruption_test.cc:17:
+/home/cavalry/pebblesdb/src/db/version_set.h: At global scope:
+/home/cavalry/pebblesdb/src/db/version_set.h:79:13: warning: ‘void leveldb::SaveValue(void*, const leveldb::Slice&, const leveldb::Slice&)’ defined but not used [-Wunused-function]
+   79 | static void SaveValue(void* arg, const Slice& ikey, const Slice& v) {
+      |             ^~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/table/filter_block_test.cc:11:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
+                 from /home/cavalry/pebblesdb/src/db/version_set_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In constructor ‘leveldb::GuardMetaData::GuardMetaData()’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:43:15: warning: ‘leveldb::GuardMetaData::largest’ will be initialized after [-Wreorder]
+   43 |   InternalKey largest;   // Largest internal key served by table
+      |               ^~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:39:12: warning:   ‘uint64_t leveldb::GuardMetaData::number_segments’ [-Wreorder]
+   39 |   uint64_t number_segments;
+      |            ^~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:48:1: warning:   when initialized here [-Wreorder]
+   48 | GuardMetaData() : refs(0), level(-1), guard_key(), smallest(), largest(), number_segments(0) { files.clear();}
+      | ^~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/include/pebblesdb/slice.h:18,
+                 from /home/cavalry/pebblesdb/src/include/pebblesdb/iterator.h:18,
+                 from /home/cavalry/pebblesdb/src/include/pebblesdb/db.h:10,
+                 from /home/cavalry/pebblesdb/src/db/dbformat.h:10,
+                 from /home/cavalry/pebblesdb/src/db/version_set.h:22,
+                 from /home/cavalry/pebblesdb/src/db/version_set_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddFileToSentinel(leveldb::FileMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:114:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  114 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:136:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  136 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:145:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  145 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:154:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  154 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:160:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  160 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardWithFiles(int, uint64_t, const leveldb::InternalKey&, const leveldb::InternalKey&, const leveldb::InternalKey&, std::vector<long unsigned int>)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:171:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  171 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
+                 from /home/cavalry/pebblesdb/src/db/version_set_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::UpdateGuards(uint64_t*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:196:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  196 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
+                 from /home/cavalry/pebblesdb/src/db/version_set.h:26,
+                 from /home/cavalry/pebblesdb/src/db/version_set_test.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/version_set_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::TotalGuards() const’:
+/home/cavalry/pebblesdb/src/db/version_set.h:299:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  299 |     for (int i = 0; i < config::kNumLevels; i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/timer.h:11,
+                 from /home/cavalry/pebblesdb/src/db/version_set.h:26,
+                 from /home/cavalry/pebblesdb/src/db/version_set_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddGuard(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:305:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  305 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddToCompleteGuards(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:310:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  310 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddToNewGuards(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:315:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  315 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/version_set_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddCompleteGuardsToEdit(leveldb::VersionEdit*)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:320:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  320 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h:321:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  321 |      for (int j = 0; j < complete_guards_[i].size(); j++) {
+      |                      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddGuardsToEdit(leveldb::VersionEdit*, std::set<int>)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:331:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  331 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h:333:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  333 |       for (int j = 0; j < complete_guards_[i].size(); j++) {
+      |                       ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::GetNumLevelsWithFiles(int*, int*, double*)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:360:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  360 |    for (int level = 0; level < config::kNumLevels; level++) {
+      |                        ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::HACK_IncreaseCompactionScoresForLevel(int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:381:22: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  381 |    for (int i = 0; i < guards_[level].size(); i++) {
+      |                    ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set_test.cc: In destructor ‘leveldb::FindFileTest::~FindFileTest()’:
+/home/cavalry/pebblesdb/src/db/version_set_test.cc:20:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::FileMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+   20 |     for (int i = 0; i < files_.size(); i++) {
+      |                     ~~^~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/version_set_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_set.h: At global scope:
+/home/cavalry/pebblesdb/src/db/version_set.h:79:13: warning: ‘void leveldb::SaveValue(void*, const leveldb::Slice&, const leveldb::Slice&)’ defined but not used [-Wunused-function]
+   79 | static void SaveValue(void* arg, const Slice& ikey, const Slice& v) {
+      |             ^~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/db/filename_test.cc:10:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+/home/cavalry/pebblesdb/src/db/filename_test.cc: In member function ‘void leveldb::_Test_Parse::_Run()’:
+/home/cavalry/pebblesdb/src/db/filename_test.cc:39:21: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+   39 |   for (int i = 0; i < sizeof(cases) / sizeof(cases[0]); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/filename_test.cc:71:21: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+   71 |   for (int i = 0; i < sizeof(errors) / sizeof(errors[0]); i++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/filename_test.cc:10:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = long unsigned int]’:
+/home/cavalry/pebblesdb/src/db/filename_test.cc:85:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const long unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/metrics.h:35,
+                 from /home/cavalry/pebblesdb/src/db/zbd_zenfs.h:26,
+                 from /home/cavalry/pebblesdb/src/db/io_zenfs.h:23,
+                 from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/snapshot.h:9,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:21,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Append(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:199:45: warning: no return statement in function returning non-void [-Wreturn-type]
+  199 |   virtual Status Append(const Slice &data) {}
+      |                                             ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Close()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:223:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  223 |   virtual Status Close() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Flush()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:226:27: warning: no return statement in function returning non-void [-Wreturn-type]
+  226 |   virtual Status Flush() {}
+      |                           ^
+/home/cavalry/pebblesdb/src/db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedWritableFile::Sync()’:
+/home/cavalry/pebblesdb/src/db/io_zenfs.h:228:26: warning: no return statement in function returning non-void [-Wreturn-type]
+  228 |   virtual Status Sync() {}
+      |                          ^
+In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In constructor ‘leveldb::GuardMetaData::GuardMetaData()’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:43:15: warning: ‘leveldb::GuardMetaData::largest’ will be initialized after [-Wreorder]
+   43 |   InternalKey largest;   // Largest internal key served by table
+      |               ^~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:39:12: warning:   ‘uint64_t leveldb::GuardMetaData::number_segments’ [-Wreorder]
+   39 |   uint64_t number_segments;
+      |            ^~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:48:1: warning:   when initialized here [-Wreorder]
+   48 | GuardMetaData() : refs(0), level(-1), guard_key(), smallest(), largest(), number_segments(0) { files.clear();}
+      | ^~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/timer.h:11,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:26,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddFileToSentinel(leveldb::FileMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:114:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  114 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:136:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  136 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:145:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  145 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:154:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  154 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:160:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  160 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardWithFiles(int, uint64_t, const leveldb::InternalKey&, const leveldb::InternalKey&, const leveldb::InternalKey&, std::vector<long unsigned int>)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:171:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  171 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/version_set.h:23,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::UpdateGuards(uint64_t*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:196:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  196 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::TotalGuards() const’:
+/home/cavalry/pebblesdb/src/db/version_set.h:299:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  299 |     for (int i = 0; i < config::kNumLevels; i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/timer.h:11,
+                 from /home/cavalry/pebblesdb/src/db/db_impl.h:26,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddGuard(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:305:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  305 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddToCompleteGuards(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:310:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  310 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddToNewGuards(leveldb::GuardMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:315:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  315 |     assert(level >=0 && level < config::kNumLevels);
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddCompleteGuardsToEdit(leveldb::VersionEdit*)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:320:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  320 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h:321:24: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  321 |      for (int j = 0; j < complete_guards_[i].size(); j++) {
+      |                      ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::AddGuardsToEdit(leveldb::VersionEdit*, std::set<int>)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:331:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  331 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h:333:25: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  333 |       for (int j = 0; j < complete_guards_[i].size(); j++) {
+      |                       ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘int leveldb::Version::GetNumLevelsWithFiles(int*, int*, double*)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:360:30: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  360 |    for (int level = 0; level < config::kNumLevels; level++) {
+      |                        ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_set.h: In member function ‘void leveldb::Version::HACK_IncreaseCompactionScoresForLevel(int)’:
+/home/cavalry/pebblesdb/src/db/version_set.h:381:22: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<leveldb::GuardMetaData*>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  381 |    for (int i = 0; i < guards_[level].size(); i++) {
+      |                    ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘std::string leveldb::DBTest::AllEntriesFor(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:426:18: warning: enumeration value ‘kTypeGuard’ not handled in switch [-Wswitch]
+  426 |           switch (ikey.type) {
+      |                  ^
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘int leveldb::DBTest::TotalTableFiles()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:456:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  456 |     for (int level = 0; level < config::kNumLevels; level++) {
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘int leveldb::DBTest::TotalGuards()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:501:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  501 |     for (int level = 0; level < config::kNumLevels; level++) {
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘std::string leveldb::DBTest::FilesPerLevel()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:563:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  563 |     for (int level = 0; level < config::kNumLevels; level++) {
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::DBTest::DumpFileCounts(const char*)’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:614:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  614 |     for (int level = 0; level < config::kNumLevels; level++) {
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_DeletionMarkers1::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:1357:13: warning: unused variable ‘last’ [-Wunused-variable]
+ 1357 |   const int last = config::kMaxMemCompactLevel;
+      |             ^~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_DeletionMarkers2::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:1383:13: warning: unused variable ‘last’ [-Wunused-variable]
+ 1383 |   const int last = config::kMaxMemCompactLevel;
+      |             ^~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_NoSpace::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:1612:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+ 1612 |     for (int level = 0; level < config::kNumLevels-1; level++) {
+      |                         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘virtual leveldb::Status leveldb::ModelDB::LiveBackup(const leveldb::Slice&)’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2003:3: warning: no return statement in function returning non-void [-Wreturn-type]
+ 2003 |   }
+      |   ^
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_FLSMGuardsE2EInsertIncRead::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2608:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+ 2608 |    uint64_t a, b;
+      |             ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2608:16: warning: variable ‘b’ set but not used [-Wunused-but-set-variable]
+ 2608 |    uint64_t a, b;
+      |                ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2609:29: warning: unused variable ‘print_every’ [-Wunused-variable]
+ 2609 |    int num_values = 100000, print_every = 100000, count = 0, value_size = 100;
+      |                             ^~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In function ‘unsigned int leveldb::RangeDifference(leveldb::Slice, leveldb::Slice)’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2655:23: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 2 has type ‘unsigned int’ [-Wformat=]
+ 2655 |     printf("hash_a: %lu hash_b: %lu\n", hash_a, hash_b);
+      |                     ~~^                 ~~~~~~
+      |                       |                 |
+      |                       long unsigned int unsigned int
+      |                     %u
+/home/cavalry/pebblesdb/src/db/db_test.cc:2655:35: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘unsigned int’ [-Wformat=]
+ 2655 |     printf("hash_a: %lu hash_b: %lu\n", hash_a, hash_b);
+      |                                 ~~^             ~~~~~~
+      |                                   |             |
+      |                                   |             unsigned int
+      |                                   long unsigned int
+      |                                 %u
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_FLSMGuardsE2EInsertIncReadRandom::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2665:22: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+ 2665 |    char* test_name = "FLSMGuardsE2EInsertIncReadRandom";
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc:2664:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+ 2664 |    uint64_t a, b;
+      |             ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2664:16: warning: variable ‘b’ set but not used [-Wunused-but-set-variable]
+ 2664 |    uint64_t a, b;
+      |                ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2666:29: warning: unused variable ‘print_every’ [-Wunused-variable]
+ 2666 |    int num_values = 100000, print_every = 10000, count = 0, value_size = 1000;
+      |                             ^~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_FLSMGuardsE2EInsertDescRead::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2706:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+ 2706 |    uint64_t a, b;
+      |             ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2706:16: warning: variable ‘b’ set but not used [-Wunused-but-set-variable]
+ 2706 |    uint64_t a, b;
+      |                ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2707:8: warning: unused variable ‘num_values’ [-Wunused-variable]
+ 2707 |    int num_values = 1000000, print_every = 100000, count = 0, value_size = 100;
+      |        ^~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc:2707:30: warning: unused variable ‘print_every’ [-Wunused-variable]
+ 2707 |    int num_values = 1000000, print_every = 100000, count = 0, value_size = 100;
+      |                              ^~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_FLSMGuardsE2EInsertRandomRead::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2744:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+ 2744 |    uint64_t a, b;
+      |             ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2744:16: warning: variable ‘b’ set but not used [-Wunused-but-set-variable]
+ 2744 |    uint64_t a, b;
+      |                ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2745:29: warning: unused variable ‘print_every’ [-Wunused-variable]
+ 2745 |    int num_values = 100000, print_every = 10000, count = 0, value_size = 1000;
+      |                             ^~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_FLSMGuardsE2EInsertRandomReadRandom::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2787:22: warning: ISO C++ forbids converting a string constant to ‘char*’ [-Wwrite-strings]
+ 2787 |    char* test_name = "FLSMGuardsE2EInsertRandomReadRandom";
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc:2786:13: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]
+ 2786 |    uint64_t a, b;
+      |             ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2786:16: warning: variable ‘b’ set but not used [-Wunused-but-set-variable]
+ 2786 |    uint64_t a, b;
+      |                ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2788:30: warning: unused variable ‘print_every’ [-Wunused-variable]
+ 2788 |    int num_values = 1000000, print_every = 100000, count = 0, value_size = 100;
+      |                              ^~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_FLSMGuardsE2EScanOneLevel::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2860:8: warning: unused variable ‘num_values’ [-Wunused-variable]
+ 2860 |    int num_values = 1000000, print_every = 100000, count = 0, value_size = 1000;
+      |        ^~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_FLSMGuardsE2ESeekRandom::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2891:13: warning: unused variable ‘a’ [-Wunused-variable]
+ 2891 |    uint64_t a, b;
+      |             ^
+/home/cavalry/pebblesdb/src/db/db_test.cc:2891:16: warning: unused variable ‘b’ [-Wunused-variable]
+ 2891 |    uint64_t a, b;
+      |                ^
+/home/cavalry/pebblesdb/src/db/db_test.cc: In member function ‘void leveldb::_Test_FLSMGuardsE2ESeekOneLevel::_Run()’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2956:8: warning: unused variable ‘print_every’ [-Wunused-variable]
+ 2956 |    int print_every = 100000, count = 0, value_size = 1000;
+      |        ^~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_test.cc:19:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = unsigned int; Y = int]’:
+/home/cavalry/pebblesdb/src/db/db_test.cc:1405:5:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const unsigned int’ and ‘const int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+/home/cavalry/pebblesdb/src/db/db_test.cc: At global scope:
+/home/cavalry/pebblesdb/src/db/db_test.cc:2048:13: warning: ‘bool leveldb::CompareIterators(int, leveldb::DB*, leveldb::DB*, const leveldb::Snapshot*, const leveldb::Snapshot*)’ defined but not used [-Wunused-function]
+ 2048 | static bool CompareIterators(int step,
+      |             ^~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/db_test.cc:2041:20: warning: ‘std::string leveldb::RandomKey(leveldb::Random*)’ defined but not used [-Wunused-function]
+ 2041 | static std::string RandomKey(Random* rnd) {
+      |                    ^~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/db_impl.h:27,
+                 from /home/cavalry/pebblesdb/src/db/db_test.cc:9:
+/home/cavalry/pebblesdb/src/db/version_set.h:79:13: warning: ‘void leveldb::SaveValue(void*, const leveldb::Slice&, const leveldb::Slice&)’ defined but not used [-Wunused-function]
+   79 | static void SaveValue(void* arg, const Slice& ikey, const Slice& v) {
+      |             ^~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/write_batch_test.cc:11:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+/home/cavalry/pebblesdb/src/db/write_batch_test.cc: In function ‘std::string leveldb::PrintContents(leveldb::WriteBatch*)’:
+/home/cavalry/pebblesdb/src/db/write_batch_test.cc:28:12: warning: enumeration value ‘kTypeGuard’ not handled in switch [-Wswitch]
+   28 |     switch (ikey.type) {
+      |            ^
+In file included from /home/cavalry/pebblesdb/src/db/write_batch_test.cc:13:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = long unsigned int]’:
+/home/cavalry/pebblesdb/src/db/write_batch_test.cc:71:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const long unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/cache_test.cc:9:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/cache_test.cc:9:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = long unsigned int]’:
+/home/cavalry/pebblesdb/src/util/cache_test.cc:86:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const long unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/timer.h:12,
+                 from /home/cavalry/pebblesdb/src/include/pebblesdb/table.h:10,
+                 from /home/cavalry/pebblesdb/src/table/table_test.cc:7:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+/home/cavalry/pebblesdb/src/table/table_test.cc: In member function ‘void leveldb::_Test_RandomizedLongDB::_Run()’:
+/home/cavalry/pebblesdb/src/table/table_test.cc:761:29: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  761 |   for (int level = 0; level < config::kNumLevels; level++) {
+      |                       ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/db/version_edit_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In constructor ‘leveldb::GuardMetaData::GuardMetaData()’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:43:15: warning: ‘leveldb::GuardMetaData::largest’ will be initialized after [-Wreorder]
+   43 |   InternalKey largest;   // Largest internal key served by table
+      |               ^~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:39:12: warning:   ‘uint64_t leveldb::GuardMetaData::number_segments’ [-Wreorder]
+   39 |   uint64_t number_segments;
+      |            ^~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h:48:1: warning:   when initialized here [-Wreorder]
+   48 | GuardMetaData() : refs(0), level(-1), guard_key(), smallest(), largest(), number_segments(0) { files.clear();}
+      | ^~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/include/pebblesdb/slice.h:18,
+                 from /home/cavalry/pebblesdb/src/include/pebblesdb/iterator.h:18,
+                 from /home/cavalry/pebblesdb/src/include/pebblesdb/db.h:10,
+                 from /home/cavalry/pebblesdb/src/db/dbformat.h:10,
+                 from /home/cavalry/pebblesdb/src/db/version_edit.h:11,
+                 from /home/cavalry/pebblesdb/src/db/version_edit_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddFileToSentinel(leveldb::FileMetaData*, int)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:114:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  114 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:136:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  136 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuard(int, const leveldb::InternalKey&)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:145:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  145 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:154:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  154 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddCompleteGuardFromExisting(int, leveldb::GuardMetaData*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:160:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  160 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::AddGuardWithFiles(int, uint64_t, const leveldb::InternalKey&, const leveldb::InternalKey&, const leveldb::InternalKey&, std::vector<long unsigned int>)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:171:32: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  171 |     assert(level >= 0 && level < config::kNumLevels);
+      |                          ~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/db/version_edit_test.cc:5:
+/home/cavalry/pebblesdb/src/db/version_edit.h: In member function ‘void leveldb::VersionEdit::UpdateGuards(uint64_t*)’:
+/home/cavalry/pebblesdb/src/db/version_edit.h:196:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const unsigned int’ [-Wsign-compare]
+  196 |     for (int i = 0; i < config::kNumLevels; i++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/db/version_edit_test.cc:6:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/issues/issue178_test.cc:12:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/issues/issue178_test.cc:12:
+/home/cavalry/pebblesdb/src/util/testharness.h: In instantiation of ‘leveldb::test::Tester& leveldb::test::Tester::IsEq(const X&, const Y&) [with X = int; Y = long unsigned int]’:
+/home/cavalry/pebblesdb/src/issues/issue178_test.cc:81:3:   required from here
+/home/cavalry/pebblesdb/src/util/testharness.h:87:19: warning: comparison of integer expressions of different signedness: ‘const int’ and ‘const long unsigned int’ [-Wsign-compare]
+   80 |     if (! (x op y)) {                                   \
+      |           ~~~~~~~~ 
+......
+   87 |   BINARY_OP(IsEq, ==)
+/home/cavalry/pebblesdb/src/util/testharness.h:80:14: note: in definition of macro ‘BINARY_OP’
+   80 |     if (! (x op y)) {                                   \
+      |              ^~
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/issues/issue200_test.cc:10:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/util/testharness.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testutil.h:8,
+                 from /home/cavalry/pebblesdb/src/util/testutil.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+In file included from /home/cavalry/pebblesdb/src/util/testharness.h:11,
+                 from /home/cavalry/pebblesdb/src/db/dbformat_test.cc:7:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:996:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  996 |     }
+      |     ^
+/home/cavalry/pebblesdb/src/db/dbformat_test.cc: In member function ‘void leveldb::_Test_InternalKey_EncodeDecode::_Run()’:
+/home/cavalry/pebblesdb/src/db/dbformat_test.cc:57:21: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+   57 |   for (int k = 0; k < sizeof(keys) / sizeof(keys[0]); k++) {
+      |                   ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/cavalry/pebblesdb/src/db/dbformat_test.cc:58:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+   58 |     for (int s = 0; s < sizeof(seq) / sizeof(seq[0]); s++) {
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

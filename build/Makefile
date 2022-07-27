@@ -790,6 +790,60 @@ src/db/filename_test.cc.s:
 	$(MAKE) -f CMakeFiles/filename_test.dir/build.make CMakeFiles/filename_test.dir/src/db/filename_test.cc.s
 .PHONY : src/db/filename_test.cc.s
 
+src/db/fs_zenfs.o: src/db/fs_zenfs.cc.o
+
+.PHONY : src/db/fs_zenfs.o
+
+# target to build an object file
+src/db/fs_zenfs.cc.o:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/fs_zenfs.cc.o
+.PHONY : src/db/fs_zenfs.cc.o
+
+src/db/fs_zenfs.i: src/db/fs_zenfs.cc.i
+
+.PHONY : src/db/fs_zenfs.i
+
+# target to preprocess a source file
+src/db/fs_zenfs.cc.i:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/fs_zenfs.cc.i
+.PHONY : src/db/fs_zenfs.cc.i
+
+src/db/fs_zenfs.s: src/db/fs_zenfs.cc.s
+
+.PHONY : src/db/fs_zenfs.s
+
+# target to generate assembly for a file
+src/db/fs_zenfs.cc.s:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/fs_zenfs.cc.s
+.PHONY : src/db/fs_zenfs.cc.s
+
+src/db/io_zenfs.o: src/db/io_zenfs.cc.o
+
+.PHONY : src/db/io_zenfs.o
+
+# target to build an object file
+src/db/io_zenfs.cc.o:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/io_zenfs.cc.o
+.PHONY : src/db/io_zenfs.cc.o
+
+src/db/io_zenfs.i: src/db/io_zenfs.cc.i
+
+.PHONY : src/db/io_zenfs.i
+
+# target to preprocess a source file
+src/db/io_zenfs.cc.i:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/io_zenfs.cc.i
+.PHONY : src/db/io_zenfs.cc.i
+
+src/db/io_zenfs.s: src/db/io_zenfs.cc.s
+
+.PHONY : src/db/io_zenfs.s
+
+# target to generate assembly for a file
+src/db/io_zenfs.cc.s:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/io_zenfs.cc.s
+.PHONY : src/db/io_zenfs.cc.s
+
 src/db/log_reader.o: src/db/log_reader.cc.o
 
 .PHONY : src/db/log_reader.o
@@ -1194,6 +1248,33 @@ src/db/write_batch_test.s: src/db/write_batch_test.cc.s
 src/db/write_batch_test.cc.s:
 	$(MAKE) -f CMakeFiles/write_batch_test.dir/build.make CMakeFiles/write_batch_test.dir/src/db/write_batch_test.cc.s
 .PHONY : src/db/write_batch_test.cc.s
+
+src/db/zbd_zenfs.o: src/db/zbd_zenfs.cc.o
+
+.PHONY : src/db/zbd_zenfs.o
+
+# target to build an object file
+src/db/zbd_zenfs.cc.o:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/zbd_zenfs.cc.o
+.PHONY : src/db/zbd_zenfs.cc.o
+
+src/db/zbd_zenfs.i: src/db/zbd_zenfs.cc.i
+
+.PHONY : src/db/zbd_zenfs.i
+
+# target to preprocess a source file
+src/db/zbd_zenfs.cc.i:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/zbd_zenfs.cc.i
+.PHONY : src/db/zbd_zenfs.cc.i
+
+src/db/zbd_zenfs.s: src/db/zbd_zenfs.cc.s
+
+.PHONY : src/db/zbd_zenfs.s
+
+# target to generate assembly for a file
+src/db/zbd_zenfs.cc.s:
+	$(MAKE) -f CMakeFiles/pebblesdb.dir/build.make CMakeFiles/pebblesdb.dir/src/db/zbd_zenfs.cc.s
+.PHONY : src/db/zbd_zenfs.cc.s
 
 src/demo/installation_test.o: src/demo/installation_test.cc.o
 
@@ -2419,6 +2500,12 @@ help:
 	@echo "... src/db/filename_test.o"
 	@echo "... src/db/filename_test.i"
 	@echo "... src/db/filename_test.s"
+	@echo "... src/db/fs_zenfs.o"
+	@echo "... src/db/fs_zenfs.i"
+	@echo "... src/db/fs_zenfs.s"
+	@echo "... src/db/io_zenfs.o"
+	@echo "... src/db/io_zenfs.i"
+	@echo "... src/db/io_zenfs.s"
 	@echo "... src/db/log_reader.o"
 	@echo "... src/db/log_reader.i"
 	@echo "... src/db/log_reader.s"
@@ -2464,6 +2551,9 @@ help:
 	@echo "... src/db/write_batch_test.o"
 	@echo "... src/db/write_batch_test.i"
 	@echo "... src/db/write_batch_test.s"
+	@echo "... src/db/zbd_zenfs.o"
+	@echo "... src/db/zbd_zenfs.i"
+	@echo "... src/db/zbd_zenfs.s"
 	@echo "... src/demo/installation_test.o"
 	@echo "... src/demo/installation_test.i"
 	@echo "... src/demo/installation_test.s"
