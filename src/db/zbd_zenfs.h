@@ -23,7 +23,7 @@
 #include <utility>
 #include <vector>
 
-#include "db/metric.h"
+#include "db/metrics.h"
 #include "pebblesdb/env.h"
 
 namespace leveldb {
@@ -43,7 +43,7 @@ class Zone {
   uint64_t capacity_; /* remaining capacity */
   uint64_t max_capacity_;
   uint64_t wp_;
-  Env::WriteLifeTimeHint lifetime_;
+  WriteLifeTimeHint lifetime_;
   std::atomic<uint64_t> used_capacity_;
 
   Status Reset();
@@ -85,7 +85,7 @@ class ZonedBlockDevice {
   int read_direct_f_;
   int write_f_;
   time_t start_time_;
-  Logger* logger_;
+  std::shared_ptr<Logger> logger_;
   uint32_t finish_threshold_ = 0;
   std::atomic<uint64_t> bytes_written_{0};
   std::atomic<uint64_t> gc_bytes_written_{0};
@@ -106,16 +106,16 @@ class ZonedBlockDevice {
   unsigned int max_nr_active_io_zones_;
   unsigned int max_nr_open_io_zones_;
 
-  ZenFSMetrics* metrics_;
+  std::shared_ptr<ZenFSMetrics> metrics_;
 
   void EncodeJsonZone(std::ostream &json_stream,
                       const std::vector<Zone *> zones);
 
  public:
   explicit ZonedBlockDevice(std::string bdevname,
-                            Logger *logger,
-                            ZenFSMetrics* metrics =
-                            new NoZenFSMetrics());
+                            std::shared_ptr<Logger> logger,
+                            std::shared_ptr<ZenFSMetrics> metrics =
+                                std::make_shared<NoZenFSMetrics>());
   virtual ~ZonedBlockDevice();
 
   Status Open(bool readonly, bool exclusive);
@@ -123,7 +123,7 @@ class ZonedBlockDevice {
 
   Zone *GetIOZone(uint64_t offset);
 
-  Status AllocateIOZone(Env::WriteLifeTimeHint file_lifetime, Env::IOType io_type,
+  Status AllocateIOZone(WriteLifeTimeHint file_lifetime, IOType io_type,
                           Zone **out_zone);
   Status AllocateMetaZone(Zone **out_meta_zone);
 
@@ -156,7 +156,7 @@ class ZonedBlockDevice {
 
   void SetZoneDeferredStatus(Status status);
 
-  ZenFSMetrics* GetMetrics() { return metrics_; }
+  std::shared_ptr<ZenFSMetrics> GetMetrics() { return metrics_; }
 
   void GetZoneSnapshot(std::vector<ZoneSnapshot> &snapshot);
 
@@ -164,7 +164,7 @@ class ZonedBlockDevice {
 
   Status ReleaseMigrateZone(Zone *zone);
 
-  Status TakeMigrateZone(Zone **out_zone, Env::WriteLifeTimeHint lifetime,
+  Status TakeMigrateZone(Zone **out_zone, WriteLifeTimeHint lifetime,
                            uint32_t min_capacity);
 
   void AddBytesWritten(uint64_t written) { bytes_written_ += written; };
@@ -181,10 +181,10 @@ class ZonedBlockDevice {
   void WaitForOpenIOZoneToken(bool prioritized);
   Status ApplyFinishThreshold();
   Status FinishCheapestIOZone();
-  Status GetBestOpenZoneMatch(Env::WriteLifeTimeHint file_lifetime,
+  Status GetBestOpenZoneMatch(WriteLifeTimeHint file_lifetime,
                                 unsigned int *best_diff_out, Zone **zone_out,
                                 uint32_t min_capacity = 0);
   Status AllocateEmptyZone(Zone **zone_out);
 };
 
-}  // namespace pebblesdb
+}  // namespace leveldb

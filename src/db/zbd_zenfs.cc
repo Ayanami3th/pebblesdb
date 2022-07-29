@@ -4,7 +4,6 @@
 //  COPYING file in the root directory) and Apache 2.0 License
 //  (found in the LICENSE.Apache file in the root directory).
 
-#include "db/zbd_zenfs.h"
 
 #include <assert.h>
 #include <errno.h>
@@ -26,7 +25,9 @@
 #include <vector>
 
 #include "pebblesdb/env.h"
+#include "db/zbd_zenfs.h"
 #include "db/snapshot.h"
+#include "db/io_config.h"
 
 #define KB (1024)
 #define MB (1024 * KB)
@@ -49,7 +50,7 @@ Zone::Zone(ZonedBlockDevice *zbd, struct zbd_zone *z)
       start_(zbd_zone_start(z)),
       max_capacity_(zbd_zone_capacity(z)),
       wp_(zbd_zone_wp(z)) {
-  lifetime_ = Env::WLTH_NOT_SET;
+  lifetime_ = WLTH_NOT_SET;
   used_capacity_ = 0;
   capacity_ = 0;
   if (!(zbd_zone_full(z) || zbd_zone_offline(z) || zbd_zone_rdonly(z)))
@@ -96,7 +97,7 @@ Status Zone::Reset() {
     max_capacity_ = capacity_ = zbd_zone_capacity(&z);
 
   wp_ = start_;
-  lifetime_ = Env::WLTH_NOT_SET;
+  lifetime_ = WLTH_NOT_SET;
 
   return Status::OK();
 }
@@ -133,7 +134,7 @@ Status Zone::Close() {
 }
 
 Status Zone::Append(char *data, uint32_t size) {
-  ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics(), ZENFS_ZONE_WRITE_LATENCY,
+  ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics().get(), ZENFS_ZONE_WRITE_LATENCY,
                                  Env::Default());
   zbd_->GetMetrics()->ReportThroughput(ZENFS_ZONE_WRITE_THROUGHPUT, size);
   char *ptr = data;
@@ -142,7 +143,7 @@ Status Zone::Append(char *data, uint32_t size) {
   int ret;
 
   if (capacity_ < size)
-    return Status::IOError("Not enough capacity for append");
+    return Status::NoSpace("Not enough capacity for append");
 
   assert((size % zbd_->GetBlockSize()) == 0);
 
@@ -179,14 +180,15 @@ Zone *ZonedBlockDevice::GetIOZone(uint64_t offset) {
 }
 
 ZonedBlockDevice::ZonedBlockDevice(std::string bdevname,
-                                   Logger *logger,
-                                   ZenFSMetrics* metrics)
+                                   std::shared_ptr<Logger> logger,
+                                   std::shared_ptr<ZenFSMetrics> metrics)
     : filename_("/dev/" + bdevname),
       read_f_(-1),
       read_direct_f_(-1),
       write_f_(-1),
       logger_(logger),
       metrics_(metrics) {
+  // Info(logger_, "New Zoned Block Device: %s", filename_.c_str());
 }
 
 std::string ZonedBlockDevice::ErrorToString(int err) {
@@ -290,12 +292,16 @@ Status ZonedBlockDevice::Open(bool readonly, bool exclusive) {
   else
     max_nr_open_io_zones_ = info.max_nr_open_zones - reserved_zones;
 
+  // Info(logger_, "Zone block device nr zones: %u max active: %u max open: %u \n",
+  //      info.nr_zones, info.max_nr_active_zones, info.max_nr_open_zones);
+
   addr_space_sz = (uint64_t)nr_zones_ * zone_sz_;
 
   ret = zbd_list_zones(read_f_, 0, addr_space_sz, ZBD_RO_ALL, &zone_rep,
                        &reported_zones);
 
   if (ret || reported_zones != nr_zones_) {
+    // Error(logger_, "Failed to list zones, err: %d", ret);
     return Status::IOError("Failed to list zones");
   }
 
@@ -465,12 +471,12 @@ ZonedBlockDevice::~ZonedBlockDevice() {
 #define LIFETIME_DIFF_NOT_GOOD (100)
 #define LIFETIME_DIFF_COULD_BE_WORSE (50)
 
-unsigned int GetLifeTimeDiff(Env::WriteLifeTimeHint zone_lifetime,
-                             Env::WriteLifeTimeHint file_lifetime) {
-  assert(file_lifetime <= Env::WLTH_EXTREME);
+unsigned int GetLifeTimeDiff(WriteLifeTimeHint zone_lifetime,
+                             WriteLifeTimeHint file_lifetime) {
+  assert(file_lifetime <= WLTH_EXTREME);
 
-  if ((file_lifetime == Env::WLTH_NOT_SET) ||
-      (file_lifetime == Env::WLTH_NONE)) {
+  if ((file_lifetime == WLTH_NOT_SET) ||
+      (file_lifetime == WLTH_NONE)) {
     if (file_lifetime == zone_lifetime) {
       return 0;
     } else {
@@ -487,7 +493,7 @@ unsigned int GetLifeTimeDiff(Env::WriteLifeTimeHint zone_lifetime,
 Status ZonedBlockDevice::AllocateMetaZone(Zone **out_meta_zone) {
   assert(out_meta_zone);
   *out_meta_zone = nullptr;
-  ZenFSMetricsLatencyGuard guard(metrics_, ZENFS_META_ALLOC_LATENCY,
+  ZenFSMetricsLatencyGuard guard(metrics_.get(), ZENFS_META_ALLOC_LATENCY,
                                  Env::Default());
   metrics_->ReportQPS(ZENFS_META_ALLOC_QPS, 1);
 
@@ -508,7 +514,7 @@ Status ZonedBlockDevice::AllocateMetaZone(Zone **out_meta_zone) {
   }
   assert(true);
   // Error(logger_, "Out of metadata zones, we should go to read only now.");
-  return Status::IOError("Out of metadata zones");
+  return Status::NoSpace("Out of metadata zones");
 }
 
 Status ZonedBlockDevice::ResetUnusedIOZones() {
@@ -662,7 +668,7 @@ Status ZonedBlockDevice::FinishCheapestIOZone() {
 }
 
 Status ZonedBlockDevice::GetBestOpenZoneMatch(
-    Env::WriteLifeTimeHint file_lifetime, unsigned int *best_diff_out,
+    WriteLifeTimeHint file_lifetime, unsigned int *best_diff_out,
     Zone **zone_out, uint32_t min_capacity) {
   unsigned int best_diff = LIFETIME_DIFF_NOT_GOOD;
   Zone *allocated_zone = nullptr;
@@ -758,8 +764,8 @@ Status ZonedBlockDevice::ReleaseMigrateZone(Zone *zone) {
 }
 
 Status ZonedBlockDevice::TakeMigrateZone(Zone **out_zone,
-                                           Env::WriteLifeTimeHint file_lifetime,
-                                           uint32_t min_capacity) {
+                                         WriteLifeTimeHint file_lifetime,
+                                         uint32_t min_capacity) {
   std::unique_lock<std::mutex> lock(migrate_zone_mtx_);
   migrate_resource_.wait(lock, [this] { return !migrating_; });
 
@@ -777,24 +783,24 @@ Status ZonedBlockDevice::TakeMigrateZone(Zone **out_zone,
   return s;
 }
 
-Status ZonedBlockDevice::AllocateIOZone(Env::WriteLifeTimeHint file_lifetime,
-                                        Env::IOType io_type, Zone **out_zone) {
+Status ZonedBlockDevice::AllocateIOZone(WriteLifeTimeHint file_lifetime,
+                                        IOType io_type, Zone **out_zone) {
   Zone *allocated_zone = nullptr;
   unsigned int best_diff = LIFETIME_DIFF_NOT_GOOD;
   int new_zone = 0;
   Status s;
 
   auto tag = ZENFS_WAL_IO_ALLOC_LATENCY;
-  if (io_type != Env::IOType::kWAL) {
+  if (io_type != IOType::kWAL) {
     // L0 flushes have lifetime MEDIUM
-    if (file_lifetime == Env::WLTH_MEDIUM) {
+    if (file_lifetime == WLTH_MEDIUM) {
       tag = ZENFS_L0_IO_ALLOC_LATENCY;
     } else {
       tag = ZENFS_NON_WAL_IO_ALLOC_LATENCY;
     }
   }
 
-  ZenFSMetricsLatencyGuard guard(metrics_, tag, Env::Default());
+  ZenFSMetricsLatencyGuard guard(metrics_.get(), tag, Env::Default());
   metrics_->ReportQPS(ZENFS_IO_ALLOC_QPS, 1);
 
   // Check if a deferred IO error was set
@@ -803,14 +809,14 @@ Status ZonedBlockDevice::AllocateIOZone(Env::WriteLifeTimeHint file_lifetime,
     return s;
   }
 
-  if (io_type != Env::IOType::kWAL) {
+  if (io_type != IOType::kWAL) {
     s = ApplyFinishThreshold();
     if (!s.ok()) {
       return s;
     }
   }
 
-  WaitForOpenIOZoneToken(io_type == Env::IOType::kWAL);
+  WaitForOpenIOZoneToken(io_type == IOType::kWAL);
 
   /* Try to fill an already open zone(with the best life time diff) */
   s = GetBestOpenZoneMatch(file_lifetime, &best_diff, &allocated_zone);
@@ -882,7 +888,7 @@ Status ZonedBlockDevice::AllocateIOZone(Env::WriteLifeTimeHint file_lifetime,
     PutOpenIOZoneToken();
   }
 
-  if (io_type != Env::IOType::kWAL) {
+  if (io_type != IOType::kWAL) {
     LogZoneStats();
   }
 
@@ -942,4 +948,3 @@ void ZonedBlockDevice::GetZoneSnapshot(std::vector<ZoneSnapshot> &snapshot) {
 }
 
 }  // namespace leveldb
-

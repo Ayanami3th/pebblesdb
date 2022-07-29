@@ -19,6 +19,17 @@ class RandomAccessFile;
 struct ReadOptions;
 class TableCache;
 
+// Types of checksums to use for checking integrity of logical blocks within
+// files. All checksums currently use 32 bits of checking power (1 in 4B
+// chance of failing to detect random corruption).
+enum ChecksumType : char {
+  kNoChecksum = 0x0,
+  kCRC32c = 0x1,
+  kxxHash = 0x2,
+  kxxHash64 = 0x3,
+  kXXH3 = 0x4,  // Supported since RocksDB 6.27
+};
+
 // A Table is a sorted map from strings to strings.  Tables are
 // immutable and persistent.  A Table may be safely accessed from
 // multiple threads without external synchronization.

@@ -150,7 +150,7 @@ Status ZoneFile::DecodeFrom(Slice* input) {
         uint32_t lt;
         if (!GetFixed32(input, &lt))
           return Status::Corruption("ZoneFile", "Missing life time hint");
-        lifetime_ = (Env::WriteLifeTimeHint)lt;
+        lifetime_ = (WriteLifeTimeHint)lt;
         break;
       case kExtent:
         extent = new ZoneExtent(0, 0, nullptr);
@@ -199,7 +199,7 @@ Status ZoneFile::DecodeFrom(Slice* input) {
   return Status::OK();
 }
 
-Status ZoneFile::MergeUpdate(ZoneFile* update, bool replace) {
+Status ZoneFile::MergeUpdate(std::shared_ptr<ZoneFile> update, bool replace) {
   if (file_id_ != update->GetID())
     return Status::Corruption("ZoneFile update", "ID missmatch");
 
@@ -234,8 +234,8 @@ ZoneFile::ZoneFile(ZonedBlockDevice* zbd, uint64_t file_id,
       active_zone_(NULL),
       extent_start_(NO_EXTENT),
       extent_filepos_(0),
-      lifetime_(Env::WLTH_NOT_SET),
-      io_type_(Env::IOType::kUnknown),
+      lifetime_(WLTH_NOT_SET),
+      io_type_(IOType::kUnknown),
       file_size_(0),
       file_id_(file_id),
       nr_synced_extents_(0),
@@ -248,7 +248,7 @@ time_t ZoneFile::GetFileModificationTime() { return m_time_; }
 uint64_t ZoneFile::GetFileSize() { return file_size_; }
 void ZoneFile::SetFileSize(uint64_t sz) { file_size_ = sz; }
 void ZoneFile::SetFileModificationTime(time_t mt) { m_time_ = mt; }
-void ZoneFile::SetIOType(Env::IOType io_type) { io_type_ = io_type; }
+void ZoneFile::SetIOType(IOType io_type) { io_type_ = io_type; }
 
 ZoneFile::~ZoneFile() { ClearExtents(); }
 
@@ -328,7 +328,7 @@ ZoneExtent* ZoneFile::GetExtent(uint64_t file_offset, uint64_t* dev_offset) {
 
 Status ZoneFile::PositionedRead(uint64_t offset, size_t n, Slice* result,
                                   char* scratch, bool direct) {
-  ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics(), ZENFS_READ_LATENCY,
+  ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics().get(), ZENFS_READ_LATENCY,
                                  Env::Default());
   zbd_->GetMetrics()->ReportQPS(ZENFS_READ_QPS, 1);
 
@@ -453,7 +453,7 @@ Status ZoneFile::AllocateNewZone() {
 
   if (!s.ok()) return s;
   if (!zone) {
-    return Status::IOError("Zone allocation failure\n");
+    return Status::NoSpace("Zone allocation failure\n");
   }
   SetActiveZone(zone);
   extent_start_ = active_zone_->wp_;
@@ -746,7 +746,7 @@ Status ZoneFile::RemoveLinkName(const std::string& linkf) {
   return Status::OK();
 }
 
-Status ZoneFile::SetWriteLifeTimeHint(Env::WriteLifeTimeHint lifetime) {
+Status ZoneFile::SetWriteLifeTimeHint(WriteLifeTimeHint lifetime) {
   lifetime_ = lifetime;
   return Status::OK();
 }
@@ -766,7 +766,7 @@ void ZoneFile::SetActiveZone(Zone* zone) {
 }
 
 ZonedWritableFile::ZonedWritableFile(ZonedBlockDevice* zbd, bool _buffered,
-                                     ZoneFile* zoneFile) {
+                                     std::shared_ptr<ZoneFile> zoneFile) {
   assert(zoneFile->IsOpenForWR());
   wp = zoneFile->GetFileSize();
 
@@ -820,9 +820,14 @@ ZonedWritableFile::~ZonedWritableFile() {
   }
 }
 
+ZonedSequentialFile::~ZonedSequentialFile() {}
+ZonedRandomAccessFile::~ZonedRandomAccessFile() {}
+
 MetadataWriter::~MetadataWriter() {}
 
-Status ZonedWritableFile::Truncate(uint64_t size) {
+Status ZonedWritableFile::Truncate(uint64_t size,
+                                   const IOOptions& /*options*/,
+                                   IODebugContext* /*dbg*/) {
   zoneFile_->SetFileSize(size);
   return Status::OK();
 }
@@ -851,10 +856,11 @@ Status ZonedWritableFile::DataSync() {
   return Status::OK();
 }
 
-Status ZonedWritableFile::Fsync() {
+Status ZonedWritableFile::Fsync(const IOOptions& /*options*/,
+                                IODebugContext* /*dbg*/) {
   Status s;
-  ZenFSMetricsLatencyGuard guard(zoneFile_->GetZBDMetrics(),
-                                 zoneFile_->GetIOType() == Env::IOType::kWAL
+  ZenFSMetricsLatencyGuard guard(zoneFile_->GetZBDMetrics().get(),
+                                 zoneFile_->GetIOType() == IOType::kWAL
                                      ? ZENFS_WAL_SYNC_LATENCY
                                      : ZENFS_NON_WAL_SYNC_LATENCY,
                                  Env::Default());
@@ -869,21 +875,26 @@ Status ZonedWritableFile::Fsync() {
   return zoneFile_->PersistMetadata();
 }
 
-Status ZonedWritableFile::Sync() {
+Status ZonedWritableFile::Sync(const IOOptions& /*options*/,
+                               IODebugContext* /*dbg*/) {
   return DataSync();
 }
 
-Status ZonedWritableFile::Flush() {
+Status ZonedWritableFile::Flush(const IOOptions& /*options*/,
+                                IODebugContext* /*dbg*/) {
   return Status::OK();
 }
 
-Status ZonedWritableFile::RangeSync(uint64_t offset, uint64_t nbytes) {
+Status ZonedWritableFile::RangeSync(uint64_t offset, uint64_t nbytes,
+                                    const IOOptions& /*options*/,
+                                    IODebugContext* /*dbg*/) {
   if (wp < offset + nbytes) return DataSync();
 
   return Status::OK();
 }
 
-Status ZonedWritableFile::Close() {
+Status ZonedWritableFile::Close(const IOOptions& /*options*/,
+                                IODebugContext* /*dbg*/) {
   return CloseInternal();
 }
 
@@ -952,10 +963,12 @@ Status ZonedWritableFile::BufferedWrite(const Slice& slice) {
   return Status::OK();
 }
 
-Status ZonedWritableFile::Append(const Slice& data) {
+Status ZonedWritableFile::Append(const Slice& data,
+                                 const IOOptions& /*options*/,
+                                 IODebugContext* /*dbg*/) {
   Status s;
-  ZenFSMetricsLatencyGuard guard(zoneFile_->GetZBDMetrics(),
-                                 zoneFile_->GetIOType() == Env::IOType::kWAL
+  ZenFSMetricsLatencyGuard guard(zoneFile_->GetZBDMetrics().get(),
+                                 zoneFile_->GetIOType() == IOType::kWAL
                                      ? ZENFS_WAL_WRITE_LATENCY
                                      : ZENFS_NON_WAL_WRITE_LATENCY,
                                  Env::Default());
@@ -975,10 +988,12 @@ Status ZonedWritableFile::Append(const Slice& data) {
   return s;
 }
 
-Status ZonedWritableFile::PositionedAppend(const Slice& data, uint64_t offset) {
+Status ZonedWritableFile::PositionedAppend(const Slice& data, uint64_t offset,
+                                           const IOOptions& /*options*/,
+                                           IODebugContext* /*dbg*/) {
   Status s;
-  ZenFSMetricsLatencyGuard guard(zoneFile_->GetZBDMetrics(),
-                                 zoneFile_->GetIOType() == Env::IOType::kWAL
+  ZenFSMetricsLatencyGuard guard(zoneFile_->GetZBDMetrics().get(),
+                                 zoneFile_->GetIOType() == IOType::kWAL
                                      ? ZENFS_WAL_WRITE_LATENCY
                                      : ZENFS_NON_WAL_WRITE_LATENCY,
                                  Env::Default());
@@ -1003,12 +1018,13 @@ Status ZonedWritableFile::PositionedAppend(const Slice& data, uint64_t offset) {
   return s;
 }
 
-void ZonedWritableFile::SetWriteLifeTimeHint(Env::WriteLifeTimeHint hint) {
+void ZonedWritableFile::SetWriteLifeTimeHint(WriteLifeTimeHint hint) {
   zoneFile_->SetWriteLifeTimeHint(hint);
 }
 
-Status ZonedSequentialFile::Read(size_t n,
-                                   Slice* result, char* scratch) {
+Status ZonedSequentialFile::Read(size_t n, const IOOptions& /*options*/,
+                                 Slice* result, char* scratch,
+                                 IODebugContext* /*dbg*/) {
   Status s;
 
   s = zoneFile_->PositionedRead(rp, n, result, scratch, direct_);
@@ -1025,12 +1041,16 @@ Status ZonedSequentialFile::Skip(uint64_t n) {
 }
 
 Status ZonedSequentialFile::PositionedRead(uint64_t offset, size_t n,
-                                             Slice* result, char* scratch) {
+                                           const IOOptions& /*options*/,
+                                           Slice* result, char* scratch,
+                                           IODebugContext* /*dbg*/) {
   return zoneFile_->PositionedRead(offset, n, result, scratch, direct_);
 }
 
 Status ZonedRandomAccessFile::Read(uint64_t offset, size_t n,
-                                     Slice* result, char* scratch) const {
+                                   const IOOptions& /*options*/,
+                                   Slice* result, char* scratch,
+                                   IODebugContext* /*dbg*/) const {
   return zoneFile_->PositionedRead(offset, n, result, scratch, direct_);
 }
 

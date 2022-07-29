@@ -28,7 +28,7 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 AM_CPPFLAGS = -I${abs_top_srcdir}/include
 AM_CFLAGS = -DLEVELDB_PLATFORM_POSIX $(SNAPPY_FLAGS) ${EXTRA_CFLAGS} $(WANAL_CFLAGS)
-AM_CXXFLAGS = -DLEVELDB_PLATFORM_POSIX $(SNAPPY_FLAGS) ${EXTRA_CFLAGS} $(WANAL_CXXFLAGS) -Wno-variadic-macros -std=c++11
+AM_CXXFLAGS = -DLEVELDB_PLATFORM_POSIX $(SNAPPY_FLAGS) ${EXTRA_CFLAGS} $(WANAL_CXXFLAGS) -Wno-variadic-macros -std=c++17
 AM_MAKEFLAGS = --no-print-directory
 
 pkgconfigdir = $(libdir)/pkgconfig
@@ -86,9 +86,10 @@ noinst_HEADERS += db/write_batch_internal.h
 noinst_HEADERS += db/filesystem_utility.h
 noinst_HEADERS += db/fs_zenfs.h
 noinst_HEADERS += db/io_zenfs.h
-noinst_HEADERS += db/metric.h
+noinst_HEADERS += db/metrics.h
 noinst_HEADERS += db/version.h
 noinst_HEADERS += db/zbd_zenfs.h
+noinst_HEADERS += db/io_config.h
 noinst_HEADERS += helpers/memenv/memenv.h
 noinst_HEADERS += port/atomic_pointer.h
 noinst_HEADERS += port/port_example.h
@@ -139,6 +140,7 @@ libpebblesdb_la_SOURCES += db/write_batch.cc
 libpebblesdb_la_SOURCES += db/fs_zenfs.cc
 libpebblesdb_la_SOURCES += db/io_zenfs.cc
 libpebblesdb_la_SOURCES += db/zbd_zenfs.cc
+libpebblesdb_la_SOURCES += db/zenfs.cc
 libpebblesdb_la_SOURCES += table/block_builder.cc
 libpebblesdb_la_SOURCES += table/block.cc
 libpebblesdb_la_SOURCES += table/filter_block.cc
@@ -164,8 +166,8 @@ libpebblesdb_la_SOURCES += util/logging.cc
 libpebblesdb_la_SOURCES += util/options.cc
 libpebblesdb_la_SOURCES += util/status.cc
 libpebblesdb_la_SOURCES += port/port_posix.cc
-libpebblesdb_la_LIBADD = $(SNAPPY_LIBS) -lpthread -lsnappy
-libpebblesdb_la_LDFLAGS = -lpthread -lsnappy $(AM_LDFLAGS) $(LDFLAGS)
+libpebblesdb_la_LIBADD = $(SNAPPY_LIBS) -lpthread -lsnappy -lgflags -lzbd
+libpebblesdb_la_LDFLAGS = -lpthread -lsnappy -lgflags -lzbd $(AM_LDFLAGS) $(LDFLAGS)
 
 TESTUTIL = util/testutil.cc
 TESTHARNESS = util/testharness.cc $(TESTUTIL)

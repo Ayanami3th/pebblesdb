@@ -15,7 +15,7 @@ option(PEBBLESDB_INSTALL "Install PebblesDB's header and library" ON)
 option(PEBBLESDB_BUILD_TESTS "Build PeblesDB's unit tests" ON)
 
 # Setup the basic C++ Compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Wno-variadic-macros")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wno-variadic-macros")
 
 message(STATUS "CMAKE_SOURCE_DIR:    " ${CMAKE_SOURCE_DIR})
 
@@ -115,6 +115,9 @@ target_sources(pebblesdb
         "${PROJECT_SOURCE_DIR}/db/version_edit.cc"
         "${PROJECT_SOURCE_DIR}/db/version_set.cc"
         "${PROJECT_SOURCE_DIR}/db/write_batch.cc"
+        "${PROJECT_SOURCE_DIR}/db/fs_zenfs.cc"
+        "${PROJECT_SOURCE_DIR}/db/io_zenfs.cc"
+        "${PROJECT_SOURCE_DIR}/db/zbd_zenfs.cc"
         "${PROJECT_SOURCE_DIR}/table/block_builder.cc"
         "${PROJECT_SOURCE_DIR}/table/block.cc"
         "${PROJECT_SOURCE_DIR}/table/filter_block.cc"

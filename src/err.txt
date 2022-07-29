@@ -1,118 +1,308 @@
-In file included from ./db/metric.h:35,
+In file included from ./db/metrics.h:35,
                  from ./db/zbd_zenfs.h:26,
-                 from ./db/io_zenfs.h:22,
+                 from ./db/io_zenfs.h:23,
                  from ./db/snapshot.h:9,
                  from ./db/db_impl.h:21,
                  from db/db_bench.cc:20:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
+In file included from ./db/snapshot.h:9,
+                 from ./db/db_impl.h:21,
+                 from db/db_bench.cc:20:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
 In file included from ./util/testutil.h:8,
                  from util/testutil.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from ./util/timer.h:12,
                  from ./db/version_set.h:26,
                  from ./db/builder.h:9,
                  from db/builder.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from db/c.cc:12:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
-In file included from ./db/metric.h:35,
+In file included from ./db/metrics.h:35,
                  from ./db/zbd_zenfs.h:26,
-                 from ./db/io_zenfs.h:22,
+                 from ./db/io_zenfs.h:23,
                  from ./db/snapshot.h:9,
                  from ./db/db_impl.h:21,
                  from db/db_impl.cc:7:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
-In file included from ./db/metric.h:35,
+In file included from ./db/snapshot.h:9,
+                 from ./db/db_impl.h:21,
+                 from db/db_impl.cc:7:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
+In file included from ./db/metrics.h:35,
                  from ./db/zbd_zenfs.h:26,
-                 from ./db/io_zenfs.h:22,
+                 from ./db/io_zenfs.h:23,
                  from ./db/snapshot.h:9,
                  from ./db/db_impl.h:21,
                  from db/db_iter.cc:10:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
+In file included from ./db/snapshot.h:9,
+                 from ./db/db_impl.h:21,
+                 from db/db_iter.cc:10:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
 In file included from db/filename.cc:9:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from db/log_reader.cc:8:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from db/log_writer.cc:8:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from db/memtable.cc:10:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from ./util/timer.h:12,
                  from ./db/version_set.h:26,
                  from ./db/builder.h:9,
                  from db/repair.cc:29:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
-In file included from ./db/metric.h:35,
+In file included from ./db/snapshot.h:9,
+                 from ./db/db_impl.h:21,
+                 from db/repair.cc:30:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
+In file included from ./db/metrics.h:35,
                  from ./db/zbd_zenfs.h:26,
-                 from ./db/io_zenfs.h:22,
+                 from ./db/io_zenfs.h:23,
                  from ./db/snapshot.h:9,
                  from ./db/db_impl.h:21,
                  from db/replay_iterator.cc:10:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
+In file included from ./db/snapshot.h:9,
+                 from ./db/db_impl.h:21,
+                 from db/replay_iterator.cc:10:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
 In file included from ./util/timer.h:12,
                  from /home/cavalry/pebblesdb/src/include/pebblesdb/table.h:10,
                  from ./db/table_cache.h:15,
                  from db/table_cache.cc:5:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from ./util/timer.h:12,
                  from ./db/version_set.h:26,
                  from db/version_edit.cc:7:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from ./util/timer.h:12,
                  from ./db/version_set.h:26,
                  from db/version_set.cc:7:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
 In file included from ./util/timer.h:12,
                  from ./db/version_set.h:26,
                  from db/write_batch.cc:29:
 /home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
-/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:642:5: warning: no return statement in function returning non-void [-Wreturn-type]
-  642 |     }
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
       |     ^
-make[1]: *** 没有规则可制作目标“db/fs_zenfs.cc”，由“db/fs_zenfs.lo” 需求。 停止。
-make: *** [Makefile:715：all] 错误 2
+In file included from ./db/metrics.h:35,
+                 from ./db/zbd_zenfs.h:26,
+                 from ./db/io_zenfs.h:23,
+                 from ./db/fs_zenfs.h:20,
+                 from db/fs_zenfs.cc:7:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from ./db/fs_zenfs.h:20,
+                 from db/fs_zenfs.cc:7:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
+In file included from ./db/metrics.h:35,
+                 from ./db/zbd_zenfs.h:26,
+                 from ./db/io_zenfs.h:23,
+                 from db/io_zenfs.cc:8:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from db/io_zenfs.cc:8:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
+In file included from db/zbd_zenfs.cc:27:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from ./db/snapshot.h:9,
+                 from db/zbd_zenfs.cc:29:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
+In file included from ./db/metrics.h:35,
+                 from ./db/zbd_zenfs.h:26,
+                 from ./db/io_zenfs.h:23,
+                 from ./db/fs_zenfs.h:20,
+                 from db/zenfs.cc:20:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from ./db/fs_zenfs.h:20,
+                 from db/zenfs.cc:20:
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedSequentialFile::Read(size_t, leveldb::Slice*, char*)’:
+./db/io_zenfs.h:282:56: warning: no return statement in function returning non-void [-Wreturn-type]
+  282 |   Status Read(size_t n, Slice* result, char* scratch) {}
+      |                                                        ^
+./db/io_zenfs.h: In member function ‘virtual leveldb::Status leveldb::ZonedRandomAccessFile::Read(uint64_t, size_t, leveldb::Slice*, char*) const’:
+./db/io_zenfs.h:310:79: warning: no return statement in function returning non-void [-Wreturn-type]
+  310 |   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
+      |                                                                               ^
+In file included from table/filter_block.cc:9:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from table/format.cc:7:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from ./util/timer.h:12,
+                 from ./db/version_set.h:26,
+                 from ./table/merger.h:8,
+                 from table/merger.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from table/table_builder.cc:9:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from ./util/timer.h:12,
+                 from /home/cavalry/pebblesdb/src/include/pebblesdb/table.h:10,
+                 from table/table.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from ./util/timer.h:12,
+                 from /home/cavalry/pebblesdb/src/include/pebblesdb/table.h:10,
+                 from table/two_level_iterator.cc:6:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from util/env.cc:5:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from util/env_posix.cc:23:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from util/logging.cc:13:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from util/options.cc:8:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from db/leveldb_main.cc:11:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^
+In file included from leveldb-verify.cc:11:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h: In member function ‘virtual pthread_t leveldb::EnvWrapper::GetThreadId()’:
+/home/cavalry/pebblesdb/src/include/pebblesdb/env.h:1018:5: warning: no return statement in function returning non-void [-Wreturn-type]
+ 1018 |     }
+      |     ^

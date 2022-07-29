@@ -1,102 +1,102 @@
 [
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/crc32c_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/crc32c_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/crc32c_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/crc32c_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/crc32c_test.dir/src/util/crc32c_test.cc.o -c /home/cavalry/pebblesdb/src/util/crc32c_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/crc32c_test.dir/src/util/crc32c_test.cc.o -c /home/cavalry/pebblesdb/src/util/crc32c_test.cc",
   "file": "/home/cavalry/pebblesdb/src/util/crc32c_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/log_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/log_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/log_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/log_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/log_test.dir/src/db/log_test.cc.o -c /home/cavalry/pebblesdb/src/db/log_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/log_test.dir/src/db/log_test.cc.o -c /home/cavalry/pebblesdb/src/db/log_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/log_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/coding_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/coding_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/coding_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/coding_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/coding_test.dir/src/util/coding_test.cc.o -c /home/cavalry/pebblesdb/src/util/coding_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/coding_test.dir/src/util/coding_test.cc.o -c /home/cavalry/pebblesdb/src/util/coding_test.cc",
   "file": "/home/cavalry/pebblesdb/src/util/coding_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/env_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/env_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/env_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/env_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/env_test.dir/src/util/env_test.cc.o -c /home/cavalry/pebblesdb/src/util/env_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/env_test.dir/src/util/env_test.cc.o -c /home/cavalry/pebblesdb/src/util/env_test.cc",
   "file": "/home/cavalry/pebblesdb/src/util/env_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/bloom_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/bloom_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/bloom_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/bloom_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/bloom_test.dir/src/util/bloom_test.cc.o -c /home/cavalry/pebblesdb/src/util/bloom_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/bloom_test.dir/src/util/bloom_test.cc.o -c /home/cavalry/pebblesdb/src/util/bloom_test.cc",
   "file": "/home/cavalry/pebblesdb/src/util/bloom_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/skiplist_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/skiplist_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/skiplist_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/skiplist_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/skiplist_test.dir/src/db/skiplist_test.cc.o -c /home/cavalry/pebblesdb/src/db/skiplist_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/skiplist_test.dir/src/db/skiplist_test.cc.o -c /home/cavalry/pebblesdb/src/db/skiplist_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/skiplist_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/c_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/c_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/c_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/c_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
@@ -106,447 +106,447 @@
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/arena_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/arena_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/arena_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/arena_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/arena_test.dir/src/util/arena_test.cc.o -c /home/cavalry/pebblesdb/src/util/arena_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/arena_test.dir/src/util/arena_test.cc.o -c /home/cavalry/pebblesdb/src/util/arena_test.cc",
   "file": "/home/cavalry/pebblesdb/src/util/arena_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/autocompact_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/autocompact_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/autocompact_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/autocompact_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/autocompact_test.dir/src/db/autocompact_test.cc.o -c /home/cavalry/pebblesdb/src/db/autocompact_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/autocompact_test.dir/src/db/autocompact_test.cc.o -c /home/cavalry/pebblesdb/src/db/autocompact_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/autocompact_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/corruption_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/corruption_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/corruption_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/corruption_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/corruption_test.dir/src/db/corruption_test.cc.o -c /home/cavalry/pebblesdb/src/db/corruption_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/corruption_test.dir/src/db/corruption_test.cc.o -c /home/cavalry/pebblesdb/src/db/corruption_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/corruption_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/builder.cc.o -c /home/cavalry/pebblesdb/src/db/builder.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/builder.cc.o -c /home/cavalry/pebblesdb/src/db/builder.cc",
   "file": "/home/cavalry/pebblesdb/src/db/builder.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/c.cc.o -c /home/cavalry/pebblesdb/src/db/c.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/c.cc.o -c /home/cavalry/pebblesdb/src/db/c.cc",
   "file": "/home/cavalry/pebblesdb/src/db/c.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/dbformat.cc.o -c /home/cavalry/pebblesdb/src/db/dbformat.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/dbformat.cc.o -c /home/cavalry/pebblesdb/src/db/dbformat.cc",
   "file": "/home/cavalry/pebblesdb/src/db/dbformat.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/db_impl.cc.o -c /home/cavalry/pebblesdb/src/db/db_impl.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/db_impl.cc.o -c /home/cavalry/pebblesdb/src/db/db_impl.cc",
   "file": "/home/cavalry/pebblesdb/src/db/db_impl.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/db_iter.cc.o -c /home/cavalry/pebblesdb/src/db/db_iter.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/db_iter.cc.o -c /home/cavalry/pebblesdb/src/db/db_iter.cc",
   "file": "/home/cavalry/pebblesdb/src/db/db_iter.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/filename.cc.o -c /home/cavalry/pebblesdb/src/db/filename.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/filename.cc.o -c /home/cavalry/pebblesdb/src/db/filename.cc",
   "file": "/home/cavalry/pebblesdb/src/db/filename.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/log_reader.cc.o -c /home/cavalry/pebblesdb/src/db/log_reader.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/log_reader.cc.o -c /home/cavalry/pebblesdb/src/db/log_reader.cc",
   "file": "/home/cavalry/pebblesdb/src/db/log_reader.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/log_writer.cc.o -c /home/cavalry/pebblesdb/src/db/log_writer.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/log_writer.cc.o -c /home/cavalry/pebblesdb/src/db/log_writer.cc",
   "file": "/home/cavalry/pebblesdb/src/db/log_writer.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/memtable.cc.o -c /home/cavalry/pebblesdb/src/db/memtable.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/memtable.cc.o -c /home/cavalry/pebblesdb/src/db/memtable.cc",
   "file": "/home/cavalry/pebblesdb/src/db/memtable.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/murmurhash3.cc.o -c /home/cavalry/pebblesdb/src/db/murmurhash3.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/murmurhash3.cc.o -c /home/cavalry/pebblesdb/src/db/murmurhash3.cc",
   "file": "/home/cavalry/pebblesdb/src/db/murmurhash3.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/repair.cc.o -c /home/cavalry/pebblesdb/src/db/repair.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/repair.cc.o -c /home/cavalry/pebblesdb/src/db/repair.cc",
   "file": "/home/cavalry/pebblesdb/src/db/repair.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/replay_iterator.cc.o -c /home/cavalry/pebblesdb/src/db/replay_iterator.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/replay_iterator.cc.o -c /home/cavalry/pebblesdb/src/db/replay_iterator.cc",
   "file": "/home/cavalry/pebblesdb/src/db/replay_iterator.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/table_cache.cc.o -c /home/cavalry/pebblesdb/src/db/table_cache.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/table_cache.cc.o -c /home/cavalry/pebblesdb/src/db/table_cache.cc",
   "file": "/home/cavalry/pebblesdb/src/db/table_cache.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/version_edit.cc.o -c /home/cavalry/pebblesdb/src/db/version_edit.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/version_edit.cc.o -c /home/cavalry/pebblesdb/src/db/version_edit.cc",
   "file": "/home/cavalry/pebblesdb/src/db/version_edit.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/version_set.cc.o -c /home/cavalry/pebblesdb/src/db/version_set.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/version_set.cc.o -c /home/cavalry/pebblesdb/src/db/version_set.cc",
   "file": "/home/cavalry/pebblesdb/src/db/version_set.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/write_batch.cc.o -c /home/cavalry/pebblesdb/src/db/write_batch.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/write_batch.cc.o -c /home/cavalry/pebblesdb/src/db/write_batch.cc",
   "file": "/home/cavalry/pebblesdb/src/db/write_batch.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/fs_zenfs.cc.o -c /home/cavalry/pebblesdb/src/db/fs_zenfs.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/fs_zenfs.cc.o -c /home/cavalry/pebblesdb/src/db/fs_zenfs.cc",
   "file": "/home/cavalry/pebblesdb/src/db/fs_zenfs.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/io_zenfs.cc.o -c /home/cavalry/pebblesdb/src/db/io_zenfs.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/io_zenfs.cc.o -c /home/cavalry/pebblesdb/src/db/io_zenfs.cc",
   "file": "/home/cavalry/pebblesdb/src/db/io_zenfs.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/zbd_zenfs.cc.o -c /home/cavalry/pebblesdb/src/db/zbd_zenfs.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/db/zbd_zenfs.cc.o -c /home/cavalry/pebblesdb/src/db/zbd_zenfs.cc",
   "file": "/home/cavalry/pebblesdb/src/db/zbd_zenfs.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/block_builder.cc.o -c /home/cavalry/pebblesdb/src/table/block_builder.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/block_builder.cc.o -c /home/cavalry/pebblesdb/src/table/block_builder.cc",
   "file": "/home/cavalry/pebblesdb/src/table/block_builder.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/block.cc.o -c /home/cavalry/pebblesdb/src/table/block.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/block.cc.o -c /home/cavalry/pebblesdb/src/table/block.cc",
   "file": "/home/cavalry/pebblesdb/src/table/block.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/filter_block.cc.o -c /home/cavalry/pebblesdb/src/table/filter_block.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/filter_block.cc.o -c /home/cavalry/pebblesdb/src/table/filter_block.cc",
   "file": "/home/cavalry/pebblesdb/src/table/filter_block.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/format.cc.o -c /home/cavalry/pebblesdb/src/table/format.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/format.cc.o -c /home/cavalry/pebblesdb/src/table/format.cc",
   "file": "/home/cavalry/pebblesdb/src/table/format.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/iterator.cc.o -c /home/cavalry/pebblesdb/src/table/iterator.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/iterator.cc.o -c /home/cavalry/pebblesdb/src/table/iterator.cc",
   "file": "/home/cavalry/pebblesdb/src/table/iterator.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/merger.cc.o -c /home/cavalry/pebblesdb/src/table/merger.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/merger.cc.o -c /home/cavalry/pebblesdb/src/table/merger.cc",
   "file": "/home/cavalry/pebblesdb/src/table/merger.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/table_builder.cc.o -c /home/cavalry/pebblesdb/src/table/table_builder.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/table_builder.cc.o -c /home/cavalry/pebblesdb/src/table/table_builder.cc",
   "file": "/home/cavalry/pebblesdb/src/table/table_builder.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/table.cc.o -c /home/cavalry/pebblesdb/src/table/table.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/table.cc.o -c /home/cavalry/pebblesdb/src/table/table.cc",
   "file": "/home/cavalry/pebblesdb/src/table/table.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/two_level_iterator.cc.o -c /home/cavalry/pebblesdb/src/table/two_level_iterator.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/table/two_level_iterator.cc.o -c /home/cavalry/pebblesdb/src/table/two_level_iterator.cc",
   "file": "/home/cavalry/pebblesdb/src/table/two_level_iterator.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/arena.cc.o -c /home/cavalry/pebblesdb/src/util/arena.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/arena.cc.o -c /home/cavalry/pebblesdb/src/util/arena.cc",
   "file": "/home/cavalry/pebblesdb/src/util/arena.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/atomic.cc.o -c /home/cavalry/pebblesdb/src/util/atomic.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/atomic.cc.o -c /home/cavalry/pebblesdb/src/util/atomic.cc",
   "file": "/home/cavalry/pebblesdb/src/util/atomic.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/bloom.cc.o -c /home/cavalry/pebblesdb/src/util/bloom.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/bloom.cc.o -c /home/cavalry/pebblesdb/src/util/bloom.cc",
   "file": "/home/cavalry/pebblesdb/src/util/bloom.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/cache.cc.o -c /home/cavalry/pebblesdb/src/util/cache.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/cache.cc.o -c /home/cavalry/pebblesdb/src/util/cache.cc",
   "file": "/home/cavalry/pebblesdb/src/util/cache.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/coding.cc.o -c /home/cavalry/pebblesdb/src/util/coding.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/coding.cc.o -c /home/cavalry/pebblesdb/src/util/coding.cc",
   "file": "/home/cavalry/pebblesdb/src/util/coding.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/comparator.cc.o -c /home/cavalry/pebblesdb/src/util/comparator.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/comparator.cc.o -c /home/cavalry/pebblesdb/src/util/comparator.cc",
   "file": "/home/cavalry/pebblesdb/src/util/comparator.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/crc32c.cc.o -c /home/cavalry/pebblesdb/src/util/crc32c.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/crc32c.cc.o -c /home/cavalry/pebblesdb/src/util/crc32c.cc",
   "file": "/home/cavalry/pebblesdb/src/util/crc32c.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/env.cc.o -c /home/cavalry/pebblesdb/src/util/env.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/env.cc.o -c /home/cavalry/pebblesdb/src/util/env.cc",
   "file": "/home/cavalry/pebblesdb/src/util/env.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/env_posix.cc.o -c /home/cavalry/pebblesdb/src/util/env_posix.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/env_posix.cc.o -c /home/cavalry/pebblesdb/src/util/env_posix.cc",
   "file": "/home/cavalry/pebblesdb/src/util/env_posix.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/filter_policy.cc.o -c /home/cavalry/pebblesdb/src/util/filter_policy.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/filter_policy.cc.o -c /home/cavalry/pebblesdb/src/util/filter_policy.cc",
   "file": "/home/cavalry/pebblesdb/src/util/filter_policy.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/hash.cc.o -c /home/cavalry/pebblesdb/src/util/hash.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/hash.cc.o -c /home/cavalry/pebblesdb/src/util/hash.cc",
   "file": "/home/cavalry/pebblesdb/src/util/hash.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/histogram.cc.o -c /home/cavalry/pebblesdb/src/util/histogram.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/histogram.cc.o -c /home/cavalry/pebblesdb/src/util/histogram.cc",
   "file": "/home/cavalry/pebblesdb/src/util/histogram.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/logging.cc.o -c /home/cavalry/pebblesdb/src/util/logging.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/logging.cc.o -c /home/cavalry/pebblesdb/src/util/logging.cc",
   "file": "/home/cavalry/pebblesdb/src/util/logging.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/options.cc.o -c /home/cavalry/pebblesdb/src/util/options.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/options.cc.o -c /home/cavalry/pebblesdb/src/util/options.cc",
   "file": "/home/cavalry/pebblesdb/src/util/options.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/status.cc.o -c /home/cavalry/pebblesdb/src/util/status.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/util/status.cc.o -c /home/cavalry/pebblesdb/src/util/status.cc",
   "file": "/home/cavalry/pebblesdb/src/util/status.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/port/port_posix.cc.o -c /home/cavalry/pebblesdb/src/port/port_posix.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/pebblesdb.dir/src/port/port_posix.cc.o -c /home/cavalry/pebblesdb/src/port/port_posix.cc",
   "file": "/home/cavalry/pebblesdb/src/port/port_posix.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filter_block_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filter_block_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filter_block_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filter_block_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filter_block_test.dir/src/table/filter_block_test.cc.o -c /home/cavalry/pebblesdb/src/table/filter_block_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filter_block_test.dir/src/table/filter_block_test.cc.o -c /home/cavalry/pebblesdb/src/table/filter_block_test.cc",
   "file": "/home/cavalry/pebblesdb/src/table/filter_block_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_set_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_set_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_set_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_set_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_set_test.dir/src/db/version_set_test.cc.o -c /home/cavalry/pebblesdb/src/db/version_set_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_set_test.dir/src/db/version_set_test.cc.o -c /home/cavalry/pebblesdb/src/db/version_set_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/version_set_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filename_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filename_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filename_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filename_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filename_test.dir/src/db/filename_test.cc.o -c /home/cavalry/pebblesdb/src/db/filename_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/filename_test.dir/src/db/filename_test.cc.o -c /home/cavalry/pebblesdb/src/db/filename_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/filename_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/db_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/db_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/db_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/db_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/db_test.dir/src/db/db_test.cc.o -c /home/cavalry/pebblesdb/src/db/db_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/db_test.dir/src/db/db_test.cc.o -c /home/cavalry/pebblesdb/src/db/db_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/db_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/write_batch_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/write_batch_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/write_batch_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/write_batch_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/write_batch_test.dir/src/db/write_batch_test.cc.o -c /home/cavalry/pebblesdb/src/db/write_batch_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/write_batch_test.dir/src/db/write_batch_test.cc.o -c /home/cavalry/pebblesdb/src/db/write_batch_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/write_batch_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/cache_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/cache_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/cache_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/cache_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/cache_test.dir/src/util/cache_test.cc.o -c /home/cavalry/pebblesdb/src/util/cache_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/cache_test.dir/src/util/cache_test.cc.o -c /home/cavalry/pebblesdb/src/util/cache_test.cc",
   "file": "/home/cavalry/pebblesdb/src/util/cache_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/table_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/table_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/table_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/table_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/table_test.dir/src/table/table_test.cc.o -c /home/cavalry/pebblesdb/src/table/table_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/table_test.dir/src/table/table_test.cc.o -c /home/cavalry/pebblesdb/src/table/table_test.cc",
   "file": "/home/cavalry/pebblesdb/src/table/table_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_edit_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_edit_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_edit_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_edit_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_edit_test.dir/src/db/version_edit_test.cc.o -c /home/cavalry/pebblesdb/src/db/version_edit_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/version_edit_test.dir/src/db/version_edit_test.cc.o -c /home/cavalry/pebblesdb/src/db/version_edit_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/version_edit_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue178_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue178_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue178_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue178_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue178_test.dir/src/issues/issue178_test.cc.o -c /home/cavalry/pebblesdb/src/issues/issue178_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue178_test.dir/src/issues/issue178_test.cc.o -c /home/cavalry/pebblesdb/src/issues/issue178_test.cc",
   "file": "/home/cavalry/pebblesdb/src/issues/issue178_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue200_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue200_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue200_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue200_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue200_test.dir/src/issues/issue200_test.cc.o -c /home/cavalry/pebblesdb/src/issues/issue200_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/issue200_test.dir/src/issues/issue200_test.cc.o -c /home/cavalry/pebblesdb/src/issues/issue200_test.cc",
   "file": "/home/cavalry/pebblesdb/src/issues/issue200_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/installation_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/installation_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/installation_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/installation_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/installation_test.dir/src/demo/installation_test.cc.o -c /home/cavalry/pebblesdb/src/demo/installation_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/installation_test.dir/src/demo/installation_test.cc.o -c /home/cavalry/pebblesdb/src/demo/installation_test.cc",
   "file": "/home/cavalry/pebblesdb/src/demo/installation_test.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/dbformat_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/dbformat_test.dir/src/util/testharness.cc.o -c /home/cavalry/pebblesdb/src/util/testharness.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testharness.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/dbformat_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/dbformat_test.dir/src/util/testutil.cc.o -c /home/cavalry/pebblesdb/src/util/testutil.cc",
   "file": "/home/cavalry/pebblesdb/src/util/testutil.cc"
 },
 {
   "directory": "/home/cavalry/pebblesdb/build",
-  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++11 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/dbformat_test.dir/src/db/dbformat_test.cc.o -c /home/cavalry/pebblesdb/src/db/dbformat_test.cc",
+  "command": "/usr/bin/g++  -DHAVE_CONFIG_H -DLEVELDB_PLATFORM_POSIX=1 -I/home/cavalry/pebblesdb/src/include -I/home/cavalry/pebblesdb/src   -std=c++17 -Wall -Wno-variadic-macros -fno-builtin-memcmp -fno-builtin-memmove -g   -pthread -std=c++11 -o CMakeFiles/dbformat_test.dir/src/db/dbformat_test.cc.o -c /home/cavalry/pebblesdb/src/db/dbformat_test.cc",
   "file": "/home/cavalry/pebblesdb/src/db/dbformat_test.cc"
 }
 ]
