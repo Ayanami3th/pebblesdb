@@ -1,31 +1,30 @@
-autocompact_test 21 0.0275281
-arena_test 94 0.893571
-bloom_test 94 0.154651
+autocompact_test 30 0.0323647
+arena_test 119 0.885372
+bloom_test 119 0.155557
 c_test 50 0.436739
-cache_test 94 0.0146061
-coding_test 94 0.121281
+cache_test 119 0.0166224
+coding_test 119 0.123239
 corruption_test 5 3.87072
-crc32c_test 94 0.00744202
+crc32c_test 119 0.00729901
 db_test 0 0
-dbformat_test 94 0.00737734
-env_test 94 0.310055
-filename_test 94 0.00646655
-filter_block_test 94 0.00738844
-log_test 94 24.8563
+dbformat_test 119 0.00875552
+env_test 119 0.310156
+filename_test 119 0.00641968
+filter_block_test 119 0.00708315
+log_test 119 24.8296
 table_test 7 4.88289
-skiplist_test 94 3.53996
-version_edit_test 94 0.005836
-version_set_test 94 0.00789565
-write_batch_test 94 0.00513369
+skiplist_test 119 3.5158
+version_edit_test 119 0.00626634
+version_set_test 119 0.00793391
+write_batch_test 119 0.00504105
 issue178_test 8 15.9677
 issue200_test 9 0.0287683
 installation_test 7 0.0369527
 ---
-corruption_test
-c_test
-table_test
-autocompact_test
 db_test
-issue178_test
+corruption_test
+table_test
 issue200_test
 installation_test
+c_test
+issue178_test
