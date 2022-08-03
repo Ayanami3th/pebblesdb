@@ -258,7 +258,7 @@ namespace leveldb
   }
 
   ZenFS::ZenFS(ZonedBlockDevice *zbd, Env* aux_fs,
-               std::shared_ptr<Logger> logger)
+               Logger* logger)
       : EnvWrapper(aux_fs), zbd_(zbd), logger_(logger)
   {
     // Info(logger_, "ZenFS initializing");
@@ -277,17 +277,17 @@ namespace leveldb
     zbd_->LogZoneUsage();
     LogFiles();
 
-    meta_log_.reset(nullptr);
+    meta_log_ = nullptr;
     ClearFiles();
     delete zbd_;
   }
 
   Status ZenFS::Repair()
   {
-    std::map<std::string, std::shared_ptr<ZoneFile>>::iterator it;
+    std::map<std::string, ZoneFile*>::iterator it;
     for (it = files_.begin(); it != files_.end(); it++)
     {
-      std::shared_ptr<ZoneFile> zFile = it->second;
+      ZoneFile* zFile = it->second;
       if (zFile->HasActiveExtent())
       {
         Status s = zFile->Recover();
@@ -307,13 +307,13 @@ namespace leveldb
 
   void ZenFS::LogFiles()
   {
-    std::map<std::string, std::shared_ptr<ZoneFile>>::iterator it;
+    std::map<std::string, ZoneFile*>::iterator it;
     uint64_t total_size = 0;
 
     // Info(logger_, "  Files:\n");
     for (it = files_.begin(); it != files_.end(); it++)
     {
-      std::shared_ptr<ZoneFile> zFile = it->second;
+      ZoneFile* zFile = it->second;
       std::vector<ZoneExtent *> extents = zFile->GetExtents();
 
       // Info(logger_, "    %-45s sz: %lu lh: %d sparse: %u", it->first.c_str(),
@@ -336,10 +336,10 @@ namespace leveldb
 
   void ZenFS::ClearFiles()
   {
-    std::map<std::string, std::shared_ptr<ZoneFile>>::iterator it;
+    std::map<std::string, ZoneFile*>::iterator it;
     std::lock_guard<std::mutex> file_lock(files_mtx_);
     for (it = files_.begin(); it != files_.end(); it++)
-      it->second.reset();
+      it->second = nullptr;
     files_.clear();
   }
 
@@ -355,7 +355,7 @@ namespace leveldb
     {
       for (auto it = files_.begin(); it != files_.end(); it++)
       {
-        std::shared_ptr<ZoneFile> zoneFile = it->second;
+        ZoneFile* zoneFile = it->second;
         zoneFile->MetadataSynced();
       }
     }
@@ -373,11 +373,11 @@ namespace leveldb
   /* Assumes the files_mtx_ is held */
   Status ZenFS::RollMetaZoneLocked()
   {
-    std::unique_ptr<ZenMetaLog> new_meta_log, old_meta_log;
+    ZenMetaLog* new_meta_log, *old_meta_log;
     Zone *new_meta_zone = nullptr;
     Status s;
 
-    ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics().get(), ZENFS_ROLL_LATENCY,
+    ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics(), ZENFS_ROLL_LATENCY,
                                    Env::Default());
     zbd_->GetMetrics()->ReportQPS(ZENFS_ROLL_QPS, 1);
 
@@ -393,14 +393,16 @@ namespace leveldb
     }
 
     // Info(logger_, "Rolling to metazone %d\n", (int)new_meta_zone->GetZoneNr());
-    new_meta_log.reset(new ZenMetaLog(zbd_, new_meta_zone));
+    new_meta_log = new ZenMetaLog(zbd_, new_meta_zone);
 
-    old_meta_log.swap(meta_log_);
-    meta_log_.swap(new_meta_log);
+    std::swap(old_meta_log, meta_log_);
+    std::swap(meta_log_, new_meta_log);
+    // old_meta_log.swap(meta_log_);
+    // meta_log_.swap(new_meta_log);
 
     /* Write an end record and finish the meta data zone if there is space left */
     if (old_meta_log->GetZone()->GetCapacityLeft())
-      WriteEndRecord(old_meta_log.get());
+      WriteEndRecord(old_meta_log);
     if (old_meta_log->GetZone()->GetCapacityLeft())
       old_meta_log->GetZone()->Finish();
 
@@ -415,7 +417,7 @@ namespace leveldb
       return Status::IOError("Failed writing a new superblock");
     }
 
-    s = WriteSnapshotLocked(meta_log_.get());
+    s = WriteSnapshotLocked(meta_log_);
 
     /* We've rolled successfully, we can reset the old zone now */
     if (s.ok())
@@ -499,7 +501,7 @@ namespace leveldb
     std::string fileRecord;
     std::string output;
     Status s;
-    ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics().get(), ZENFS_META_SYNC_LATENCY,
+    ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics(), ZENFS_META_SYNC_LATENCY,
                                    Env::Default());
 
     if (zoneFile->IsDeleted())
@@ -535,9 +537,9 @@ namespace leveldb
   }
 
   /* Must hold files_mtx_ */
-  std::shared_ptr<ZoneFile> ZenFS::GetFileNoLock(std::string fname)
+  ZoneFile* ZenFS::GetFileNoLock(std::string fname)
   {
-    std::shared_ptr<ZoneFile> zoneFile(nullptr);
+    ZoneFile* zoneFile(nullptr);
     fname = FormatPathLexically(fname);
     if (files_.find(fname) != files_.end())
     {
@@ -546,9 +548,9 @@ namespace leveldb
     return zoneFile;
   }
 
-  std::shared_ptr<ZoneFile> ZenFS::GetFile(std::string fname)
+  ZoneFile* ZenFS::GetFile(std::string fname)
   {
-    std::shared_ptr<ZoneFile> zoneFile(nullptr);
+    ZoneFile* zoneFile(nullptr);
     std::lock_guard<std::mutex> lock(files_mtx_);
     zoneFile = GetFileNoLock(fname);
     return zoneFile;
@@ -557,7 +559,7 @@ namespace leveldb
   /* Must hold files_mtx_ */
   Status ZenFS::DeleteFileNoLock(std::string fname)
   {
-    std::shared_ptr<ZoneFile> zoneFile(nullptr);
+    ZoneFile* zoneFile(nullptr);
     Status s;
 
     fname = FormatPathLexically(fname);
@@ -584,7 +586,6 @@ namespace leveldb
           return s;
         /* Mark up the file as deleted so it won't be migrated by GC */
         zoneFile->SetDeleted();
-        zoneFile.reset();
       }
     }
     else
@@ -596,40 +597,38 @@ namespace leveldb
   }
 
   Status ZenFS::NewSequentialFile(const std::string &filename,
-                                  std::unique_ptr<SequentialFile> *result)
+                                  SequentialFile **result)
   {
     std::string fname = FormatPathLexically(filename);
-    std::shared_ptr<ZoneFile> zoneFile = GetFile(fname);
+    ZoneFile* zoneFile = GetFile(fname);
 
     // Debug(logger_, "New sequential file: %s direct: %d\n", fname.c_str(),
     //       file_opts.use_direct_reads);
 
     if (zoneFile == nullptr)
     {
-      SequentialFile *r = result->get();
-      return target()->NewSequentialFile(ToAuxPath(fname), &r);
+      return target()->NewSequentialFile(ToAuxPath(fname), result);
     }
 
-    result->reset(new ZonedSequentialFile(zoneFile));
+    *result = new ZonedSequentialFile(zoneFile);
     return Status::OK();
   }
 
   Status ZenFS::NewRandomAccessFile(const std::string &filename,
-                                    std::unique_ptr<RandomAccessFile> *result)
+                                    RandomAccessFile **result)
   {
     std::string fname = FormatPathLexically(filename);
-    std::shared_ptr<ZoneFile> zoneFile = GetFile(fname);
+    ZoneFile* zoneFile = GetFile(fname);
 
     // Debug(logger_, "New random access file: %s direct: %d\n", fname.c_str(),
     //       file_opts.use_direct_reads);
 
     if (zoneFile == nullptr)
     {
-      RandomAccessFile *r = result->get();
-      return target()->NewRandomAccessFile(ToAuxPath(fname), &r);
+      return target()->NewRandomAccessFile(ToAuxPath(fname), result);
     }
 
-    result->reset(new ZonedRandomAccessFile(files_[fname]));
+    *result = new ZonedRandomAccessFile(files_[fname]);
     return Status::OK();
   }
 
@@ -641,7 +640,7 @@ namespace leveldb
   }
 
   Status ZenFS::NewWritableFile(const std::string &filename,
-                                std::unique_ptr<WritableFile> *result)
+                                WritableFile **result)
   {
     std::string fname = FormatPathLexically(filename);
     // Debug(logger_, "New writable file: %s direct: %d\n", fname.c_str(),
@@ -650,9 +649,277 @@ namespace leveldb
     return OpenWritableFile(fname, result, false);
   }
 
+  Status ZenFS::NewConcurrentWritableFile(const std::string &fname,
+                                  ConcurrentWritableFile **result)
+  {
+    class WAL : public ConcurrentWritableFile {
+    private:
+      WAL(const WAL&);
+      WAL& operator = (const WAL&);
+      struct MmapSegment{
+        char* base_;
+      };
+
+      std::string filename_;    // Path to the file
+      int fd_;                  // The open file
+      const size_t block_size_; // System page size
+      uint64_t end_offset_;     // Where does the file end?
+      MmapSegment* segments_;   // mmap'ed regions of memory
+      size_t segments_sz_;      // number of segments that are truncated
+      bool trunc_in_progress_;  // is there an ongoing truncate operation?
+      uint64_t trunc_waiters_;  // number of threads waiting for truncate
+      port::Mutex mtx_;         // Protection for state
+      port::CondVar cnd_;       // Wait for truncate
+
+      // Roundup x to a multiple of y
+      static size_t Roundup(size_t x, size_t y) {
+        return ((x + y - 1) / y) * y;
+      }
+
+      bool GrowViaTruncate(uint64_t block) {
+        mtx_.Lock();
+        while (trunc_in_progress_ && segments_sz_ <= block) {
+          ++trunc_waiters_;
+          cnd_.Wait();
+          --trunc_waiters_;
+        }
+        uint64_t cur_sz = segments_sz_;
+        trunc_in_progress_ = cur_sz <= block;
+        mtx_.Unlock();
+
+        bool error = false;
+        if (cur_sz <= block) {
+          uint64_t new_sz = ((block + 7) & ~7ULL) + 1;
+          if (ftruncate(fd_, new_sz * block_size_) < 0) {
+            error = true;
+          }
+          MmapSegment* new_segs = new MmapSegment[new_sz];
+          MmapSegment* old_segs = NULL;
+          mtx_.Lock();
+          old_segs = segments_;
+          for (size_t i = 0; i < segments_sz_; ++i) {
+            new_segs[i].base_ = old_segs[i].base_;
+          }
+          for (size_t i = segments_sz_; i < new_sz; ++i) {
+            new_segs[i].base_ = NULL;
+          }
+          segments_ = new_segs;
+          segments_sz_ = new_sz;
+          trunc_in_progress_ = false;
+          cnd_.SignalAll();
+          mtx_.Unlock();
+          delete[] old_segs;
+        }
+        return !error;
+      }
+
+      bool UnmapSegment(char* base) {
+        return munmap(base, block_size_) >= 0;
+      }
+
+      // Call holding mtx_
+      char* GetSegment(uint64_t block) {
+        char* base = NULL;
+        mtx_.Lock();
+        size_t cur_sz = segments_sz_;
+        if (block < segments_sz_) {
+          base = segments_[block].base_;
+        }
+        mtx_.Unlock();
+        if (base) {
+          return base;
+        }
+        if (cur_sz <= block) {
+          if (!GrowViaTruncate(block)) {
+            return NULL;
+          }
+        }
+        void* ptr = mmap(NULL, block_size_, PROT_READ | PROT_WRITE,
+                        MAP_SHARED, fd_, block * block_size_);
+        if (ptr == MAP_FAILED) {
+          abort();
+          return NULL;
+        }
+        bool unmap = false;
+        mtx_.Lock();
+        assert(block < segments_sz_);
+        if (segments_[block].base_) {
+          base = segments_[block].base_;
+          unmap = true;
+        } else {
+          base = reinterpret_cast<char*>(ptr);
+          segments_[block].base_ = base;
+          unmap = false;
+        }
+        mtx_.Unlock();
+        if (unmap) {
+          if (!UnmapSegment(reinterpret_cast<char*>(ptr))) {
+            return NULL;
+          }
+        }
+        return base;
+      }
+
+    public:
+      WAL(const std::string& fname, int fd, size_t page_size)
+          : filename_(fname),
+            fd_(fd),
+            block_size_(Roundup(page_size, 262144)),
+            end_offset_(0),
+            segments_(NULL),
+            segments_sz_(0),
+            trunc_in_progress_(false),
+            trunc_waiters_(0),
+            mtx_(),
+            cnd_(&mtx_) {
+        assert((page_size & (page_size - 1)) == 0);
+      }
+
+      ~WAL() {
+        WAL::Close();
+      }
+
+      virtual Status WriteAt(uint64_t offset, const Slice& data) {
+        const uint64_t end = offset + data.size();
+        const char* src = data.data();
+        uint64_t rem = data.size();
+        mtx_.Lock();
+        end_offset_ = end_offset_ < end ? end : end_offset_;
+        mtx_.Unlock();
+        while (rem > 0) {
+          const uint64_t block = offset / block_size_;
+          char* base = GetSegment(block);
+          if (!base) {
+            return Status::IOError(filename_);
+          }
+          const uint64_t loff = offset - block * block_size_;
+          uint64_t n = block_size_ - loff;
+          n = n < rem ? n : rem;
+          memmove(base + loff, src, n);
+          rem -= n;
+          src += n;
+          offset += n;
+        }
+        return Status::OK();
+      }
+
+      virtual Status Append(const Slice& data) {
+        mtx_.Lock();
+        uint64_t offset = end_offset_;
+        mtx_.Unlock();
+        return WriteAt(offset, data);
+      }
+
+      virtual Status Close() {
+        Status s;
+        int fd;
+        MmapSegment* segments;
+        size_t end_offset;
+        size_t segments_sz;
+        mtx_.Lock();
+        fd = fd_;
+        fd_ = -1;
+        end_offset = end_offset_;
+        end_offset_ = 0;
+        segments = segments_;
+        segments_ = NULL;
+        segments_sz = segments_sz_;
+        segments_sz_ = 0;
+        mtx_.Unlock();
+        if (fd < 0) {
+          return s;
+        }
+        for (size_t i = 0; i < segments_sz; ++i) {
+          if (segments[i].base_ != NULL &&
+              munmap(segments[i].base_, block_size_) < 0) {
+            s = Status::IOError(filename_);
+          }
+        }
+        delete[] segments;
+        if (ftruncate(fd, end_offset) < 0) {
+          s = Status::IOError(filename_);
+        }
+        if (close(fd) < 0) {
+          if (s.ok()) {
+            s = Status::IOError(filename_);
+          }
+        }
+        return s;
+      }
+
+      Status Flush() {
+        return Status::OK();
+      }
+
+      Status SyncDirIfManifest() {
+        const char* f = filename_.c_str();
+        const char* sep = strrchr(f, '/');
+        Slice basename;
+        std::string dir;
+        if (sep == NULL) {
+          dir = ".";
+          basename = f;
+        } else {
+          dir = std::string(f, sep - f);
+          basename = sep + 1;
+        }
+        Status s;
+        if (basename.starts_with("MANIFEST")) {
+          int fd = open(dir.c_str(), O_RDONLY);
+          if (fd < 0) {
+            s = Status::IOError(dir);
+          } else {
+            if (fsync(fd) < 0) {
+              s = Status::IOError(dir);
+            }
+            close(fd);
+          }
+        }
+        return s;
+      }
+
+      virtual Status Sync() {
+        // Ensure new files referred to by the manifest are in the filesystem.
+        Status s = SyncDirIfManifest();
+
+        if (!s.ok()) {
+          return s;
+        }
+
+        size_t block = 0;
+        while (true) {
+          char* base = NULL;
+          mtx_.Lock();
+          if (block < segments_sz_) {
+            base = segments_[block].base_;
+          }
+          mtx_.Unlock();
+          if (!base) {
+            break;
+          }
+          if (msync(base, block_size_, MS_SYNC) < 0) {
+            s = Status::IOError(filename_);
+          }
+          ++block;
+        }
+        return s;
+      }
+    };
+
+    Status s;
+    const int fd = open(fname.c_str(), O_CREAT | O_RDWR | O_TRUNC, 0644);
+    if (fd < 0) {
+      *result = NULL;
+      s = Status::IOError(fname);
+    } else {
+      *result = new WAL(fname, fd, getpagesize());
+    }
+    return s;
+  }
+
   Status ZenFS::ReuseWritableFile(const std::string &filename,
                                   const std::string &old_filename,
-                                  std::unique_ptr<WritableFile> *result)
+                                  WritableFile **result)
   {
     Status s;
     std::string fname = FormatPathLexically(filename);
@@ -697,7 +964,7 @@ namespace leveldb
    * else return the existing file
    */
   Status ZenFS::ReopenWritableFile(const std::string &filename,
-                                   std::unique_ptr<WritableFile> *result)
+                                   WritableFile **result)
   {
     std::string fname = FormatPathLexically(filename);
     // Debug(logger_, "Reopen writable file: %s \n", fname.c_str());
@@ -848,7 +1115,7 @@ namespace leveldb
   }
 
   Status ZenFS::OpenWritableFile(const std::string &filename,
-                                 std::unique_ptr<WritableFile> *result,
+                                 WritableFile **result,
                                  bool reopen)
   {
     Status s;
@@ -856,14 +1123,13 @@ namespace leveldb
     bool resetIOZones = false;
     {
       std::lock_guard<std::mutex> file_lock(files_mtx_);
-      std::shared_ptr<ZoneFile> zoneFile = GetFileNoLock(fname);
+      ZoneFile* zoneFile = GetFileNoLock(fname);
 
       /* if reopen is true and the file exists, return it */
       if (reopen && zoneFile != nullptr)
       {
         zoneFile->AcquireWRLock();
-        result->reset(
-            new ZonedWritableFile(zbd_, true, zoneFile)); // !file_opts.use_direct_writes
+        *result = new ZonedWritableFile(zbd_, true, zoneFile); // !file_opts.use_direct_writes
         return Status::OK();
       }
 
@@ -875,8 +1141,7 @@ namespace leveldb
         resetIOZones = true;
       }
 
-      zoneFile =
-          std::make_shared<ZoneFile>(zbd_, next_file_id_++, &metadata_writer_);
+      zoneFile = new ZoneFile(zbd_, next_file_id_++, &metadata_writer_);
       zoneFile->SetFileModificationTime(time(0));
       zoneFile->AddLinkName(fname);
 
@@ -895,14 +1160,13 @@ namespace leveldb
       s = SyncFileMetadataNoLock(zoneFile);
       if (!s.ok())
       {
-        zoneFile.reset();
+        zoneFile = nullptr;
         return s;
       }
 
       zoneFile->AcquireWRLock();
       files_.insert(std::make_pair(fname.c_str(), zoneFile));
-      result->reset(
-          new ZonedWritableFile(zbd_, true, zoneFile)); // !file_opts.use_direct_writes
+      *result = new ZonedWritableFile(zbd_, true, zoneFile); // !file_opts.use_direct_writes
     }
 
     if (resetIOZones)
@@ -930,7 +1194,7 @@ namespace leveldb
   Status ZenFS::GetFileModificationTime(const std::string &filename,
                                         uint64_t *mtime)
   {
-    std::shared_ptr<ZoneFile> zoneFile(nullptr);
+    ZoneFile* zoneFile(nullptr);
     std::string f = FormatPathLexically(filename);
     Status s;
 
@@ -951,7 +1215,7 @@ namespace leveldb
   Status ZenFS::GetFileSize(const std::string &filename,
                             uint64_t *size)
   {
-    std::shared_ptr<ZoneFile> zoneFile(nullptr);
+    ZoneFile* zoneFile(nullptr);
     std::string f = FormatPathLexically(filename);
     Status s;
 
@@ -1048,8 +1312,8 @@ namespace leveldb
   Status ZenFS::RenameFileNoLock(const std::string &src_path,
                                  const std::string &dst_path)
   {
-    std::shared_ptr<ZoneFile> source_file(nullptr);
-    std::shared_ptr<ZoneFile> existing_dest_file(nullptr);
+    ZoneFile* source_file(nullptr);
+    ZoneFile* existing_dest_file(nullptr);
     std::string source_path = FormatPathLexically(src_path);
     std::string dest_path = FormatPathLexically(dst_path);
     Status s;
@@ -1111,7 +1375,7 @@ namespace leveldb
 
   Status ZenFS::LinkFile(const std::string &file, const std::string &link)
   {
-    std::shared_ptr<ZoneFile> src_file(nullptr);
+    ZoneFile* src_file(nullptr);
     std::string fname = FormatPathLexically(file);
     std::string lname = FormatPathLexically(link);
     Status s;
@@ -1146,7 +1410,7 @@ namespace leveldb
   Status ZenFS::NumFileLinks(const std::string &file, 
                              uint64_t *nr_links)
   {
-    std::shared_ptr<ZoneFile> src_file(nullptr);
+    ZoneFile* src_file(nullptr);
     std::string fname = FormatPathLexically(file);
     Status s;
 
@@ -1168,8 +1432,8 @@ namespace leveldb
   Status ZenFS::AreFilesSame(const std::string &file, const std::string &linkf,
                              bool *res)
   {
-    std::shared_ptr<ZoneFile> src_file(nullptr);
-    std::shared_ptr<ZoneFile> dst_file(nullptr);
+    ZoneFile* src_file(nullptr);
+    ZoneFile* dst_file(nullptr);
     std::string fname = FormatPathLexically(file);
     std::string link = FormatPathLexically(linkf);
     Status s;
@@ -1195,13 +1459,13 @@ namespace leveldb
 
   void ZenFS::EncodeSnapshotTo(std::string *output)
   {
-    std::map<std::string, std::shared_ptr<ZoneFile>>::iterator it;
+    std::map<std::string, ZoneFile*>::iterator it;
     std::string files_string;
     PutFixed32(output, kCompleteFilesSnapshot);
     for (it = files_.begin(); it != files_.end(); it++)
     {
       std::string file_string;
-      std::shared_ptr<ZoneFile> zFile = it->second;
+      ZoneFile* zFile = it->second;
 
       zFile->EncodeSnapshotTo(&file_string);
       PutLengthPrefixedSlice(&files_string, Slice(file_string));
@@ -1230,7 +1494,7 @@ namespace leveldb
 
   Status ZenFS::DecodeFileUpdateFrom(Slice *slice, bool replace)
   {
-    std::shared_ptr<ZoneFile> update(new ZoneFile(zbd_, 0, &metadata_writer_));
+    ZoneFile* update(new ZoneFile(zbd_, 0, &metadata_writer_));
     uint64_t id;
     Status s;
 
@@ -1245,7 +1509,7 @@ namespace leveldb
     /* Check if this is an update or an replace to an existing file */
     for (auto it = files_.begin(); it != files_.end(); it++)
     {
-      std::shared_ptr<ZoneFile> zFile = it->second;
+      ZoneFile* zFile = it->second;
       if (id == zFile->GetID())
       {
         for (const auto &name : zFile->GetLinkFiles())
@@ -1257,7 +1521,7 @@ namespace leveldb
         }
 
         s = zFile->MergeUpdate(update, replace);
-        update.reset();
+        update = nullptr;
 
         if (!s.ok())
           return s;
@@ -1284,7 +1548,7 @@ namespace leveldb
 
     while (GetLengthPrefixedSlice(input, &slice))
     {
-      std::shared_ptr<ZoneFile> zoneFile(
+      ZoneFile* zoneFile(
           new ZoneFile(zbd_, 0, &metadata_writer_));
       Status s = zoneFile->DecodeFrom(&slice);
       if (!s.ok())
@@ -1300,7 +1564,7 @@ namespace leveldb
     return Status::OK();
   }
 
-  void ZenFS::EncodeFileDeletionTo(std::shared_ptr<ZoneFile> zoneFile,
+  void ZenFS::EncodeFileDeletionTo(ZoneFile* zoneFile,
                                    std::string *output, std::string linkf)
   {
     std::string file_string;
@@ -1329,7 +1593,7 @@ namespace leveldb
     if (files_.find(fileName) == files_.end())
       return Status::Corruption("Zone file deletion: no such file");
 
-    std::shared_ptr<ZoneFile> zoneFile = files_[fileName];
+    ZoneFile* zoneFile = files_[fileName];
     if (zoneFile->GetID() != fileID)
       return Status::Corruption("Zone file deletion: file ID missmatch");
 
@@ -1432,8 +1696,8 @@ namespace leveldb
   Status ZenFS::Mount(bool readonly)
   {
     std::vector<Zone *> metazones = zbd_->GetMetaZones();
-    std::vector<std::unique_ptr<Superblock>> valid_superblocks;
-    std::vector<std::unique_ptr<ZenMetaLog>> valid_logs;
+    std::vector<Superblock*> valid_superblocks;
+    std::vector<ZenMetaLog*> valid_logs;
     std::vector<Zone *> valid_zones;
     std::vector<std::pair<uint32_t, uint32_t>> seq_map;
 
@@ -1450,7 +1714,7 @@ namespace leveldb
     /* Find all valid superblocks */
     for (const auto z : metazones)
     {
-      std::unique_ptr<ZenMetaLog> log;
+      ZenMetaLog* log;
       std::string scratch;
       Slice super_record;
 
@@ -1462,7 +1726,7 @@ namespace leveldb
       }
 
       // log takes the ownership of z's busy flag.
-      log.reset(new ZenMetaLog(zbd_, z));
+      log = new ZenMetaLog(zbd_, z);
 
       if (!log->ReadRecord(&super_record, &scratch).ok())
         continue;
@@ -1470,9 +1734,9 @@ namespace leveldb
       if (super_record.size() == 0)
         continue;
 
-      std::unique_ptr<Superblock> super_block;
+      Superblock* super_block;
 
-      super_block.reset(new Superblock());
+      super_block = new Superblock();
       s = super_block->DecodeFrom(&super_record);
       if (s.ok())
         s = super_block->CompatibleWith(zbd_);
@@ -1506,9 +1770,9 @@ namespace leveldb
     {
       uint32_t i = sm.second;
       std::string scratch;
-      std::unique_ptr<ZenMetaLog> log = std::move(valid_logs[i]);
+      ZenMetaLog *log = valid_logs[i];
 
-      s = RecoverFrom(log.get());
+      s = RecoverFrom(log);
       if (!s.ok())
       {
         if (s.IsNotFound())
@@ -1556,7 +1820,7 @@ namespace leveldb
       {
         /* Metadata zones are not marked as having valid data, so they can be
          * reset */
-        valid_logs[i].reset();
+        valid_logs[i] = nullptr;
       }
     }
 
@@ -1600,7 +1864,7 @@ namespace leveldb
   Status ZenFS::MkFS(std::string aux_fs_p, uint32_t finish_threshold)
   {
     std::vector<Zone *> metazones = zbd_->GetMetaZones();
-    std::unique_ptr<ZenMetaLog> log;
+    ZenMetaLog* log;
     Zone *meta_zone = nullptr;
     std::string aux_fs_path = FormatPathLexically(aux_fs_p);
     Status s;
@@ -1652,7 +1916,7 @@ namespace leveldb
       return Status::IOError("Not available meta zones\n");
     }
 
-    log.reset(new ZenMetaLog(zbd_, meta_zone));
+    log = new ZenMetaLog(zbd_, meta_zone);
 
     Superblock super(zbd_, aux_fs_path, finish_threshold);
     std::string super_string;
@@ -1663,7 +1927,7 @@ namespace leveldb
       return std::move(s);
 
     /* Write an empty snapshot to make the metadata zone valid */
-    s = PersistSnapshot(log.get());
+    s = PersistSnapshot(log);
     if (!s.ok())
     {
       // Error(logger_, "Failed to persist snapshot: %s", s.ToString().c_str());
@@ -1680,7 +1944,7 @@ namespace leveldb
 
     for (auto it = files_.begin(); it != files_.end(); it++)
     {
-      std::shared_ptr<ZoneFile> zoneFile = it->second;
+      ZoneFile* zoneFile = it->second;
       std::string filename = it->first;
       hint_map.insert(std::make_pair(filename, zoneFile->GetWriteLifeTimeHint()));
     }
@@ -1939,7 +2203,7 @@ namespace leveldb
       zbd_->ReleaseMigrateZone(target_zone);
     }
 
-    SyncFileExtents(zfile.get(), new_extent_list);
+    SyncFileExtents(zfile, new_extent_list);
     zfile->ReleaseWRLock();
 
     // Info(logger_, "MigrateFileExtents Finished, fname: %s, extent count: %lu",

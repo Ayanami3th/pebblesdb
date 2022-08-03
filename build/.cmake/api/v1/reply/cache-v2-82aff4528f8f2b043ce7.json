@@ -2047,7 +2047,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;snappy;"
+			"value" : "general;snappy;general;gflags;general;zbd;"
 		}
 	],
 	"kind" : "cache",

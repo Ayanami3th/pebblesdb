@@ -19,6 +19,9 @@
 #include <stdlib.h>
 #include "db/db_impl.h"
 #include "db/version_set.h"
+#include "db/fs_zenfs.h"
+#include "db/io_zenfs.h"
+#include "db/zbd_zenfs.h"
 #include "pebblesdb/cache.h"
 #include "pebblesdb/db.h"
 #include "pebblesdb/env.h"

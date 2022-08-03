@@ -2,7 +2,30 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
 
+#include <deque>
+#include <set>
+#include <dirent.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <time.h>
+#include <unistd.h>
+#if defined(LEVELDB_PLATFORM_ANDROID)
+#include <sys/stat.h>
+#endif
 #include "pebblesdb/env.h"
+#include "pebblesdb/slice.h"
+#include "port/port.h"
+#include "util/logging.h"
+#include "util/mutexlock.h"
+#include "util/posix_logger.h"
 
 namespace leveldb {
 
@@ -91,12 +114,122 @@ size_t Directory::GetUniqueId(char* /*id*/, size_t /*max_size*/) const {
 Env::~Env() {
 }
 
-bool Env::DirExists(const std::string& dname) {
-struct stat statbuf;
-if (stat(dname.c_str(), &statbuf) == 0) {
-  return S_ISDIR(statbuf.st_mode);
+bool Env::FileExists(const std::string& fname) {
+  return access(fname.c_str(), F_OK) == 0;
 }
-return false;  // stat() failed return false
+
+Status Env::GetChildren(const std::string& dir,
+                            std::vector<std::string>* result) {
+  result->clear();
+  DIR* d = opendir(dir.c_str());
+  if (d == NULL) {
+    return Status::IOError(dir);
+  }
+  struct dirent* entry;
+  while ((entry = readdir(d)) != NULL) {
+    result->push_back(entry->d_name);
+  }
+  closedir(d);
+  return Status::OK();
+}
+
+Status Env::DeleteFile(const std::string& fname) {
+  Status result;
+  if (unlink(fname.c_str()) != 0) {
+    result = Status::IOError(fname);
+  }
+  return result;
+}
+
+Status Env::CreateDir(const std::string& name) {
+  Status result;
+  if (mkdir(name.c_str(), 0755) != 0) {
+    result = Status::IOError(name);
+  }
+  return result;
+}
+
+Status Env::DeleteDir(const std::string& name) {
+  Status result;
+  if (rmdir(name.c_str()) != 0) {
+    result = Status::IOError(name);
+  }
+  return result;
+}
+
+Status Env::GetFileSize(const std::string& fname, uint64_t* size) {
+  Status s;
+  struct stat sbuf;
+  if (stat(fname.c_str(), &sbuf) != 0) {
+    *size = 0;
+    s = Status::IOError(fname);
+  } else {
+    *size = sbuf.st_size;
+  }
+  return s;
+}
+
+Status Env::RenameFile(const std::string& src, const std::string& target) {
+  Status result;
+  if (rename(src.c_str(), target.c_str()) != 0) {
+    result = Status::IOError(src);
+  }
+  return result;
+}
+
+Status Env::CopyFile(const std::string& src, const std::string& target) {
+  Status result;
+  int fd1 = -1;
+  int fd2 = -1;
+
+  if (result.ok() && (fd1 = open(src.c_str(), O_RDONLY)) < 0) {
+    result = Status::IOError(src);
+  }
+  if (result.ok() && (fd2 = open(target.c_str(), O_WRONLY | O_CREAT | O_TRUNC, 0644)) < 0) {
+    result = Status::IOError(target);
+  }
+
+  ssize_t amt = 0;
+  char buf[512];
+
+  while (result.ok() && (amt = read(fd1, buf, 512)) > 0) {
+    if (write(fd2, buf, amt) != amt) {
+      result = Status::IOError(src);
+    }
+  }
+
+  if (result.ok() && amt < 0) {
+    result = Status::IOError(src);
+  }
+
+  if (fd1 >= 0 && close(fd1) < 0) {
+    if (result.ok()) {
+      result = Status::IOError(src);
+    }
+  }
+
+  if (fd2 >= 0 && close(fd2) < 0) {
+    if (result.ok()) {
+      result = Status::IOError(target);
+    }
+  }
+
+  return result;
+}
+
+Status Env::LinkFile(const std::string& src, const std::string& target) {
+  Status result;
+  if (link(src.c_str(), target.c_str()) != 0) {
+    result = Status::IOError(src);
+  }
+  return result;
+}
+bool Env::DirExists(const std::string& dname) {
+  struct stat statbuf;
+  if (stat(dname.c_str(), &statbuf) == 0) {
+    return S_ISDIR(statbuf.st_mode);
+  }
+  return false;  // stat() failed return false
 }
 // Creates directory if missing. Return Ok if it exists, or successful in
 // Creating.
@@ -166,9 +299,9 @@ Env::IsDirectory(const std::string &path,
 }
 Status
 Env::NewDirectory(const std::string &name,
-              std::unique_ptr<Directory> *result)
+                  Directory **result)
 {
-  result->reset();
+  result = nullptr;
   int fd;
   int flags = cloexec_flags(0, nullptr);
   {
@@ -178,7 +311,7 @@ Env::NewDirectory(const std::string &name,
   if (fd < 0) {
     return Status::IOError("While open directory");
   } else {
-    result->reset(new Directory(fd, name));
+    *result = new Directory(fd, name);
   }
   return Status::OK();
 }

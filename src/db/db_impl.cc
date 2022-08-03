@@ -166,15 +166,16 @@ Options SanitizeOptions(const std::string& dbname,
   ClipToRange(&result.max_open_files,    64 + kNumNonTableCacheFiles, 50000);
   ClipToRange(&result.write_buffer_size, 64<<10,                      1<<30);
   ClipToRange(&result.block_size,        1<<10,                       4<<20);
+  // bug here
   if (result.info_log == NULL) {
     // Open a log file in the same directory as the db
-    src.env->CreateDir(dbname);  // In case it does not exist
-    src.env->RenameFile(InfoLogFileName(dbname), OldInfoLogFileName(dbname));
-    Status s = src.env->NewLogger(InfoLogFileName(dbname), &result.info_log);
-    if (!s.ok()) {
-      // No place suitable for logging
-      result.info_log = NULL;
-    }
+    src.env->CreateDirIfMissing(dbname);  // In case it does not exist
+    // src.env->RenameFile(InfoLogFileName(dbname), OldInfoLogFileName(dbname));
+    // Status s = src.env->NewLogger(InfoLogFileName(dbname), &result.info_log);
+    // if (!s.ok()) {
+    //   // No place suitable for logging
+    //   result.info_log = NULL;
+    // }
   }
   if (result.block_cache == NULL) {
     result.block_cache = NewLRUCache(8 << 20);
@@ -2462,56 +2463,57 @@ Status DB::Open(const Options& options, const std::string& dbname,
   DBImpl* impl = new DBImpl(options, dbname);
   impl->mutex_.Lock();
 
-  VersionEdit edit;
-  Status s = impl->Recover(&edit); // Handles create_if_missing, error_if_exists
+  // VersionEdit edit;
+  // Status s = impl->Recover(&edit); // Handles create_if_missing, error_if_exists
 
-  if (s.ok()) {
-    uint64_t new_log_number = impl->versions_->NewFileNumber();
-    ConcurrentWritableFile* lfile;
-    s = options.env->NewConcurrentWritableFile(LogFileName(dbname, new_log_number),
-                                               &lfile);
-    if (s.ok()) {
-      edit.SetLogNumber(new_log_number);
-      impl->logfile_.reset(lfile);
-      impl->logfile_number_ = new_log_number;
-      impl->log_.reset(new log::Writer(lfile));
-      s = impl->versions_->LogAndApply(&edit, &impl->mutex_, &impl->bg_log_cv_, &impl->bg_log_occupied_, std::vector<uint64_t>(), std::vector<std::string*>(), 1);
-    }
-    if (s.ok()) {
-      impl->DeleteObsoleteFiles();
-      impl->bg_compaction_cv_.Signal();
-      impl->bg_memtable_cv_.Signal();
-    }
-  }
+  // if (s.ok()) {
+  //   uint64_t new_log_number = impl->versions_->NewFileNumber();
+  //   ConcurrentWritableFile* lfile;
+  //   s = options.env->NewConcurrentWritableFile(LogFileName(dbname, new_log_number),
+  //                                              &lfile);
+  //   if (s.ok()) {
+  //     edit.SetLogNumber(new_log_number);
+  //     impl->logfile_.reset(lfile);
+  //     impl->logfile_number_ = new_log_number;
+  //     impl->log_.reset(new log::Writer(lfile));
+  //     s = impl->versions_->LogAndApply(&edit, &impl->mutex_, &impl->bg_log_cv_, &impl->bg_log_occupied_, std::vector<uint64_t>(), std::vector<std::string*>(), 1);
+  //   }
+  //   if (s.ok()) {
+  //     impl->DeleteObsoleteFiles();
+  //     impl->bg_compaction_cv_.Signal();
+  //     impl->bg_memtable_cv_.Signal();
+  //   }
+  // }
 
-  // Populate the file level bloom filter at the start of the database
-  // TODO: Optimize this by storing the filter values in file during shutdown and just reading them during open or
-  // store file level bloom filter for every file along with the index block
-  uint64_t before = Env::Default()->NowMicros();
-  impl->versions_->InitializeFileLevelBloomFilter();
-  uint64_t after = Env::Default()->NowMicros();
+  // // Populate the file level bloom filter at the start of the database
+  // // TODO: Optimize this by storing the filter values in file during shutdown and just reading them during open or
+  // // store file level bloom filter for every file along with the index block
+  // uint64_t before = Env::Default()->NowMicros();
+  // impl->versions_->InitializeFileLevelBloomFilter();
+  // uint64_t after = Env::Default()->NowMicros();
 
-  impl->versions_->InitializeTableCacheFileMetaData();
-  before = Env::Default()->NowMicros();
+  // impl->versions_->InitializeTableCacheFileMetaData();
+  // before = Env::Default()->NowMicros();
 
-  impl->pending_outputs_.clear();
-  impl->allow_background_activity_ = true;
-  impl->bg_compaction_cv_.SignalAll();
-  impl->bg_memtable_cv_.SignalAll();
-  impl->mutex_.Unlock();
+  // impl->pending_outputs_.clear();
+  // impl->allow_background_activity_ = true;
+  // impl->bg_compaction_cv_.SignalAll();
+  // impl->bg_memtable_cv_.SignalAll();
+  // impl->mutex_.Unlock();
 
-  if (s.ok()) {
-    *dbptr = impl;
-  } else {
-    delete impl;
-    impl = NULL;
-  }
-  if (impl) {
-    impl->writers_mutex_.Lock();
-    impl->writers_upper_ = impl->versions_->LastSequence();
-    impl->writers_mutex_.Unlock();
-  }
-  return s;
+  // if (s.ok()) {
+  //   *dbptr = impl;
+  // } else {
+  //   delete impl;
+  //   impl = NULL;
+  // }
+  // if (impl) {
+  //   impl->writers_mutex_.Lock();
+  //   impl->writers_upper_ = impl->versions_->LastSequence();
+  //   impl->writers_mutex_.Unlock();
+  // }
+  // return s;
+  return Status::OK();
 }
 
 Snapshot::~Snapshot() {

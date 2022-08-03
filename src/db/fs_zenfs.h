@@ -128,17 +128,17 @@ class ZenMetaLog {
 
 class ZenFS : public EnvWrapper {
   ZonedBlockDevice* zbd_;
-  std::map<std::string, std::shared_ptr<ZoneFile>> files_;
+  std::map<std::string, ZoneFile*> files_;
   std::mutex files_mtx_;
-  std::shared_ptr<Logger> logger_;
+  Logger* logger_;
   std::atomic<uint64_t> next_file_id_;
 
   Zone* cur_meta_zone_ = nullptr;
-  std::unique_ptr<ZenMetaLog> meta_log_;
+  ZenMetaLog* meta_log_;
   std::mutex metadata_sync_mtx_;
-  std::unique_ptr<Superblock> superblock_;
+  Superblock* superblock_;
 
-  std::shared_ptr<Logger> GetLogger() { return logger_; }
+  Logger* GetLogger() { return logger_; }
 
   struct ZenFSMetadataWriter : public MetadataWriter {
     ZenFS* zenFS;
@@ -171,19 +171,10 @@ class ZenFS : public EnvWrapper {
                            std::vector<ZoneExtent*> new_extents);
   /* Must hold files_mtx_ */
   Status SyncFileMetadataNoLock(ZoneFile* zoneFile, bool replace = false);
-  /* Must hold files_mtx_ */
-  Status SyncFileMetadataNoLock(std::shared_ptr<ZoneFile> zoneFile,
-                                  bool replace = false) {
-    return SyncFileMetadataNoLock(zoneFile.get(), replace);
-  }
   Status SyncFileMetadata(ZoneFile* zoneFile, bool replace = false);
-  Status SyncFileMetadata(std::shared_ptr<ZoneFile> zoneFile,
-                            bool replace = false) {
-    return SyncFileMetadata(zoneFile.get(), replace);
-  }
 
   void EncodeSnapshotTo(std::string* output);
-  void EncodeFileDeletionTo(std::shared_ptr<ZoneFile> zoneFile,
+  void EncodeFileDeletionTo(ZoneFile* zoneFile,
                             std::string* output, std::string linkf);
 
   Status DecodeSnapshotFrom(Slice* input);
@@ -203,7 +194,7 @@ class ZenFS : public EnvWrapper {
   }
 
   /* Must hold files_mtx_ */
-  std::shared_ptr<ZoneFile> GetFileNoLock(std::string fname);
+  ZoneFile* GetFileNoLock(std::string fname);
   /* Must hold files_mtx_ */
   void GetZenFSChildrenNoLock(const std::string& dir,
                               bool include_grandchildren,
@@ -229,7 +220,7 @@ class ZenFS : public EnvWrapper {
   /* Must hold files_mtx_ */
   Status RenameFileNoLock(const std::string& f, const std::string& t);
 
-  std::shared_ptr<ZoneFile> GetFile(std::string fname);
+  ZoneFile* GetFile(std::string fname);
 
   /* Must hold files_mtx_, On successful return,
    * caller must release files_mtx_ and call ResetUnusedIOZones() */
@@ -252,12 +243,12 @@ class ZenFS : public EnvWrapper {
 
  protected:
   Status OpenWritableFile(const std::string& fname,
-                            std::unique_ptr<WritableFile>* result,
-                            bool reopen);
+                          WritableFile **result,
+                          bool reopen);
 
  public:
   explicit ZenFS(ZonedBlockDevice* zbd, Env* aux_fs,
-                 std::shared_ptr<Logger> logger);
+                 Logger* logger);
   virtual ~ZenFS();
 
   Status Mount(bool readonly);
@@ -273,16 +264,18 @@ class ZenFS : public EnvWrapper {
   void ReportSuperblock(std::string* report) { superblock_->GetReport(report); }
   
   virtual Status NewSequentialFile(const std::string& fname,
-                                   std::unique_ptr<SequentialFile>* result); // delete override
+                                   SequentialFile **result); // delete override
   virtual Status NewRandomAccessFile(const std::string& fname,
-                                     std::unique_ptr<RandomAccessFile>* result); // delete override;
+                                     RandomAccessFile **result); // delete override;
   virtual Status NewWritableFile(const std::string& fname,
-                                 std::unique_ptr<WritableFile>* result); // delete override;
+                                 WritableFile **result); // delete override;
+  virtual Status NewConcurrentWritableFile(const std::string &fname,
+                              ConcurrentWritableFile **result);
   virtual Status ReuseWritableFile(const std::string& fname,
                                      const std::string& old_fname,
-                                     std::unique_ptr<WritableFile>* result); // delete override
+                                     WritableFile **result); // delete override
   virtual Status ReopenWritableFile(const std::string& fname,
-                                    std::unique_ptr<WritableFile>* result); // delete override
+                                    WritableFile **result); // delete override
   bool FileExists(const std::string& fname); // delete override;
   virtual Status GetChildren(const std::string& dir, 
                                std::vector<std::string>* result); // delete override;
@@ -316,25 +309,25 @@ class ZenFS : public EnvWrapper {
   }
 
   Status NewDirectory(const std::string& name, 
-                        std::unique_ptr<Directory>* result) { // delete override
+                      Directory** result) { // delete override
     // Debug(logger_, "NewDirectory: %s to aux: %s\n", name.c_str(),
     //       ToAuxPath(name).c_str());
     return target()->NewDirectory(ToAuxPath(name), result);
   }
 
-  Status CreateDir(const std::string& d) override {
+  Status CreateDir(const std::string& d) {
     // Debug(logger_, "CreatDir: %s to aux: %s\n", d.c_str(),
     //       ToAuxPath(d).c_str());
     return target()->CreateDir(ToAuxPath(d));
   }
 
-  Status CreateDirIfMissing(const std::string& d) override {
+  Status CreateDirIfMissing(const std::string& d) {
     // Debug(logger_, "CreatDirIfMissing: %s to aux: %s\n", d.c_str(),
     //       ToAuxPath(d).c_str());
     return target()->CreateDirIfMissing(ToAuxPath(d));
   }
 
-  Status DeleteDir(const std::string& d) override {
+  Status DeleteDir(const std::string& d) {
     std::vector<std::string> children;
     Status s;
 
@@ -365,38 +358,16 @@ class ZenFS : public EnvWrapper {
   }
 
   Status GetTestDirectory(std::string* path) override {
-    *path = "rocksdbtest";
+    *path = "pebblesdbtest";
     // Debug(logger_, "GetTestDirectory: %s aux: %s\n", path->c_str(),
     //       ToAuxPath(*path).c_str());
     return target()->CreateDirIfMissing(ToAuxPath(*path));
   }
 
   Status NewLogger(const std::string& fname,
-                     std::shared_ptr<Logger>* result) { // delete override
-    Logger *r = result->get();
-    return target()->NewLogger(ToAuxPath(fname), &r);
+                   Logger **result) { // delete override
+    return target()->NewLogger(ToAuxPath(fname), result);
   }
-
-  // // Not supported (at least not yet)
-  // Status Truncate(const std::string& /*fname*/, size_t /*size*/,
-  //                   const IOOptions& /*options*/,
-  //                   IODebugContext* /*dbg*/) override {
-  //   return Status::NotSupported("Truncate is not implemented in ZenFS");
-  // }
-
-  // virtual Status NewRandomRWFile(const std::string& /*fname*/,
-  //                                  const FileOptions& /*options*/,
-  //                                  std::unique_ptr<FSRandomRWFile>* /*result*/,
-  //                                  IODebugContext* /*dbg*/) override {
-  //   return Status::NotSupported("RandomRWFile is not implemented in ZenFS");
-  // }
-
-  // virtual Status NewMemoryMappedFileBuffer(
-  //     const std::string& /*fname*/,
-  //     std::unique_ptr<MemoryMappedFileBuffer>* /*result*/) override {
-  //   return Status::NotSupported(
-  //       "MemoryMappedFileBuffer is not implemented in ZenFS");
-  // }
 
   void GetZenFSSnapshot(ZenFSSnapshot& snapshot,
                         const ZenFSSnapshotOptions& options);
@@ -409,7 +380,7 @@ class ZenFS : public EnvWrapper {
 };
 
 Status NewZenFS(const std::string& bdevname,
-               std::shared_ptr<ZenFSMetrics> metrics = std::make_shared<NoZenFSMetrics>());
+               ZenFSMetrics *metrics = new NoZenFSMetrics());
 Status ListZenFileSystems(std::map<std::string, std::string>& out_list);
 
 } // namespace leveldb

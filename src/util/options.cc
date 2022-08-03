@@ -6,6 +6,8 @@
 
 #include "pebblesdb/comparator.h"
 #include "pebblesdb/env.h"
+#include "db/io_zenfs.h"
+#include "db/fs_zenfs.h"
 
 namespace leveldb {
 
@@ -14,7 +16,8 @@ Options::Options()
       create_if_missing(false),
       error_if_exists(false),
       paranoid_checks(false),
-      env(Env::Default()),
+      env(new ZenFS(new ZonedBlockDevice("nullb0", nullptr), Env::Default(), nullptr)),
+      // env(Env::Default()),
       info_log(NULL),
       write_buffer_size(4<<20),
       max_open_files(1000),

@@ -15,6 +15,7 @@
 
 #include <string>
 #include <vector>
+#include <set>
 #include <unordered_map>
 #include <ostream>
 #include <algorithm>
@@ -305,11 +306,6 @@ namespace leveldb
     virtual Status
     NewWritableFile(const std::string &fname,
                     WritableFile **result) = 0;
-    // virtual Status
-    // NewWritableFile(const std::string &fname,
-    //                 const FileOptions &file_opts,
-    //                 std::unique_ptr<WritableFile> *result,
-    //                 IODebugContext *dbg);
 
     virtual Status
     NewConcurrentWritableFile(const std::string &fname,
@@ -318,10 +314,6 @@ namespace leveldb
     // Returns true iff the named file exists.
     virtual bool
     FileExists(const std::string &fname) = 0;
-    // virtual Status
-    // FileExists(const std::string &fname,
-    //            const IOOptions &options,
-    //            IODebugContext *dbg);
 
     // Store in *result the names of the children of the specified directory.
     // The names are relative to "dir".
@@ -329,54 +321,27 @@ namespace leveldb
     virtual Status
     GetChildren(const std::string &dir,
                 std::vector<std::string> *result) = 0;
-    // virtual Status
-    // GetChildren(const std::string &dir,
-    //             const IOOptions &options,
-    //             std::vector<std::string> *result,
-    //             IODebugContext *dbg);
 
     // Delete the named file.
     virtual Status
     DeleteFile(const std::string &fname) = 0;
-    // virtual Status
-    // DeleteFile(const std::string &fname,
-    //            const IOOptions &options,
-    //            IODebugContext *dbg);
 
     // Create the specified directory.
     virtual Status
     CreateDir(const std::string &dirname) = 0;
-    // virtual Status
-    // CreateDir(const std::string &d,
-    //           const IOOptions &options,
-    //           IODebugContext *dbg);
 
     // Delete the specified directory.
     virtual Status
     DeleteDir(const std::string &dirname) = 0;
-    // virtual Status
-    // DeleteDir(const std::string &d,
-    //           const IOOptions &options,
-    //           IODebugContext *dbg);
 
     // Store the size of fname in *file_size.
     virtual Status
     GetFileSize(const std::string &fname, uint64_t *file_size) = 0;
-    // virtual Status
-    // GetFileSize(const std::string &f,
-    //             const IOOptions &options,
-    //             uint64_t *size,
-    //             IODebugContext *dbg);
 
     // Rename file src to target.
     virtual Status
     RenameFile(const std::string &src,
                const std::string &target) = 0;
-    // virtual Status
-    // RenameFile(const std::string &f,
-    //            const std::string &t,
-    //            const IOOptions &options,
-    //            IODebugContext *dbg);
 
     // Copy file src to target.
     virtual Status
@@ -387,11 +352,6 @@ namespace leveldb
     virtual Status
     LinkFile(const std::string &src,
              const std::string &target) = 0;
-    // virtual Status
-    // LinkFile(const std::string &fname,
-    //          const std::string &lname,
-    //          const IOOptions &options,
-    //          IODebugContext *dbg);
 
     // Lock the specified file.  Used to prevent concurrent access to
     // the same db by multiple processes.  On failure, stores NULL in
@@ -409,21 +369,12 @@ namespace leveldb
     // May create the named file if it does not already exist.
     virtual Status
     LockFile(const std::string &fname, FileLock **lock) = 0;
-    // virtual Status
-    // LockFile(const std::string &fname,
-    //          const IOOptions &options,
-    //          FileLock **lock,
-    //          IODebugContext *dbg);
 
     // Release the lock acquired by a previous successful call to LockFile.
     // REQUIRES: lock was returned by a successful LockFile() call
     // REQUIRES: lock has not already been unlocked.
     virtual Status
     UnlockFile(FileLock *lock) = 0;
-    // virtual Status
-    // UnlockFile(FileLock *l,
-    //            const IOOptions &options,
-    //            IODebugContext *dbg);
 
     virtual bool DirExists(const std::string& dname);
     // Creates directory if missing. Return Ok if it exists, or successful in
@@ -435,11 +386,6 @@ namespace leveldb
     virtual Status
     GetFileModificationTime(const std::string &fname,
                             uint64_t *file_mtime);
-    // virtual Status
-    // GetFileModificationTime(const std::string &fname,
-    //                         const IOOptions &options,
-    //                         uint64_t *mtime,
-    //                         IODebugContext *dbg);
 
     // Arrange to run "(*function)(arg)" once in a background thread.
     //
@@ -473,19 +419,10 @@ namespace leveldb
     // same directory.
     virtual Status
     GetTestDirectory(std::string *path) = 0;
-    // virtual Status
-    // GetTestDirectory(const IOOptions &options,
-    //                  std::string *path,
-    //                  IODebugContext *dbg);
 
     // Create and return a log file for storing informational messages.
     virtual Status
     NewLogger(const std::string &fname, Logger **result) = 0;
-    // virtual Status
-    // NewLogger(const std::string &fname,
-    //           const IOOptions &options,
-    //           std::shared_ptr<Logger> *result,
-    //           IODebugContext *dbg);
 
     // Returns the number of micro-seconds since some fixed point in time. Only
     // useful for computing deltas of time.
@@ -507,7 +444,7 @@ namespace leveldb
 
     virtual Status
     NewDirectory(const std::string &name,
-                 std::unique_ptr<Directory> *result);
+                 Directory **result);
 
     std::string invoke_strerror_r(char* (*strerror_r)(int, char*, size_t),
                                         int err, char* buf, size_t buflen);
@@ -764,39 +701,39 @@ namespace leveldb
     {
       return target_->NewSequentialFile(f, r);
     }
-    Status
-    NewSequentialFile(const std::string &fname,
-                      std::unique_ptr<SequentialFile> *result)
-    {
-      SequentialFile *r = result->get();
-      return target_->NewSequentialFile(fname, &r);
-    }
+    // Status
+    // NewSequentialFile(const std::string &fname,
+    //                   std::unique_ptr<SequentialFile> *result)
+    // {
+    //   SequentialFile *r = result->get();
+    //   return target_->NewSequentialFile(fname, &r);
+    // }
 
     Status
     NewRandomAccessFile(const std::string &f, RandomAccessFile **r)
     {
       return target_->NewRandomAccessFile(f, r);
     }
-    Status
-    NewRandomAccessFile(const std::string &fname,
-                        std::unique_ptr<RandomAccessFile> *result)
-    {
-      RandomAccessFile *r = result->get();
-      return target_->NewRandomAccessFile(fname, &r);
-    }
+    // Status
+    // NewRandomAccessFile(const std::string &fname,
+    //                     std::unique_ptr<RandomAccessFile> *result)
+    // {
+    //   RandomAccessFile *r = result->get();
+    //   return target_->NewRandomAccessFile(fname, &r);
+    // }
 
     Status
     NewWritableFile(const std::string &f, WritableFile **r)
     {
       return target_->NewWritableFile(f, r);
     }
-    Status
-    NewWritableFile(const std::string &fname,
-                    std::unique_ptr<WritableFile> *result)
-    {
-      WritableFile *r = result->get();
-      return target_->NewWritableFile(fname, &r);
-    }
+    // Status
+    // NewWritableFile(const std::string &fname,
+    //                 std::unique_ptr<WritableFile> *result)
+    // {
+    //   WritableFile *r = result->get();
+    //   return target_->NewWritableFile(fname, &r);
+    // }
 
     Status
     NewConcurrentWritableFile(const std::string &f, ConcurrentWritableFile **r)
@@ -991,13 +928,6 @@ namespace leveldb
     {
       return target_->NewLogger(fname, result);
     }
-    virtual Status
-    NewLogger(const std::string &fname,
-              std::shared_ptr<Logger> *result)
-    {
-      Logger *r = result->get();
-      return target_->NewLogger(fname, &r);
-    }
 
     uint64_t
     NowMicros()
@@ -1025,7 +955,7 @@ namespace leveldb
 
     Status
     NewDirectory(const std::string &name,
-                 std::unique_ptr<Directory> *result)
+                 Directory **result)
     {
       return target_->NewDirectory(name, result);
     }

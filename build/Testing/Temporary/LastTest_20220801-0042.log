@@ -1,0 +1,536 @@
+Start testing: Aug 01 23:54 CST
+----------------------------------------------------------
+7/22 Testing: corruption_test
+7/22 Test: corruption_test
+Command: "/home/cavalry/pebblesdb/build/corruption_test"
+Directory: /home/cavalry/pebblesdb/build
+"corruption_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test CorruptionTest.Recovery
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Failed.
+"corruption_test" end time: Aug 01 23:54 CST
+"corruption_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/22 Testing: cache_test
+5/22 Test: cache_test
+Command: "/home/cavalry/pebblesdb/build/cache_test"
+Directory: /home/cavalry/pebblesdb/build
+"cache_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test CacheTest.HitAndMiss
+==== Test CacheTest.Erase
+==== Test CacheTest.EntriesArePinned
+==== Test CacheTest.EvictionPolicy
+==== Test CacheTest.HeavyEntries
+==== Test CacheTest.NewId
+==== PASSED 6 tests
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"cache_test" end time: Aug 01 23:54 CST
+"cache_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/22 Testing: c_test
+4/22 Test: c_test
+Command: "/home/cavalry/pebblesdb/build/c_test"
+Directory: /home/cavalry/pebblesdb/build
+"c_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+=== Test create_objects
+=== Test destroy
+=== Test open_error
+/home/cavalry/pebblesdb/src/db/c_test.c:207: open_error: err != NULL
+<end of output>
+Test time =   0.24 sec
+----------------------------------------------------------
+Test Failed.
+"c_test" end time: Aug 01 23:54 CST
+"c_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/22 Testing: bloom_test
+3/22 Test: bloom_test
+Command: "/home/cavalry/pebblesdb/build/bloom_test"
+Directory: /home/cavalry/pebblesdb/build
+"bloom_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test BloomTest.EmptyFilter
+==== Test BloomTest.Small
+==== Test BloomTest.VaryingLengths
+False positives:  0.23% @ length =      1 ; bytes =      9
+False positives:  0.44% @ length =      2 ; bytes =      9
+False positives:  0.75% @ length =      3 ; bytes =      9
+False positives:  1.08% @ length =      4 ; bytes =      9
+False positives:  1.20% @ length =      5 ; bytes =      9
+False positives:  1.59% @ length =      6 ; bytes =      9
+False positives:  1.53% @ length =      7 ; bytes =     10
+False positives:  1.81% @ length =      8 ; bytes =     11
+False positives:  0.79% @ length =      9 ; bytes =     13
+False positives:  1.63% @ length =     10 ; bytes =     14
+False positives:  1.24% @ length =     20 ; bytes =     26
+False positives:  0.84% @ length =     30 ; bytes =     39
+False positives:  1.07% @ length =     40 ; bytes =     51
+False positives:  1.09% @ length =     50 ; bytes =     64
+False positives:  1.12% @ length =     60 ; bytes =     76
+False positives:  0.93% @ length =     70 ; bytes =     89
+False positives:  1.16% @ length =     80 ; bytes =    101
+False positives:  1.07% @ length =     90 ; bytes =    114
+False positives:  0.83% @ length =    100 ; bytes =    126
+False positives:  0.96% @ length =    200 ; bytes =    251
+False positives:  0.77% @ length =    300 ; bytes =    376
+False positives:  0.81% @ length =    400 ; bytes =    501
+False positives:  0.74% @ length =    500 ; bytes =    626
+False positives:  0.78% @ length =    600 ; bytes =    751
+False positives:  0.91% @ length =    700 ; bytes =    876
+False positives:  0.88% @ length =    800 ; bytes =   1001
+False positives:  0.97% @ length =    900 ; bytes =   1126
+False positives:  0.90% @ length =   1000 ; bytes =   1251
+False positives:  0.89% @ length =   2000 ; bytes =   2501
+False positives:  0.95% @ length =   3000 ; bytes =   3751
+False positives:  1.01% @ length =   4000 ; bytes =   5001
+False positives:  0.89% @ length =   5000 ; bytes =   6251
+False positives:  1.03% @ length =   6000 ; bytes =   7501
+False positives:  0.78% @ length =   7000 ; bytes =   8751
+False positives:  1.09% @ length =   8000 ; bytes =  10001
+False positives:  1.09% @ length =   9000 ; bytes =  11251
+False positives:  0.81% @ length =  10000 ; bytes =  12501
+Filters: 33 good, 4 mediocre
+==== PASSED 3 tests
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"bloom_test" end time: Aug 01 23:54 CST
+"bloom_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/22 Testing: coding_test
+6/22 Test: coding_test
+Command: "/home/cavalry/pebblesdb/build/coding_test"
+Directory: /home/cavalry/pebblesdb/build
+"coding_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test Coding.Fixed32
+==== Test Coding.Fixed64
+==== Test Coding.EncodingOutput
+==== Test Coding.Varint32
+==== Test Coding.Varint64
+==== Test Coding.Varint32Overflow
+==== Test Coding.Varint32Truncation
+==== Test Coding.Varint64Overflow
+==== Test Coding.Varint64Truncation
+==== Test Coding.Strings
+==== PASSED 10 tests
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"coding_test" end time: Aug 01 23:54 CST
+"coding_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/22 Testing: version_set_test
+18/22 Test: version_set_test
+Command: "/home/cavalry/pebblesdb/build/version_set_test"
+Directory: /home/cavalry/pebblesdb/build
+"version_set_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test FindFileTest.Empty
+==== Test FindFileTest.Single
+==== Test FindFileTest.Multiple
+==== Test FindFileTest.MultipleNullBoundaries
+==== Test FindFileTest.OverlapSequenceChecks
+==== Test FindFileTest.OverlappingFiles
+==== PASSED 6 tests
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"version_set_test" end time: Aug 01 23:54 CST
+"version_set_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/22 Testing: crc32c_test
+8/22 Test: crc32c_test
+Command: "/home/cavalry/pebblesdb/build/crc32c_test"
+Directory: /home/cavalry/pebblesdb/build
+"crc32c_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test CRC.StandardResults
+==== Test CRC.LargeBuffer
+==== Test CRC.Values
+==== Test CRC.Extend
+==== Test CRC.Mask
+==== PASSED 5 tests
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"crc32c_test" end time: Aug 01 23:54 CST
+"crc32c_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/22 Testing: dbformat_test
+10/22 Test: dbformat_test
+Command: "/home/cavalry/pebblesdb/build/dbformat_test"
+Directory: /home/cavalry/pebblesdb/build
+"dbformat_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test FormatTest.InternalKey_EncodeDecode
+==== Test FormatTest.InternalKeyShortSeparator
+==== Test FormatTest.InternalKeyShortestSuccessor
+==== PASSED 3 tests
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"dbformat_test" end time: Aug 01 23:54 CST
+"dbformat_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/22 Testing: filter_block_test
+13/22 Test: filter_block_test
+Command: "/home/cavalry/pebblesdb/build/filter_block_test"
+Directory: /home/cavalry/pebblesdb/build
+"filter_block_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test FilterBlockTest.EmptyBuilder
+==== Test FilterBlockTest.SingleChunk
+==== Test FilterBlockTest.MultiChunk
+==== PASSED 3 tests
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"filter_block_test" end time: Aug 01 23:54 CST
+"filter_block_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/22 Testing: table_test
+15/22 Test: table_test
+Command: "/home/cavalry/pebblesdb/build/table_test"
+Directory: /home/cavalry/pebblesdb/build
+"table_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test Harness.Empty
+<end of output>
+Test time =   0.23 sec
+----------------------------------------------------------
+Test Failed.
+"table_test" end time: Aug 01 23:54 CST
+"table_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/22 Testing: filename_test
+12/22 Test: filename_test
+Command: "/home/cavalry/pebblesdb/build/filename_test"
+Directory: /home/cavalry/pebblesdb/build
+"filename_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test FileNameTest.Parse
+==== Test FileNameTest.Construction
+==== PASSED 2 tests
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"filename_test" end time: Aug 01 23:54 CST
+"filename_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/22 Testing: version_edit_test
+17/22 Test: version_edit_test
+Command: "/home/cavalry/pebblesdb/build/version_edit_test"
+Directory: /home/cavalry/pebblesdb/build
+"version_edit_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test VersionEditTest.EncodeDecode
+==== PASSED 1 tests
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"version_edit_test" end time: Aug 01 23:54 CST
+"version_edit_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/22 Testing: write_batch_test
+19/22 Test: write_batch_test
+Command: "/home/cavalry/pebblesdb/build/write_batch_test"
+Directory: /home/cavalry/pebblesdb/build
+"write_batch_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test WriteBatchTest.Empty
+==== Test WriteBatchTest.Multiple
+==== Test WriteBatchTest.Corruption
+==== Test WriteBatchTest.Append
+==== PASSED 4 tests
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"write_batch_test" end time: Aug 01 23:54 CST
+"write_batch_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+1/22 Testing: autocompact_test
+1/22 Test: autocompact_test
+Command: "/home/cavalry/pebblesdb/build/autocompact_test"
+Directory: /home/cavalry/pebblesdb/build
+"autocompact_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test AutoCompactTest.ReadAll
+<end of output>
+Test time =   0.27 sec
+----------------------------------------------------------
+Test Failed.
+"autocompact_test" end time: Aug 01 23:54 CST
+"autocompact_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/22 Testing: db_test
+9/22 Test: db_test
+Command: "/home/cavalry/pebblesdb/build/db_test"
+Directory: /home/cavalry/pebblesdb/build
+"db_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test DBTest.Empty
+<end of output>
+Test time =   0.27 sec
+----------------------------------------------------------
+Test Failed.
+"db_test" end time: Aug 01 23:54 CST
+"db_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/22 Testing: issue178_test
+20/22 Test: issue178_test
+Command: "/home/cavalry/pebblesdb/build/issue178_test"
+Directory: /home/cavalry/pebblesdb/build
+"issue178_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test Issue178.Test
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Failed.
+"issue178_test" end time: Aug 01 23:54 CST
+"issue178_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/22 Testing: issue200_test
+21/22 Test: issue200_test
+Command: "/home/cavalry/pebblesdb/build/issue200_test"
+Directory: /home/cavalry/pebblesdb/build
+"issue200_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test Issue200.Test
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Failed.
+"issue200_test" end time: Aug 01 23:54 CST
+"issue200_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/22 Testing: installation_test
+22/22 Test: installation_test
+Command: "/home/cavalry/pebblesdb/build/installation_test"
+Directory: /home/cavalry/pebblesdb/build
+"installation_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.30 sec
+----------------------------------------------------------
+Test Failed.
+"installation_test" end time: Aug 01 23:54 CST
+"installation_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/22 Testing: env_test
+11/22 Test: env_test
+Command: "/home/cavalry/pebblesdb/build/env_test"
+Directory: /home/cavalry/pebblesdb/build
+"env_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test EnvPosixTest.RunImmediately
+==== Test EnvPosixTest.RunMany
+==== Test EnvPosixTest.StartThread
+==== PASSED 3 tests
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"env_test" end time: Aug 01 23:54 CST
+"env_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/22 Testing: arena_test
+2/22 Test: arena_test
+Command: "/home/cavalry/pebblesdb/build/arena_test"
+Directory: /home/cavalry/pebblesdb/build
+"arena_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test ArenaTest.Empty
+==== Test ArenaTest.Simple
+==== PASSED 2 tests
+<end of output>
+Test time =   0.82 sec
+----------------------------------------------------------
+Test Passed.
+"arena_test" end time: Aug 01 23:54 CST
+"arena_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/22 Testing: skiplist_test
+16/22 Test: skiplist_test
+Command: "/home/cavalry/pebblesdb/build/skiplist_test"
+Directory: /home/cavalry/pebblesdb/build
+"skiplist_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test SkipTest.Empty
+==== Test SkipTest.InsertAndLookup
+==== Test SkipTest.ConcurrentWithoutThreads
+==== Test SkipTest.Concurrent1
+Run 0 of 1000
+Run 100 of 1000
+Run 200 of 1000
+Run 300 of 1000
+Run 400 of 1000
+Run 500 of 1000
+Run 600 of 1000
+Run 700 of 1000
+Run 800 of 1000
+Run 900 of 1000
+==== Test SkipTest.Concurrent2
+Run 0 of 1000
+Run 100 of 1000
+Run 200 of 1000
+Run 300 of 1000
+Run 400 of 1000
+Run 500 of 1000
+Run 600 of 1000
+Run 700 of 1000
+Run 800 of 1000
+Run 900 of 1000
+==== Test SkipTest.Concurrent3
+Run 0 of 1000
+Run 100 of 1000
+Run 200 of 1000
+Run 300 of 1000
+Run 400 of 1000
+Run 500 of 1000
+Run 600 of 1000
+Run 700 of 1000
+Run 800 of 1000
+Run 900 of 1000
+==== Test SkipTest.Concurrent4
+Run 0 of 1000
+Run 100 of 1000
+Run 200 of 1000
+Run 300 of 1000
+Run 400 of 1000
+Run 500 of 1000
+Run 600 of 1000
+Run 700 of 1000
+Run 800 of 1000
+Run 900 of 1000
+==== Test SkipTest.Concurrent5
+Run 0 of 1000
+Run 100 of 1000
+Run 200 of 1000
+Run 300 of 1000
+Run 400 of 1000
+Run 500 of 1000
+Run 600 of 1000
+Run 700 of 1000
+Run 800 of 1000
+Run 900 of 1000
+==== PASSED 8 tests
+<end of output>
+Test time =   3.08 sec
+----------------------------------------------------------
+Test Passed.
+"skiplist_test" end time: Aug 01 23:54 CST
+"skiplist_test" time elapsed: 00:00:03
+----------------------------------------------------------
+
+14/22 Testing: log_test
+14/22 Test: log_test
+Command: "/home/cavalry/pebblesdb/build/log_test"
+Directory: /home/cavalry/pebblesdb/build
+"log_test" start time: Aug 01 23:54 CST
+Output:
+----------------------------------------------------------
+==== Test LogTest.Empty
+==== Test LogTest.ReadWrite
+==== Test LogTest.ManyBlocks
+==== Test LogTest.Fragmentation
+==== Test LogTest.MarginalTrailer
+==== Test LogTest.MarginalTrailer2
+==== Test LogTest.ShortTrailer
+==== Test LogTest.AlignedEof
+==== Test LogTest.RandomRead
+==== Test LogTest.ReadError
+==== Test LogTest.BadRecordType
+==== Test LogTest.TruncatedTrailingRecordIsIgnored
+==== Test LogTest.BadLength
+==== Test LogTest.BadLengthAtEndIsIgnored
+==== Test LogTest.ChecksumMismatch
+==== Test LogTest.UnexpectedMiddleType
+==== Test LogTest.UnexpectedLastType
+==== Test LogTest.UnexpectedFullType
+==== Test LogTest.UnexpectedFirstType
+==== Test LogTest.MissingLastIsIgnored
+==== Test LogTest.PartialLastIsIgnored
+==== Test LogTest.ErrorJoinsRecords
+==== Test LogTest.ReadStart
+==== Test LogTest.ReadSecondOneOff
+==== Test LogTest.ReadSecondTenThousand
+==== Test LogTest.ReadSecondStart
+==== Test LogTest.ReadThirdOneOff
+==== Test LogTest.ReadThirdStart
+==== Test LogTest.ReadFourthOneOff
+==== Test LogTest.ReadFourthFirstBlockTrailer
+==== Test LogTest.ReadFourthMiddleBlock
+==== Test LogTest.ReadFourthLastBlock
+==== Test LogTest.ReadFourthStart
+==== Test LogTest.ReadEnd
+==== Test LogTest.ReadPastEnd
+==== PASSED 35 tests
+<end of output>
+Test time =  23.87 sec
+----------------------------------------------------------
+Test Passed.
+"log_test" end time: Aug 01 23:55 CST
+"log_test" time elapsed: 00:00:23
+----------------------------------------------------------
+
+End testing: Aug 01 23:55 CST

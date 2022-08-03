@@ -85,7 +85,7 @@ class ZonedBlockDevice {
   int read_direct_f_;
   int write_f_;
   time_t start_time_;
-  std::shared_ptr<Logger> logger_;
+  Logger* logger_;
   uint32_t finish_threshold_ = 0;
   std::atomic<uint64_t> bytes_written_{0};
   std::atomic<uint64_t> gc_bytes_written_{0};
@@ -106,16 +106,15 @@ class ZonedBlockDevice {
   unsigned int max_nr_active_io_zones_;
   unsigned int max_nr_open_io_zones_;
 
-  std::shared_ptr<ZenFSMetrics> metrics_;
+  ZenFSMetrics* metrics_;
 
   void EncodeJsonZone(std::ostream &json_stream,
                       const std::vector<Zone *> zones);
 
  public:
   explicit ZonedBlockDevice(std::string bdevname,
-                            std::shared_ptr<Logger> logger,
-                            std::shared_ptr<ZenFSMetrics> metrics =
-                                std::make_shared<NoZenFSMetrics>());
+                            Logger* logger,
+                            ZenFSMetrics* metrics = new NoZenFSMetrics());
   virtual ~ZonedBlockDevice();
 
   Status Open(bool readonly, bool exclusive);
@@ -156,7 +155,7 @@ class ZonedBlockDevice {
 
   void SetZoneDeferredStatus(Status status);
 
-  std::shared_ptr<ZenFSMetrics> GetMetrics() { return metrics_; }
+  ZenFSMetrics* GetMetrics() { return metrics_; }
 
   void GetZoneSnapshot(std::vector<ZoneSnapshot> &snapshot);
 

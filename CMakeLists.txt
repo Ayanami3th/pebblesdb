@@ -154,6 +154,8 @@ target_compile_definitions(pebblesdb
 if (HAVE_SNAPPY)
     target_link_libraries(pebblesdb snappy)
 endif (HAVE_SNAPPY)
+target_link_libraries(pebblesdb gflags)
+target_link_libraries(pebblesdb zbd)
 
 # Locate the pthread library
 set(THREADS_PREFER_PTHREAD_FLAG ON)

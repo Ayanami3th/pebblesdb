@@ -134,7 +134,7 @@ Status Zone::Close() {
 }
 
 Status Zone::Append(char *data, uint32_t size) {
-  ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics().get(), ZENFS_ZONE_WRITE_LATENCY,
+  ZenFSMetricsLatencyGuard guard(zbd_->GetMetrics(), ZENFS_ZONE_WRITE_LATENCY,
                                  Env::Default());
   zbd_->GetMetrics()->ReportThroughput(ZENFS_ZONE_WRITE_THROUGHPUT, size);
   char *ptr = data;
@@ -180,8 +180,8 @@ Zone *ZonedBlockDevice::GetIOZone(uint64_t offset) {
 }
 
 ZonedBlockDevice::ZonedBlockDevice(std::string bdevname,
-                                   std::shared_ptr<Logger> logger,
-                                   std::shared_ptr<ZenFSMetrics> metrics)
+                                   Logger* logger,
+                                   ZenFSMetrics* metrics)
     : filename_("/dev/" + bdevname),
       read_f_(-1),
       read_direct_f_(-1),
@@ -493,7 +493,7 @@ unsigned int GetLifeTimeDiff(WriteLifeTimeHint zone_lifetime,
 Status ZonedBlockDevice::AllocateMetaZone(Zone **out_meta_zone) {
   assert(out_meta_zone);
   *out_meta_zone = nullptr;
-  ZenFSMetricsLatencyGuard guard(metrics_.get(), ZENFS_META_ALLOC_LATENCY,
+  ZenFSMetricsLatencyGuard guard(metrics_, ZENFS_META_ALLOC_LATENCY,
                                  Env::Default());
   metrics_->ReportQPS(ZENFS_META_ALLOC_QPS, 1);
 
@@ -800,7 +800,7 @@ Status ZonedBlockDevice::AllocateIOZone(WriteLifeTimeHint file_lifetime,
     }
   }
 
-  ZenFSMetricsLatencyGuard guard(metrics_.get(), tag, Env::Default());
+  ZenFSMetricsLatencyGuard guard(metrics_, tag, Env::Default());
   metrics_->ReportQPS(ZENFS_IO_ALLOC_QPS, 1);
 
   // Check if a deferred IO error was set

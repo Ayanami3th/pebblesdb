@@ -131,7 +131,7 @@ class ZoneFile {
   Status MigrateData(uint64_t offset, uint32_t length, Zone* target_zone);
 
   Status DecodeFrom(Slice* input);
-  Status MergeUpdate(std::shared_ptr<ZoneFile> update, bool replace);
+  Status MergeUpdate(ZoneFile* update, bool replace);
 
   uint64_t GetID() { return file_id_; }
   size_t GetUniqueId(char* id, size_t max_size);
@@ -157,7 +157,7 @@ class ZoneFile {
   Status CloseActiveZone();
 
  public:
-  std::shared_ptr<ZenFSMetrics> GetZBDMetrics() { return zbd_->GetMetrics(); };
+  ZenFSMetrics* GetZBDMetrics() { return zbd_->GetMetrics(); };
   IOType GetIOType() const { return io_type_; };
   bool IsDeleted() const { return is_deleted_; };
   void SetDeleted() { is_deleted_ = true; };
@@ -193,17 +193,17 @@ class ZoneFile {
 class ZonedWritableFile : public WritableFile {
  public:
   explicit ZonedWritableFile(ZonedBlockDevice* zbd, bool buffered,
-                             std::shared_ptr<ZoneFile> zoneFile);
+                             ZoneFile* zoneFile);
   virtual ~ZonedWritableFile();
 
-  virtual Status Append(const Slice &data) {return Status::NotSupported();}
-  virtual Status Append(const Slice& data, const IOOptions& options,
-                        IODebugContext* dbg); // delete override
-  virtual Status Append(const Slice& data, const IOOptions& opts,
-                        const DataVerificationInfo& /* verification_info */,
-                        IODebugContext* dbg) { // delete override
-    return Append(data, opts, dbg);
-  }
+  virtual Status Append(const Slice &data);
+  // virtual Status Append(const Slice& data, const IOOptions& options,
+  //                       IODebugContext* dbg); // delete override
+  // virtual Status Append(const Slice& data, const IOOptions& opts,
+  //                       const DataVerificationInfo& /* verification_info */,
+  //                       IODebugContext* dbg) { // delete override
+  //   return Append(data, opts, dbg);
+  // }
   virtual Status PositionedAppend(const Slice& data, uint64_t offset,
                                   const IOOptions& options,
                                   IODebugContext* dbg); // delete override
@@ -218,14 +218,14 @@ class ZonedWritableFile : public WritableFile {
 
   virtual Status Truncate(uint64_t size, const IOOptions& options,
                           IODebugContext* dbg); // delete override
-  virtual Status Close(const IOOptions& options,
-                       IODebugContext* dbg); // delete override
-  virtual Status Close() {{return Status::NotSupported();}}
-  virtual Status Flush(const IOOptions& options,
-                       IODebugContext* dbg); // delete override
-  virtual Status Flush() {return Status::NotSupported();}
-  virtual Status Sync(const IOOptions& options, IODebugContext* dbg); // delete override;
-  virtual Status Sync() {return Status::NotSupported();}
+  // virtual Status Close(const IOOptions& options,
+  //                      IODebugContext* dbg); // delete override
+  virtual Status Close();
+  // virtual Status Flush(const IOOptions& options,
+  //                      IODebugContext* dbg); // delete override
+  virtual Status Flush();
+  // virtual Status Sync(const IOOptions& options, IODebugContext* dbg); // delete override;
+  virtual Status Sync();
   virtual Status RangeSync(uint64_t offset, uint64_t nbytes,
                            const IOOptions& options,
                            IODebugContext* dbg); // delete override
@@ -258,7 +258,7 @@ class ZonedWritableFile : public WritableFile {
   int write_temp;
   bool open;
 
-  std::shared_ptr<ZoneFile> zoneFile_;
+  ZoneFile* zoneFile_;
   MetadataWriter* metadata_writer_;
 
   std::mutex buffer_mtx_;
@@ -266,20 +266,20 @@ class ZonedWritableFile : public WritableFile {
 
 class ZonedSequentialFile : public SequentialFile {
  private:
-  std::shared_ptr<ZoneFile> zoneFile_;
+  ZoneFile* zoneFile_;
   uint64_t rp;
   bool direct_;
 
  public:
-  explicit ZonedSequentialFile(std::shared_ptr<ZoneFile> zoneFile)
+  explicit ZonedSequentialFile(ZoneFile* zoneFile)
       : zoneFile_(zoneFile),
         rp(0),
         direct_(!zoneFile->IsSparse()) {} // file_opts.use_direct_reads
   virtual ~ZonedSequentialFile();
 
-  Status Read(size_t n, const IOOptions& options, Slice* result,
-                char* scratch, IODebugContext* dbg); // delete override
-  Status Read(size_t n, Slice* result, char* scratch) {}
+  // Status Read(size_t n, const IOOptions& options, Slice* result,
+  //               char* scratch, IODebugContext* dbg); // delete override
+  Status Read(size_t n, Slice* result, char* scratch);
   Status PositionedRead(uint64_t offset, size_t n, const IOOptions& options,
                         Slice* result, char* scratch,
                         IODebugContext* dbg); // delete override
@@ -298,19 +298,19 @@ class ZonedSequentialFile : public SequentialFile {
 
 class ZonedRandomAccessFile : public RandomAccessFile {
  private:
-  std::shared_ptr<ZoneFile> zoneFile_;
+  ZoneFile* zoneFile_;
   bool direct_;
 
  public:
-  explicit ZonedRandomAccessFile(std::shared_ptr<ZoneFile> zoneFile)
+  explicit ZonedRandomAccessFile(ZoneFile* zoneFile)
       : zoneFile_(zoneFile),
         direct_(!zoneFile->IsSparse()) {} // file_opts.use_direct_reads
   virtual ~ZonedRandomAccessFile();
 
-  Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {};
-  Status Read(uint64_t offset, size_t n, const IOOptions& options,
-              Slice* result, char* scratch,
-              IODebugContext* dbg) const; // delete override
+  Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const;
+  // Status Read(uint64_t offset, size_t n, const IOOptions& options,
+  //             Slice* result, char* scratch,
+  //             IODebugContext* dbg) const; // delete override
   
   Status Prefetch(uint64_t /*offset*/, size_t /*n*/,
                   const IOOptions& /*options*/,

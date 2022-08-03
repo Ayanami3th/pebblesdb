@@ -284,7 +284,7 @@ PebblesDB_BINARY_DIR:STATIC=/home/cavalry/pebblesdb/build
 PebblesDB_SOURCE_DIR:STATIC=/home/cavalry/pebblesdb
 
 //Dependencies for the target
-pebblesdb_LIB_DEPENDS:STATIC=general;snappy;
+pebblesdb_LIB_DEPENDS:STATIC=general;snappy;general;gflags;general;zbd;
 
 
 ########################
