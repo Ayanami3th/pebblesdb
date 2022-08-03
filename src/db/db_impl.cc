@@ -169,7 +169,7 @@ Options SanitizeOptions(const std::string& dbname,
   // bug here
   if (result.info_log == NULL) {
     // Open a log file in the same directory as the db
-    src.env->CreateDirIfMissing(dbname);  // In case it does not exist
+    src.env->CreateDir(dbname);  // In case it does not exist
     // src.env->RenameFile(InfoLogFileName(dbname), OldInfoLogFileName(dbname));
     // Status s = src.env->NewLogger(InfoLogFileName(dbname), &result.info_log);
     // if (!s.ok()) {
@@ -2463,8 +2463,8 @@ Status DB::Open(const Options& options, const std::string& dbname,
   DBImpl* impl = new DBImpl(options, dbname);
   impl->mutex_.Lock();
 
-  // VersionEdit edit;
-  // Status s = impl->Recover(&edit); // Handles create_if_missing, error_if_exists
+  VersionEdit edit;
+  Status s = impl->Recover(&edit); // Handles create_if_missing, error_if_exists
 
   // if (s.ok()) {
   //   uint64_t new_log_number = impl->versions_->NewFileNumber();

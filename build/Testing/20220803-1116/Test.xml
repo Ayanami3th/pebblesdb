@@ -21,43 +21,43 @@
 	TotalVirtualMemory="15624"
 	TotalPhysicalMemory="15781"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="2600"
+	ProcessorClockFrequency="4198.9"
 	>
 	<Testing>
-		<StartDateTime>Aug 03 20:15 CST</StartDateTime>
-		<StartTestTime>1659528906</StartTestTime>
+		<StartDateTime>Aug 03 20:28 CST</StartDateTime>
+		<StartTestTime>1659529721</StartTestTime>
 		<TestList>
-			<Test>./autocompact_test</Test>
-			<Test>./db_test</Test>
+			<Test>./bloom_test</Test>
+			<Test>./cache_test</Test>
 			<Test>./dbformat_test</Test>
 			<Test>./version_set_test</Test>
 			<Test>./crc32c_test</Test>
+			<Test>./autocompact_test</Test>
 			<Test>./filter_block_test</Test>
-			<Test>./coding_test</Test>
 			<Test>./filename_test</Test>
-			<Test>./cache_test</Test>
 			<Test>./version_edit_test</Test>
 			<Test>./write_batch_test</Test>
-			<Test>./bloom_test</Test>
-			<Test>./corruption_test</Test>
 			<Test>./table_test</Test>
-			<Test>./issue200_test</Test>
+			<Test>./coding_test</Test>
 			<Test>./installation_test</Test>
-			<Test>./env_test</Test>
 			<Test>./c_test</Test>
 			<Test>./issue178_test</Test>
+			<Test>./db_test</Test>
+			<Test>./issue200_test</Test>
+			<Test>./corruption_test</Test>
+			<Test>./env_test</Test>
 			<Test>./arena_test</Test>
 			<Test>./skiplist_test</Test>
 			<Test>./log_test</Test>
 		</TestList>
 		<Test Status="passed">
-			<Name>autocompact_test</Name>
+			<Name>bloom_test</Name>
 			<Path>.</Path>
-			<FullName>./autocompact_test</FullName>
-			<FullCommandLine>/home/cavalry/pebblesdb/build/autocompact_test</FullCommandLine>
+			<FullName>./bloom_test</FullName>
+			<FullCommandLine>/home/cavalry/pebblesdb/build/bloom_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.0443407</Value>
+					<Value>0.115635</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -66,29 +66,21 @@
 					<Value>Completed</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/cavalry/pebblesdb/build/autocompact_test</Value>
+					<Value>/home/cavalry/pebblesdb/build/bloom_test</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value>==== Test AutoCompactTest.ReadAll
-==== PASSED 1 tests
-</Value>
+					<Value encoding="base64" compression="gzip">eJyN001rxCAQBuB7fsVcehU15qtFKIXuqbcuvacbuwmYGKK7bf5980EvzhSS05DxwfFFtdYazsYHeLHO9WvFXvsxzKfOBjMlmui/97W1ZOejnuZuuL6Z4Rpan5xq6w2Mznehuxv/CMCZTB/gGey2AjRsn4An+JyD8X8/KpIqhak8RosM0/QIFYyXmKpjVHJMs2M0qzDND1Ii4SKigpO0FJiWMRV0wsTAVUxTctccDyx4TBWdML4SMqYyJwcuMU1jmv5zJQpEVUwzKqaF4piymOb0WYVENI9pQZ+1wgkXO2WMJefWwLQ+ZPcFYanDVt/CeAvwXful17u7acB3w8VAF8D8XIxp/L64XWjrbLNqwaXa52HJL7LTOCE=</Value>
 				</Measurement>
 			</Results>
 		</Test>
-		<Test Status="failed">
-			<Name>db_test</Name>
+		<Test Status="passed">
+			<Name>cache_test</Name>
 			<Path>.</Path>
-			<FullName>./db_test</FullName>
-			<FullCommandLine>/home/cavalry/pebblesdb/build/db_test</FullCommandLine>
+			<FullName>./cache_test</FullName>
+			<FullCommandLine>/home/cavalry/pebblesdb/build/cache_test</FullCommandLine>
 			<Results>
-				<NamedMeasurement type="text/string" name="Exit Code">
-					<Value>Failed</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Exit Value">
-					<Value>1</Value>
-				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.067839</Value>
+					<Value>0.0205244</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -97,12 +89,10 @@
 					<Value>Completed</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/cavalry/pebblesdb/build/db_test</Value>
+					<Value>/home/cavalry/pebblesdb/build/cache_test</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value>==== Test DBTest.Empty
-/home/cavalry/pebblesdb/src/db/db_test.cc:673: Assertion failure db_ != NULL
-</Value>
+					<Value encoding="base64" compression="gzip">eJxtjDEKgDAMAHdf0Rc4umUoKuigFPQDpQ0YkAhNUPy9Co7ZDu44AAC3oqhrY9rwo3og9ZwnEqnA0H2JgrZhLYTiCwZixmxHJyWlg8OxU7rNZMB43v/MDGa8xv8e/LL0nWucvkKqB2QGRPs=</Value>
 				</Measurement>
 			</Results>
 		</Test>
@@ -113,7 +103,7 @@
 			<FullCommandLine>/home/cavalry/pebblesdb/build/dbformat_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.0193345</Value>
+					<Value>0.00303371</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -136,7 +126,7 @@
 			<FullCommandLine>/home/cavalry/pebblesdb/build/version_set_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.017922</Value>
+					<Value>0.00255696</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -159,7 +149,7 @@
 			<FullCommandLine>/home/cavalry/pebblesdb/build/crc32c_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.0149574</Value>
+					<Value>0.002697</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -175,6 +165,36 @@
 				</Measurement>
 			</Results>
 		</Test>
+		<Test Status="failed">
+			<Name>autocompact_test</Name>
+			<Path>.</Path>
+			<FullName>./autocompact_test</FullName>
+			<FullCommandLine>/home/cavalry/pebblesdb/build/autocompact_test</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>SEGFAULT</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>0</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.170713</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/cavalry/pebblesdb/build/autocompact_test</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>==== Test AutoCompactTest.ReadAll
+</Value>
+				</Measurement>
+			</Results>
+		</Test>
 		<Test Status="passed">
 			<Name>filter_block_test</Name>
 			<Path>.</Path>
@@ -182,7 +202,7 @@
 			<FullCommandLine>/home/cavalry/pebblesdb/build/filter_block_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.0152326</Value>
+					<Value>0.00244847</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -199,36 +219,13 @@
 			</Results>
 		</Test>
 		<Test Status="passed">
-			<Name>coding_test</Name>
-			<Path>.</Path>
-			<FullName>./coding_test</FullName>
-			<FullCommandLine>/home/cavalry/pebblesdb/build/coding_test</FullCommandLine>
-			<Results>
-				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.121249</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="numeric/double" name="Processors">
-					<Value>1</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Completion Status">
-					<Value>Completed</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/cavalry/pebblesdb/build/coding_test</Value>
-				</NamedMeasurement>
-				<Measurement>
-					<Value encoding="base64" compression="gzip">eJyztbW1VQhJLS5RcM5PycxL13PLrEhNMTbissUqYWaCKeGalwxm+JeWFJSWYMqHJRZl5pVgMxIig81MmB7/stSitJz8ctwqQopK85ITSzLz83CbT8gUMxN8pgSXANWkF0MkAhyDg11dFAwNFEqASoq5AF/maN8=</Value>
-				</Measurement>
-			</Results>
-		</Test>
-		<Test Status="passed">
 			<Name>filename_test</Name>
 			<Path>.</Path>
 			<FullName>./filename_test</FullName>
 			<FullCommandLine>/home/cavalry/pebblesdb/build/filename_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.00904957</Value>
+					<Value>0.00312515</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -248,36 +245,13 @@
 			</Results>
 		</Test>
 		<Test Status="passed">
-			<Name>cache_test</Name>
-			<Path>.</Path>
-			<FullName>./cache_test</FullName>
-			<FullCommandLine>/home/cavalry/pebblesdb/build/cache_test</FullCommandLine>
-			<Results>
-				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.108341</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="numeric/double" name="Processors">
-					<Value>1</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Completion Status">
-					<Value>Completed</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/cavalry/pebblesdb/build/cache_test</Value>
-				</NamedMeasurement>
-				<Measurement>
-					<Value encoding="base64" compression="gzip">eJxtjDEKgDAMAHdf0Rc4umUoKuigFPQDpQ0YkAhNUPy9Co7ZDu44AAC3oqhrY9rwo3og9ZwnEqnA0H2JgrZhLYTiCwZixmxHJyWlg8OxU7rNZMB43v/MDGa8xv8e/LL0nWucvkKqB2QGRPs=</Value>
-				</Measurement>
-			</Results>
-		</Test>
-		<Test Status="passed">
 			<Name>version_edit_test</Name>
 			<Path>.</Path>
 			<FullName>./version_edit_test</FullName>
 			<FullCommandLine>/home/cavalry/pebblesdb/build/version_edit_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.00597887</Value>
+					<Value>0.00309078</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -302,7 +276,7 @@
 			<FullCommandLine>/home/cavalry/pebblesdb/build/write_batch_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.00503672</Value>
+					<Value>0.00187891</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -315,59 +289,6 @@
 				</NamedMeasurement>
 				<Measurement>
 					<Value encoding="base64" compression="gzip">eJyztbW1VQhJLS5RCC/KLEl1SixJzgBx9VxzC0oquWxxSfuW5pRkFuSk4lbhnF9UVFpQkpmfh1uNY0FBal4KRD7AMTjY1UXBRKEEKFPMBQDPBzPS====</Value>
-				</Measurement>
-			</Results>
-		</Test>
-		<Test Status="passed">
-			<Name>bloom_test</Name>
-			<Path>.</Path>
-			<FullName>./bloom_test</FullName>
-			<FullCommandLine>/home/cavalry/pebblesdb/build/bloom_test</FullCommandLine>
-			<Results>
-				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.146822</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="numeric/double" name="Processors">
-					<Value>1</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Completion Status">
-					<Value>Completed</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/cavalry/pebblesdb/build/bloom_test</Value>
-				</NamedMeasurement>
-				<Measurement>
-					<Value encoding="base64" compression="gzip">eJyN001rxCAQBuB7fsVcehU15qtFKIXuqbcuvacbuwmYGKK7bf5980EvzhSS05DxwfFFtdYazsYHeLHO9WvFXvsxzKfOBjMlmui/97W1ZOejnuZuuL6Z4Rpan5xq6w2Mznehuxv/CMCZTB/gGey2AjRsn4An+JyD8X8/KpIqhak8RosM0/QIFYyXmKpjVHJMs2M0qzDND1Ii4SKigpO0FJiWMRV0wsTAVUxTctccDyx4TBWdML4SMqYyJwcuMU1jmv5zJQpEVUwzKqaF4piymOb0WYVENI9pQZ+1wgkXO2WMJefWwLQ+ZPcFYanDVt/CeAvwXful17u7acB3w8VAF8D8XIxp/L64XWjrbLNqwaXa52HJL7LTOCE=</Value>
-				</Measurement>
-			</Results>
-		</Test>
-		<Test Status="failed">
-			<Name>corruption_test</Name>
-			<Path>.</Path>
-			<FullName>./corruption_test</FullName>
-			<FullCommandLine>/home/cavalry/pebblesdb/build/corruption_test</FullCommandLine>
-			<Results>
-				<NamedMeasurement type="text/string" name="Exit Code">
-					<Value>SEGFAULT</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Exit Value">
-					<Value>0</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.235824</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="numeric/double" name="Processors">
-					<Value>1</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Completion Status">
-					<Value>Completed</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/cavalry/pebblesdb/build/corruption_test</Value>
-				</NamedMeasurement>
-				<Measurement>
-					<Value>==== Test CorruptionTest.Recovery
-</Value>
 				</Measurement>
 			</Results>
 		</Test>
@@ -384,7 +305,7 @@
 					<Value>0</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.267698</Value>
+					<Value>0.185935</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -401,20 +322,14 @@
 				</Measurement>
 			</Results>
 		</Test>
-		<Test Status="failed">
-			<Name>issue200_test</Name>
+		<Test Status="passed">
+			<Name>coding_test</Name>
 			<Path>.</Path>
-			<FullName>./issue200_test</FullName>
-			<FullCommandLine>/home/cavalry/pebblesdb/build/issue200_test</FullCommandLine>
+			<FullName>./coding_test</FullName>
+			<FullCommandLine>/home/cavalry/pebblesdb/build/coding_test</FullCommandLine>
 			<Results>
-				<NamedMeasurement type="text/string" name="Exit Code">
-					<Value>SEGFAULT</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Exit Value">
-					<Value>0</Value>
-				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.286548</Value>
+					<Value>0.162294</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -423,11 +338,10 @@
 					<Value>Completed</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/cavalry/pebblesdb/build/issue200_test</Value>
+					<Value>/home/cavalry/pebblesdb/build/coding_test</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value>==== Test Issue200.Test
-</Value>
+					<Value encoding="base64" compression="gzip">eJyztbW1VQhJLS5RcM5PycxL13PLrEhNMTbissUqYWaCKeGalwxm+JeWFJSWYMqHJRZl5pVgMxIig81MmB7/stSitJz8ctwqQopK85ITSzLz83CbT8gUMxN8pgSXANWkF0MkAhyDg11dFAwNFEqASoq5AF/maN8=</Value>
 				</Measurement>
 			</Results>
 		</Test>
@@ -444,7 +358,7 @@
 					<Value>0</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.304964</Value>
+					<Value>0.196863</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -457,29 +371,6 @@
 				</NamedMeasurement>
 				<Measurement>
 					<Value></Value>
-				</Measurement>
-			</Results>
-		</Test>
-		<Test Status="passed">
-			<Name>env_test</Name>
-			<Path>.</Path>
-			<FullName>./env_test</FullName>
-			<FullCommandLine>/home/cavalry/pebblesdb/build/env_test</FullCommandLine>
-			<Results>
-				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.308299</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="numeric/double" name="Processors">
-					<Value>1</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Completion Status">
-					<Value>Completed</Value>
-				</NamedMeasurement>
-				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>/home/cavalry/pebblesdb/build/env_test</Value>
-				</NamedMeasurement>
-				<Measurement>
-					<Value encoding="base64" compression="gzip">eJyztbW1VQhJLS5RcM0rC8gvzqwAcfSCSvM8c3NTUzITS1JzKrlscaryTczDKR1cklhUEpJRlJqYAlES4Bgc7OqiYKxQApQu5gIAe6YqFg==</Value>
 				</Measurement>
 			</Results>
 		</Test>
@@ -496,7 +387,7 @@
 					<Value>0</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.340924</Value>
+					<Value>0.215082</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -529,7 +420,7 @@
 					<Value>0</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.727674</Value>
+					<Value>0.226301</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -546,6 +437,119 @@
 				</Measurement>
 			</Results>
 		</Test>
+		<Test Status="failed">
+			<Name>db_test</Name>
+			<Path>.</Path>
+			<FullName>./db_test</FullName>
+			<FullCommandLine>/home/cavalry/pebblesdb/build/db_test</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>SEGFAULT</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>0</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.243759</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/cavalry/pebblesdb/build/db_test</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>==== Test DBTest.Empty
+</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<Test Status="failed">
+			<Name>issue200_test</Name>
+			<Path>.</Path>
+			<FullName>./issue200_test</FullName>
+			<FullCommandLine>/home/cavalry/pebblesdb/build/issue200_test</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>SEGFAULT</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>0</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.256695</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/cavalry/pebblesdb/build/issue200_test</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>==== Test Issue200.Test
+</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<Test Status="failed">
+			<Name>corruption_test</Name>
+			<Path>.</Path>
+			<FullName>./corruption_test</FullName>
+			<FullCommandLine>/home/cavalry/pebblesdb/build/corruption_test</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>SEGFAULT</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>0</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.275261</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/cavalry/pebblesdb/build/corruption_test</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>==== Test CorruptionTest.Recovery
+</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<Test Status="passed">
+			<Name>env_test</Name>
+			<Path>.</Path>
+			<FullName>./env_test</FullName>
+			<FullCommandLine>/home/cavalry/pebblesdb/build/env_test</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.305564</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/cavalry/pebblesdb/build/env_test</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyztbW1VQhJLS5RcM0rC8gvzqwAcfSCSvM8c3NTUzITS1JzKrlscaryTczDKR1cklhUEpJRlJqYAlES4Bgc7OqiYKxQApQu5gIAe6YqFg==</Value>
+				</Measurement>
+			</Results>
+		</Test>
 		<Test Status="passed">
 			<Name>arena_test</Name>
 			<Path>.</Path>
@@ -553,7 +557,7 @@
 			<FullCommandLine>/home/cavalry/pebblesdb/build/arena_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>1.1999</Value>
+					<Value>0.80889</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -579,7 +583,7 @@
 			<FullCommandLine>/home/cavalry/pebblesdb/build/skiplist_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>4.80014</Value>
+					<Value>3.16019</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -602,7 +606,7 @@
 			<FullCommandLine>/home/cavalry/pebblesdb/build/log_test</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>28.9471</Value>
+					<Value>24.63</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -618,8 +622,8 @@
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Aug 03 20:15 CST</EndDateTime>
-		<EndTestTime>1659528935</EndTestTime>
+		<EndDateTime>Aug 03 20:29 CST</EndDateTime>
+		<EndTestTime>1659529746</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

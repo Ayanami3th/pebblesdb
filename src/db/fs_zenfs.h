@@ -184,6 +184,7 @@ class ZenFS : public EnvWrapper {
   Status RecoverFrom(ZenMetaLog* log);
 
   std::string ToAuxPath(std::string path) {
+    if (!superblock_) mkdir("456", 0755);
     return superblock_->GetAuxFsPath() + path;
   }
 
